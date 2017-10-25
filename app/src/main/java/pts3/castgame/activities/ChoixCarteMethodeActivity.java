@@ -9,6 +9,8 @@ import pts3.castgame.R;
 
 public class ChoixCarteMethodeActivity extends AppCompatActivity {
 
+    //
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
