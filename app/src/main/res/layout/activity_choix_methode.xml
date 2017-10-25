@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="pts3.castgame.activities.ChoixCarteMethodeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight=".1"
+            android:background="@drawable/menu_icon" />
+
+        <TextView
+            style="@style/NomApp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8" />
+
+        <ImageButton
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight=".1"
+            android:background="@drawable/map"
+            android:onClick="voirMap" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/TitrePage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/page_methode" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <Button
+            style="@style/Carte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:onClick="changerPageMethode"
+            android:text="@string/attaquer" />
+
+        <Button
+            style="@style/Carte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:onClick="changerPageMethode"
+            android:text="@string/defendre" />
+
+        <Button
+            style="@style/Carte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:onClick="changerPageMethode"
+            android:text="@string/querir" />
+
+        <Button
+            style="@style/Carte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:onClick="changerPageMethode"
+            android:text="@string/lancerSort" />
+
+        <Button
+            style="@style/Carte"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:onClick="changerPageMethode"
+            android:text="@string/reveiller_mort" />
+
+    </LinearLayout>
+
+</LinearLayout>

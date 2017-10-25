@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">CastGame</string>
+
+    <!-- nom des pages -->
+    <string name="page_difficulte">Choix de la difficulté</string>
+    <string name="page_type_de_jeu">Choix du type de jeu</string>
+    <string name="page_templates">Choix du template</string>
+    <string name="page_personnage">Choix de la carte personnage</string>
+    <string name="page_methode">Choix de la carte méthode</string>
+
+    <!-- Difficulté -->
+    <string name="facile">Facile</string>
+    <string name="difficile">Difficile</string>
+
+    <!-- Difficulté -->
+    <string name="jeu_papier">Jeu papier</string>
+    <string name="jeu_solo">Jeu solo</string>
+    <string name="map">Map</string>
+
+    <!-- Réponses -->
+    <string name="page_rep">Que se passe-t-il ?</string>
+    <string name="rep_compile_pas">Ne compile pas</string>
+    <string name="rep_execute_pas">Ne s\'exécute pas</string>
+    <string name="rep_affichage_sortie">Affichage en sortie</string>
+
+    <!-- Cartes Méthodes -->
+    <string name="attaquer">attaquer()</string>
+    <string name="defendre">defendre()</string>
+    <string name="querir">guerir()</string>
+    <string name="lancerSort">lancerSort()</string>
+    <string name="reveiller_mort">reveillerMort()</string>
+    <string name="title_activity_map">MapActivity</string>
+
+</resources>
