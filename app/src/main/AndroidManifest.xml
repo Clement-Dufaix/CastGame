@@ -6,7 +6,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/logo_cast"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/logo_cast"
+        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
@@ -20,9 +20,11 @@
 
         <activity android:name=".activities.ChoixTemplateActivity" />
 
-        <activity android:name=".activities.ChoixCarteMethodeActivity" />
+        <activity android:name=".activities.ChoixPersonnageActivity" />
 
-        <activity android:name=".activities.ChoixTypeDeJeuActivity" />
+        <activity android:name=".activities.ChoixMethodeActivity" />
+
+        <activity android:name=".activities.ChoixJeuActivity" />
 
         <activity android:name=".activities.ReponseActivity" />
 

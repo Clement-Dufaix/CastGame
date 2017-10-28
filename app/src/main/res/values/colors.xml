@@ -3,6 +3,7 @@
 
     <color name="colorPrimary">#fdf4d0</color>
     <color name="colorPrimaryDark">#fdf4d0</color>
+    <color name="colorAccent">#000000</color>
 
     <!--
     <color name="colorD">222222</color>

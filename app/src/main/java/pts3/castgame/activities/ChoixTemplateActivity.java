@@ -17,7 +17,7 @@ public class ChoixTemplateActivity extends AppCompatActivity {
     }
 
     public void changerPageTemplate(View view) {
-        Intent intent = new Intent(this, ChoixCarteMethodeActivity.class);
+        Intent intent = new Intent(this, ChoixPersonnageActivity.class);
         startActivity(intent);
     }
 

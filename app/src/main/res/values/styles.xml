@@ -31,10 +31,11 @@
     <style name="Carte">
         <item name="android:layout_marginTop">5dp</item>
         <item name="android:layout_marginBottom">5dp</item>
-        <item name="android:background">@drawable/card</item>
+        <item name="android:gravity">center</item>
         <item name="android:padding">10dp</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textSize">18sp</item>
+        <item name="android:background">@drawable/card</item>
     </style>
 
     <style name="Divider">

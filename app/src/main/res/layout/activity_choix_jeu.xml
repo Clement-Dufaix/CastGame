@@ -6,7 +6,7 @@
     android:background="@color/colorPrimaryDark"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context="pts3.castgame.activities.ChoixTypeDeJeuActivity">
+    tools:context="pts3.castgame.activities.ChoixJeuActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

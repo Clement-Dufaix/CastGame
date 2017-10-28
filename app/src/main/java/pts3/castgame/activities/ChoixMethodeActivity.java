@@ -7,17 +7,17 @@ import android.view.View;
 
 import pts3.castgame.R;
 
-public class ReponseActivity extends AppCompatActivity {
+public class ChoixMethodeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reponse);
+        setContentView(R.layout.activity_choix_methode);
         getIntent();
     }
 
-    public void changerPageReponse(View view) {
-        Intent intent = new Intent(this, ChoixTemplateActivity.class);
+    public void changerPageMethode(View view) {
+        Intent intent = new Intent(this, ReponseActivity.class);
         startActivity(intent);
     }
 

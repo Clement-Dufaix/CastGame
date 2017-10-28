@@ -7,12 +7,12 @@ import android.view.View;
 
 import pts3.castgame.R;
 
-public class ChoixTypeDeJeuActivity extends AppCompatActivity {
+public class ChoixJeuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_choix_typedejeu);
+        setContentView(R.layout.activity_choix_jeu);
         getIntent();
     }
 

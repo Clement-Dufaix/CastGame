@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void choisirDifficulte(View view) {
-        Intent intent = new Intent(this, ChoixTypeDeJeuActivity.class);
+        Intent intent = new Intent(this, ChoixJeuActivity.class);
         startActivity(intent);
     }
 
