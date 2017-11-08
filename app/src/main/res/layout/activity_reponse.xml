@@ -26,11 +26,11 @@
             android:layout_weight=".8" />
 
         <ImageButton
-            android:onClick="voirMap"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_weight=".1"
-            android:background="@drawable/map" />
+            android:background="@drawable/map"
+            android:onClick="voirMap" />
     </LinearLayout>
 
     <TextView
@@ -48,32 +48,32 @@
 
         <Button
             style="@style/Bouton"
-            android:onClick="changerPageReponse"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:layout_weight=".25"
+            android:onClick="changerPageReponse"
             android:text="@string/rep_compile_pas" />
 
         <Button
             style="@style/Bouton"
-            android:onClick="changerPageReponse"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:layout_weight=".25"
+            android:onClick="changerPageReponse"
             android:text="@string/rep_execute_pas" />
 
         <Button
             style="@style/Bouton"
-            android:onClick="changerPageReponse"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="10dp"
             android:layout_weight=".25"
+            android:onClick="changerPageReponse"
             android:text="@string/rep_affichage_sortie" />
 
     </LinearLayout>

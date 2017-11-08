@@ -33,39 +33,12 @@
             android:onClick="voirMap" />
     </LinearLayout>
 
-    <TextView
-        style="@style/TitrePage"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="pts3.castgame.fragments.DifficulteFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/page_difficulte" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <Button
-            style="@style/Bouton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="50dp"
-            android:layout_weight="0.5"
-            android:onClick="choisirDifficulte"
-            android:text="@string/facile" />
-
-        <Button
-            style="@style/Bouton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="50dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0.5"
-            android:onClick="choisirDifficulte"
-            android:text="@string/difficile" />
-
-    </LinearLayout>
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_difficulte">
+    </fragment>
 
 </LinearLayout>
