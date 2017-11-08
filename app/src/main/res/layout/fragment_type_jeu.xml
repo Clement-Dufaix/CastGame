@@ -1,15 +1,16 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context="pts3.castgame.fragments.DifficulteFragment">
+    android:orientation="vertical"
+    tools:context="pts3.castgame.fragments.TypeJeuFragment">
 
     <TextView
         style="@style/TitrePage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_difficulte" />
+        android:text="@string/page_type_de_jeu" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,27 +19,25 @@
         android:padding="10dp">
 
         <Button
-            android:id="@+id/difficulte_facile"
             style="@style/Bouton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="80dp"
             android:layout_weight="0.5"
-            android:onClick="choisirDifficulte"
-            android:text="@string/facile" />
+            android:onClick="choisirTypeJeu"
+            android:text="@string/jeu_papier" />
 
         <Button
-            android:id="@+id/difficulte_difficile"
             style="@style/Bouton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="80dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
-            android:onClick="choisirDifficulte"
-            android:text="@string/difficile" />
+            android:onClick="choisirTypeJeu"
+            android:text="@string/jeu_solo" />
 
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

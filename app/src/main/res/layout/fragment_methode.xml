@@ -1,39 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:padding="10dp"
-    tools:context="pts3.castgame.activities.ChoixMethodeActivity">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_weight=".1"
-            android:background="@drawable/menu_icon" />
-
-        <TextView
-            style="@style/NomApp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".8" />
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_weight=".1"
-            android:background="@drawable/map"
-            android:onClick="voirMap" />
-    </LinearLayout>
+    tools:context="pts3.castgame.fragments.MethodeFragment">
 
     <TextView
         style="@style/TitrePage"
@@ -52,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="changerPageMethode"
+            android:onClick="choisirMethode"
             android:text="@string/attaquer" />
 
         <Button
@@ -60,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="changerPageMethode"
+            android:onClick="choisirMethode"
             android:text="@string/defendre" />
 
         <Button
@@ -68,7 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="changerPageMethode"
+            android:onClick="choisirMethode"
             android:text="@string/querir" />
 
         <Button
@@ -76,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="changerPageMethode"
+            android:onClick="choisirMethode"
             android:text="@string/lancerSort" />
 
         <Button
@@ -84,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="changerPageMethode"
+            android:onClick="choisirMethode"
             android:text="@string/reveiller_mort" />
 
     </LinearLayout>

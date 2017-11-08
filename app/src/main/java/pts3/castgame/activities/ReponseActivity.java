@@ -17,8 +17,8 @@ public class ReponseActivity extends AppCompatActivity {
     }
 
     public void changerPageReponse(View view) {
-        Intent intent = new Intent(this, ChoixTemplateActivity.class);
-        startActivity(intent);
+        // Intent intent = new Intent(this, ChoixTemplateActivity.class);
+        // startActivity(intent);
     }
 
     public void voirMap(View view) {

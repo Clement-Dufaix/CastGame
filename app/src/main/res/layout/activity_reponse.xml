@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimaryDark"
-    android:orientation="vertical"
     android:padding="10dp"
     tools:context="pts3.castgame.activities.ReponseActivity">
 
@@ -33,49 +32,5 @@
             android:onClick="voirMap" />
     </LinearLayout>
 
-    <TextView
-        style="@style/TitrePage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/page_rep" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:orientation="vertical"
-        android:padding="10dp">
-
-        <Button
-            style="@style/Bouton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".25"
-            android:onClick="changerPageReponse"
-            android:text="@string/rep_compile_pas" />
-
-        <Button
-            style="@style/Bouton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".25"
-            android:onClick="changerPageReponse"
-            android:text="@string/rep_execute_pas" />
-
-        <Button
-            style="@style/Bouton"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight=".25"
-            android:onClick="changerPageReponse"
-            android:text="@string/rep_affichage_sortie" />
-
-    </LinearLayout>
-
-</LinearLayout>
+</FrameLayout>
