@@ -19,10 +19,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ChoixTemplateActivity" />
-        <activity android:name=".activities.ChoixPersonnageActivity" />
-        <activity android:name=".activities.ChoixMethodeActivity" />
-        <activity android:name=".activities.ChoixJeuActivity" />
         <activity android:name=".activities.ReponseActivity" />
         <activity android:name=".activities.MapActivity" />
     </application>
