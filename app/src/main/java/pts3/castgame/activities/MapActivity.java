@@ -34,16 +34,16 @@ public class MapActivity extends AppCompatActivity {
                         map.setScaleY((float) (map.getScaleY() * 0.5));
                         map.setX(30);
                         map.setY(150);
-                        // ...fdf
                         zoom=false;
                     }else{
+                        map.setX(map.getX()+map.getWidth()-e.getX()*2);
+                        map.setY(map.getY()+map.getHeight()-e.getY()*2);
                         map.setScaleX((float) (map.getScaleX() * 2));
                         map.setScaleY((float) (map.getScaleY() * 2));
-                        map.setX(e.getX());
-                        map.setY(e.getY());
+
                         zoom=true;
                     }
-
+                    Log.e("Coordonnée image", "x : "+map.getX()+", y : "+map.getY()+"");
                     return super.onDoubleTap(e);
                 }
 
