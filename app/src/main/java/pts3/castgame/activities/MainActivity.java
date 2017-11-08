@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // J'ai crée une fonction générique pour ajouter nos Fragments plutôt que de dupliquer pour chaque possibilité.
+    // Le booléen sert à savoir si on permet le retour sur la page précédente ou pas.
     private void setFragment(Fragment fragment, boolean backStack) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // On remplace l'ancien fragment par le nouveau.
@@ -75,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         // On va vers le choix d'un nouveau template.
         // Il faudrait refaire une IHM entre les deux nn ?
         TemplateFragment newFragment = new TemplateFragment();
-        setFragment(newFragment, false);
+        setFragment(newFragment, true);
     }
 
     // On laisse pour le moment le fait de changer d'activité car la carte ne reprend rien du reste.
