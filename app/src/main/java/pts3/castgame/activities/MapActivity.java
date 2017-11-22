@@ -20,18 +20,19 @@ public class MapActivity extends AppCompatActivity {
     ImageView map;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        getIntent();
+        String isDifficile = getIntent().getStringExtra("isDifficile");
+Log.e("test ",isDifficile+"");
         map = (ImageView) findViewById(R.id.imageMap);
+        if(isDifficile.equals("false"))
+            map.setBackgroundResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile
         map.setOnTouchListener(new View.OnTouchListener() {
             private GestureDetector gestureDetector = new GestureDetector(MapActivity.this, new GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
-                    Log.e("TEST", "x : "+e.getX()+", y : "+e.getY()+"");
 
                     if(zoom) {
                         map.setScaleX((float) (map.getScaleX() * 0.5));
