@@ -16,39 +16,40 @@ import pts3.castgame.R;
 public class MapActivity extends AppCompatActivity {
 
     MainActivity context;
-    boolean zoom=false;
+    boolean zoom = false;
     ImageView map;
+    String isDifficile="false";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        String isDifficile = getIntent().getStringExtra("isDifficile");
-Log.e("test ",isDifficile+"");
+        isDifficile = getIntent().getStringExtra("isDifficile");
+        Log.e("test ", isDifficile + "");
         map = (ImageView) findViewById(R.id.imageMap);
-        if(isDifficile.equals("false"))
+        if (isDifficile!=null&&isDifficile.equals("false"))
             map.setBackgroundResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile
         map.setOnTouchListener(new View.OnTouchListener() {
             private GestureDetector gestureDetector = new GestureDetector(MapActivity.this, new GestureDetector.SimpleOnGestureListener() {
                 @Override
                 public boolean onDoubleTap(MotionEvent e) {
 
-                    if(zoom) {
+                    if (zoom) {
                         map.setScaleX((float) (map.getScaleX() * 0.5));
                         map.setScaleY((float) (map.getScaleY() * 0.5));
                         map.setX(30);
                         map.setY(150);
-                        zoom=false;
-                    }else{
-                        map.setX(map.getX()+map.getWidth()-e.getX()*2);
-                        map.setY(map.getY()+map.getHeight()-e.getY()*2);
+                        zoom = false;
+                    } else {
+                        map.setX(map.getX() + map.getWidth() - e.getX() * 2);
+                        map.setY(map.getY() + map.getHeight() - e.getY() * 2);
                         map.setScaleX((float) (map.getScaleX() * 2));
                         map.setScaleY((float) (map.getScaleY() * 2));
 
-                        zoom=true;
+                        zoom = true;
                     }
-                    Log.e("Coordonnée image", "x : "+map.getX()+", y : "+map.getY()+"");
+                    Log.e("Coordonnée image", "x : " + map.getX() + ", y : " + map.getY() + "");
                     return super.onDoubleTap(e);
                 }
 
@@ -66,7 +67,7 @@ Log.e("test ",isDifficile+"");
 
 
     public void quitterCarte(View view) {
-            onBackPressed();
+        onBackPressed();
 
     }
 }

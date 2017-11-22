@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     protected boolean isDifficile;      //false : le jeu est en mode facile, true le jeu est en mode difficile
     MapActivity map;
-    Intent intentMap ;
+    Intent intentMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +53,16 @@ public class MainActivity extends AppCompatActivity {
         // On va vers le type de jeu.
         TypeJeuFragment newFragment = new TypeJeuFragment();
         setFragment(newFragment, true);
-        isDifficile=false;   //le jeu est mit en mode difficile
-        intentMap.putExtra("isDifficile",""+isDifficile);
+        isDifficile = false;   //le jeu est mit en mode difficile
+        intentMap.putExtra("isDifficile", "" + isDifficile);
     }
 
     public void choisirDifficulteDifficile(View view) {
         // On va vers le type de jeu.
         TypeJeuFragment newFragment = new TypeJeuFragment();
         setFragment(newFragment, true);
-        isDifficile=true;  //le jeu est mit en mode facile
-        intentMap.putExtra("isDifficile",""+isDifficile);
+        isDifficile = true;  //le jeu est mit en mode facile
+        intentMap.putExtra("isDifficile", "" + isDifficile);
     }
 
     public void choisirTypeJeu(View view) {
@@ -99,10 +99,9 @@ public class MainActivity extends AppCompatActivity {
 
     // On laisse pour le moment le fait de changer d'activité car la carte ne reprend rien du reste.
     public void voirMap(View view) {
-       // map = new MapActivity(this);
+        // map = new MapActivity(this);
         startActivity(intentMap);
     }
-
 
 
 }
