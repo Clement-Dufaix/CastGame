@@ -41,38 +41,38 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    protected void choisirDifficulte(View view) {
+    public void choisirDifficulte(View view) {
         // On va vers le type de jeu.
         TypeJeuFragment newFragment = new TypeJeuFragment();
         setFragment(newFragment, true);
     }
 
-    protected void choisirTypeJeu(View view) {
+    public void choisirTypeJeu(View view) {
         // On va vers le choix de template.
         TemplateFragment newFragment = new TemplateFragment();
         setFragment(newFragment, true);
     }
 
-    protected void choisirTemplate(View view) {
+    public void choisirTemplate(View view) {
         // On va vers le choix de carte personnage.
         PersonnageFragment newFragment = new PersonnageFragment();
         setFragment(newFragment, true);
     }
 
     // Attention le nombre d'appels varie en fonction du template (1, 2 ou 3 personnages).
-    protected void choisirPersonnage(View view) {
+    public void choisirPersonnage(View view) {
         // On va vers le choix de carte methode.
         MethodeFragment newFragment = new MethodeFragment();
         setFragment(newFragment, true);
     }
 
-    protected void choisirMethode(View view) {
+    public void choisirMethode(View view) {
         // On va vers le choix de la réponse.
         ReponseFragment newFragment = new ReponseFragment();
         setFragment(newFragment, true);
     }
 
-    protected void choisirReponse(View view) {
+    public void choisirReponse(View view) {
         // On va vers le choix d'un nouveau template.
         // Il faudrait refaire une IHM entre les deux nn ?
         TemplateFragment newFragment = new TemplateFragment();
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // On laisse pour le moment le fait de changer d'activité car la carte ne reprend rien du reste.
-    protected void voirMap(View view) {
+    public void voirMap(View view) {
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
