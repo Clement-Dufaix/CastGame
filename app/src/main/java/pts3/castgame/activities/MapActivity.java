@@ -1,5 +1,6 @@
 package pts3.castgame.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -14,8 +15,11 @@ import pts3.castgame.R;
 
 public class MapActivity extends AppCompatActivity {
 
+    MainActivity context;
     boolean zoom=false;
     ImageView map;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +65,7 @@ public class MapActivity extends AppCompatActivity {
 
 
     public void quitterCarte(View view) {
-        //
+            onBackPressed();
+
     }
 }

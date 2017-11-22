@@ -7,6 +7,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import java.util.Map;
+
 import pts3.castgame.R;
 import pts3.castgame.fragments.MethodeFragment;
 import pts3.castgame.fragments.PersonnageFragment;
@@ -15,6 +17,9 @@ import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.fragments.TypeJeuFragment;
 
 public class MainActivity extends AppCompatActivity {
+
+    protected boolean isDifficile;      //false : le jeu est en mode facile, true le jeu est en mode difficile
+    MapActivity map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,10 +46,18 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void choisirDifficulte(View view) {
+    public void choisirDifficulteFacile(View view) {
         // On va vers le type de jeu.
         TypeJeuFragment newFragment = new TypeJeuFragment();
         setFragment(newFragment, true);
+        isDifficile=true;   //le jeu est mit en mode difficile
+    }
+
+    public void choisirDifficulteDifficile(View view) {
+        // On va vers le type de jeu.
+        TypeJeuFragment newFragment = new TypeJeuFragment();
+        setFragment(newFragment, true);
+        isDifficile=false;  //le jeu est mit en mode facile
     }
 
     public void choisirTypeJeu(View view) {
@@ -81,8 +94,11 @@ public class MainActivity extends AppCompatActivity {
 
     // On laisse pour le moment le fait de changer d'activité car la carte ne reprend rien du reste.
     public void voirMap(View view) {
+       // map = new MapActivity(this);
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
+
+
 
 }

@@ -31,7 +31,7 @@
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="80dp"
                 android:layout_weight="0.5"
-                android:onClick="choisirDifficulte"
+                android:onClick="choisirDifficulteFacile"
                 android:text="@string/facile" />
 
             <Button
@@ -42,7 +42,7 @@
                 android:layout_marginBottom="80dp"
                 android:layout_marginTop="30dp"
                 android:layout_weight="0.5"
-                android:onClick="choisirDifficulte"
+                android:onClick="choisirDifficulteDifficile"
                 android:text="@string/difficile" />
 
         </LinearLayout>
