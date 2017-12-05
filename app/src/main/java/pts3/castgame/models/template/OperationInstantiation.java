@@ -5,7 +5,7 @@ import pts3.castgame.models.castgame.CastGameCard;
 /**
  * Opération d'instanciation de la classe : 'new Class()'
  */
-public final class OperationInstantiation implements Operation {
+public class OperationInstantiation implements Operation {
 
     private CastGameCard type;
 
