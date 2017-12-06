@@ -27,10 +27,9 @@
             android:layout_weight=".9" />
     </LinearLayout>
 
-    <ImageView
+    <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/imageMap"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/plateau_mode_difficile" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
