@@ -31,51 +31,14 @@ public class MapActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        isDifficile = getIntent().getStringExtra("isDifficile");
+        isDifficile = getIntent().getStringExtra("isDifficile");    //on récupère dans le main si le mode est en difficile
         Log.e("test ", isDifficile + "");
         map = (ImageView) findViewById(R.id.imageMap);
-        PhotoView photoView = (PhotoView) findViewById(R.id.imageMap);
+        PhotoView photoView = (PhotoView) findViewById(R.id.imageMap);  //photoview vient d'une librairie qui permet le zoom
         if (isDifficile!=null&&isDifficile.equals("false"))
-            photoView.setImageResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile
+            photoView.setImageResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile si
        else photoView.setImageResource(R.drawable.plateau_mode_difficile);
 
-
-
-//        if (isDifficile!=null&&isDifficile.equals("false"))
-//            map.setBackgroundResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile
-//        map.setOnTouchListener(new View.OnTouchListener() {
-//            private GestureDetector gestureDetector = new GestureDetector(MapActivity.this, new GestureDetector.SimpleOnGestureListener() {
-//                @Override
-//                public boolean onDoubleTap(MotionEvent e) {
-//
-//                    if (zoom) {
-//                        map.setScaleX((float) (map.getScaleX() * 0.5));
-//                        map.setScaleY((float) (map.getScaleY() * 0.5));
-//                        map.setX(30);
-//                        map.setY(150);
-//                        zoom = false;
-//                    } else {
-//                        map.setX(map.getX() + map.getWidth() - e.getX() * 2);
-//                        map.setY(map.getY() + map.getHeight() - e.getY() * 2);
-//                        map.setScaleX((float) (map.getScaleX() * 2));
-//                        map.setScaleY((float) (map.getScaleY() * 2));
-//
-//                        zoom = true;
-//                    }
-//                    Log.e("Coordonnée image", "x : " + map.getX() + ", y : " + map.getY() + "");
-//                    return super.onDoubleTap(e);
-//                }
-//
-//
-//            });
-//
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                Log.e("TEST", "Raw event: " + event.getAction() + ", (" + event.getRawX() + ", " + event.getRawY() + ")");
-//                gestureDetector.onTouchEvent(event);
-//                return true;
-//            }
-//        });
     }
 
     public void quitterCarte(View view) {
