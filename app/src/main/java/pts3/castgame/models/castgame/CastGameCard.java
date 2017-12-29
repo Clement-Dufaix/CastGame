@@ -25,8 +25,30 @@ public class CastGameCard {
         return isInterface;
     }
 
+    public boolean emptyParents() {
+        return parents.isEmpty();
+    }
+
     public void addParent(CastGameCard parent) {
         parents.add(parent);
+    }
+
+    /**
+     * Retourne vrai si la carte passée en paramètre est parente de la classe courante.
+     *
+     * @param implementedInterface
+     * @return
+     */
+    public boolean isChild(CastGameCard implementedInterface) {
+
+        for (CastGameCard card : parents) {
+            if (card == implementedInterface) {
+                return true;
+            } else if (!card.emptyParents()) {
+                return isChild(card);
+            }
+        }
+        return false;
     }
 
 }

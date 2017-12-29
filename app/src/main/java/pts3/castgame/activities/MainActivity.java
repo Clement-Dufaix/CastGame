@@ -5,10 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-
-import java.util.Map;
 
 import pts3.castgame.R;
 import pts3.castgame.fragments.MethodeFragment;
@@ -29,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         intentMap = new Intent(this, MapActivity.class);
     }
-
 
     // J'ai crée une fonction générique pour ajouter nos Fragments plutôt que de dupliquer pour chaque possibilité.
     // Le booléen sert à savoir si on permet le retour sur la page précédente ou pas.
@@ -102,6 +98,5 @@ public class MainActivity extends AppCompatActivity {
         // map = new MapActivity(this);
         startActivity(intentMap);
     }
-
 
 }

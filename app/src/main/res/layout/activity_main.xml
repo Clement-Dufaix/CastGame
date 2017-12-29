@@ -38,7 +38,6 @@
         android:name="pts3.castgame.fragments.DifficulteFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_difficulte">
-    </fragment>
+        tools:layout="@layout/fragment_difficulte"></fragment>
 
 </LinearLayout>

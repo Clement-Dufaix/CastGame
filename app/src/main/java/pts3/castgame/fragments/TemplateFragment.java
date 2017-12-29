@@ -47,7 +47,7 @@ public class TemplateFragment extends Fragment {
 
         mListView = (ListView) v.findViewById(R.id.listTemplate);
 
-        ArrayAdapter<String> adapter  = new ArrayAdapter<String >(
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
                 template
@@ -64,7 +64,6 @@ public class TemplateFragment extends Fragment {
         });
         return v;
     }
-
 
 
 }
