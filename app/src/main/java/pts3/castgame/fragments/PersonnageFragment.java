@@ -36,7 +36,7 @@ public class PersonnageFragment extends Fragment {
 
         choixActuelleTextView = v.findViewById(R.id.ChoixActuelleCartePersonnage);
 
-        templateText = ((MainActivity) getActivity()).getIntent().getStringExtra("template").replaceAll("[1-9]\\) ", "");
+        templateText = ((MainActivity) getActivity()).getIntent().getStringExtra("template").replaceAll("[1-9]+\\) ", "");
 
         carte = new String[]{"Défenseur", "Attaquant", "Mendiant", "Combattant", "Guerrisseur", "LanceurDeSortProfane", "Guerrier", "LanceurDeSortDivin",
                 "Magicien", "Sorceleur", "Clerc", "Pretre", "Sorcier", "LanceurDeSortMagique", "Necromancien"};
