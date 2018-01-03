@@ -95,12 +95,14 @@ public class PersonnageFragment extends Fragment {
                             if (etat == 4) {
                                 templateText = templateText.replaceAll("\\[Carte M\\]",carte[position]);
                             }
-                            //CODE POUR QUITTER LE FRAGMENT!!!!!!!!!!!!!!
+                            Log.e("on quitte la page : ", "vers la réponse" );
                         }
                     }
                 }
                 ((MainActivity)getActivity()).getIntent().putExtra("template",templateText);
+                if(templateText.indexOf("[Carte 1]") != -1 || templateText.indexOf("[Carte 2]") != -1 || templateText.indexOf("[Carte 3]") != -1 || templateText.indexOf("[Carte M]") != -1)
                 ((MainActivity)getActivity()).choisirTemplate();
+                else((MainActivity)getActivity()).choisirReponsePapier();
             }
         });
 

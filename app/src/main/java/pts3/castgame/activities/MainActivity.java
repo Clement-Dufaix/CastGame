@@ -11,6 +11,7 @@ import pts3.castgame.R;
 import pts3.castgame.fragments.MethodeFragment;
 import pts3.castgame.fragments.PersonnageFragment;
 import pts3.castgame.fragments.ReponseFragment;
+import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.fragments.TypeJeuFragment;
 
@@ -64,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
     public void choisirTypeJeu(View view) {
         // On va vers le choix de template.
         TemplateFragment newFragment = new TemplateFragment();
+        setFragment(newFragment, true);
+    }
+
+    public void choisirReponsePapier() {
+        // On va vers la réponse du jeu papier (après avoir choisi le template et les cartes).
+        ResultatPapierFragment newFragment = new ResultatPapierFragment();
         setFragment(newFragment, true);
     }
 
