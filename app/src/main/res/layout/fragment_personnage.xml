@@ -13,53 +13,27 @@
         android:layout_height="wrap_content"
         android:text="@string/page_personnage" />
 
-    <LinearLayout
-        android:id="@+id/listePersonnages"
+    <TextView
+        android:id="@+id/templateChoixPersonnage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_height="wrap_content"
+        android:text="vsdfgs"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/ChoixActuelleCartePersonnage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Carte 1 :"
+        android:textSize="20sp"
+      />
 
-        <Button
-            style="@style/Carte"
+        <ListView
+            android:id="@+id/listPersonnage"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:onClick="choisirPersonnage"
-            android:text="Guerrier" />
+            android:layout_height="match_parent">
 
-        <Button
-            style="@style/Carte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:onClick="choisirPersonnage"
-            android:text="Attaquant" />
+        </ListView>
 
-        <Button
-            style="@style/Carte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:onClick="choisirPersonnage"
-            android:text="Sorcier" />
 
-        <Button
-            style="@style/Carte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:onClick="choisirPersonnage"
-            android:text="LaceurDeSort" />
-
-        <Button
-            style="@style/Carte"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight=".2"
-            android:onClick="choisirPersonnage"
-            android:text="........." />
-
-    </LinearLayout>
 
 </LinearLayout>

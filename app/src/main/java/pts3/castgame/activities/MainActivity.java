@@ -67,14 +67,14 @@ public class MainActivity extends AppCompatActivity {
         setFragment(newFragment, true);
     }
 
-    public void choisirTemplate(View view) {
+    public void choisirTemplate() {
         // On va vers le choix de carte personnage.
         PersonnageFragment newFragment = new PersonnageFragment();
         setFragment(newFragment, true);
     }
 
     // Attention le nombre d'appels varie en fonction du template (1, 2 ou 3 personnages).
-    public void choisirPersonnage(View view) {
+    public void choisirPersonnage() {
         // On va vers le choix de carte methode.
         MethodeFragment newFragment = new MethodeFragment();
         setFragment(newFragment, true);

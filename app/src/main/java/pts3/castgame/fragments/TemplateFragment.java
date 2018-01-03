@@ -26,7 +26,7 @@ public class TemplateFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_template, container, false);
-        template = new String[]{"1) [Carte 1] perso1 = new [Carte 1]();\n[Carte 2] perso2 = new [carte 2]();\nperso1 = ([Carte 1]) perso2;\nSystem.out.println(personnage);",
+        template = new String[]{"1) [Carte 1] perso1 = new [Carte 1]();\n[Carte 2] perso2 = new [Carte 2]();\nperso1 = ([Carte 1]) perso2;\nSystem.out.println(personnage);",
                 "2) [Carte 1] perso1 = new [Carte 2]();\n[Carte 3] perso2 = ([Carte 3]) perso1;\nSystem.out.println(perso2);",
                 "3) [Carte 1] perso1 = ([Carte 1]) new [Carte 2]();\n[Carte 3] perso2 = ([Carte 3]) perso1;\nSystem.out.println(perso2);",
                 "4) [Carte 1] perso1 = ([Carte 1]) new [Carte 2]();\n[Carte 3] perso2 = perso1;\nSystem.out.println(perso2);",
@@ -57,9 +57,11 @@ public class TemplateFragment extends Fragment {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ((MainActivity)getActivity()).getIntent().putExtra("template",template[position]);
 
                 Log.i("test : ", "Position=" + position);
 
+                ((MainActivity)getActivity()).choisirTemplate();
             }
         });
         return v;
