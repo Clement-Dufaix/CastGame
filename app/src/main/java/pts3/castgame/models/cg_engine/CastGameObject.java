@@ -50,18 +50,22 @@ public class CastGameObject {
 	
 	// variableName = new [instanciatedClass.getName()]();
 	
-	public CastGameResult affectation(CastGameClass instanciatedClass) {
+	public CastGameResult affectation(CastGameTypable instanciatedClass) {
+		if (instanciatedClass instanceof CastGameInterface)
+			return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface, donc non instanciable.", "");
 		
-		return affectation(new CastGameObject(instanciatedClass));
+		return affectation(new CastGameObject((CastGameClass) instanciatedClass));
 		
 	}
 	
 	
 	// variableName = (castType) new [instanciatedClass.getName()]();
 	
-	public CastGameResult affectation(CastGameTypable castType, CastGameClass instanciatedClass) {
+	public CastGameResult affectation(CastGameTypable castType, CastGameTypable instanciatedClass) {
+		if (instanciatedClass instanceof CastGameInterface)
+			return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface, donc non instanciable.", "");
 		
-		return affectation(castType, new CastGameObject(instanciatedClass));
+		return affectation(castType, new CastGameObject((CastGameClass) instanciatedClass));
 		
 	}
 	
@@ -115,6 +119,9 @@ public class CastGameObject {
 	// variableName = ([castType.getName()]) [object.getVariableName()];
 	
 	public CastGameResult affectation(CastGameTypable castType, CastGameObject object) {
+		
+		if (castType == null)
+			return affectation(object);
 		
 		CastGameClass otherObjectRealType = object.getRealObjectType();
 		
