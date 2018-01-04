@@ -8,33 +8,33 @@ import pts3.castgame.models.castgame.CastGameObject;
  */
 public class OperationDeclaration implements Operation {
 
-    private CastGameCard type;
-    private CastGameObject perso;
+    private CastGameObject target;
 
     /**
-     * Crée une opération de déclaration d'un type <b>{@code CastGameCard}</b> pour
-     * le <b>{@code CastGameObject}</b> personnage, tous deux passés en paramètres.
+     * Déclare l'objet <b>target</b> en lui donnant pour type déclaré <b>type</b>
      *
-     * @param type  : Le type de la classe.
-     * @param perso : L'objet que l'on définit.
+     * @param type   : Le type déclaré de l'objet
+     * @param target : L'objet que l'on déclare
      */
-    public OperationDeclaration(CastGameCard type, CastGameObject perso) {
+    public OperationDeclaration(CastGameCard type, CastGameObject target) {
         super();
-        this.type = type;
-        this.perso = perso;
+        this.target = target;
+        target.setType(type);
     }
 
-    public CastGameCard getType() {
-        return type;
+    @Override
+    public void compile() {
+        // On ne relève pas d'erreur de compilation ici.
     }
 
-    public CastGameObject getPerso() {
-        return perso;
+    @Override
+    public void execute() {
+        // On ne relève pas d'erreur d'exécution ici.
     }
 
     @Override
     public String toString() {
-        return "[" + type.getClassName() + "] " + perso.getName();
+        return target.getClassName() + " " + target.getName();
     }
 
 }

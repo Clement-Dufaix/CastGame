@@ -3,7 +3,7 @@ package pts3.castgame.models.castgame;
 import java.util.ArrayList;
 
 /**
- * CastGameTypable (Interface / Classe).
+ * Les cartes du CastGame
  */
 public class CastGameCard {
 
@@ -12,12 +12,18 @@ public class CastGameCard {
     private ArrayList<CastGameCard> parents;
     private ArrayList<CastGameMethod> methods;
 
+    /**
+     * Génère une carte du CastGame
+     *
+     * @param className   : Le nom de la carte
+     * @param isInterface : Cette carte est une interface ?
+     */
     public CastGameCard(String className, boolean isInterface) {
         super();
         this.className = className;
         this.isInterface = isInterface;
-        parents = new ArrayList<CastGameCard>();
-        methods = new ArrayList<CastGameMethod>();
+        parents = new ArrayList<>();
+        methods = new ArrayList<>();
     }
 
     public String getClassName() {
@@ -28,17 +34,17 @@ public class CastGameCard {
         return isInterface;
     }
 
-	/**/
-    // Parents.
-    /**/
-
-    public boolean noParents() {
+    private boolean noParents() {
         return parents.isEmpty();
     }
 
+    /**
+     * Attention, aucune gestion des doublons dans l'ajout des méthodes du parent
+     *
+     * @param parent : Le parent à ajouter
+     */
     public void addParent(CastGameCard parent) {
         parents.add(parent);
-        // Aucune gestion des doublons pour le moment ;)
         methods.addAll(parent.getMethods());
     }
 
@@ -46,35 +52,41 @@ public class CastGameCard {
         return parents;
     }
 
-    public boolean hasParent(CastGameCard parent) {
+    /**
+     * Cherche si cette carte possède le <b>searchedParent</b>
+     *
+     * @param searchedParent : Le parent que l'on cherche
+     * @return Le résultat booléen
+     */
+    public boolean hasParent(CastGameCard searchedParent) {
         for (CastGameCard card : parents) {
-            if (card == parent) {
+            if (card == searchedParent) {
                 return true;
             } else if (!card.noParents()) {
-                return hasParent(card);
+                return card.hasParent(searchedParent);
             }
         }
         return false;
     }
 
-	/**/
-    // Méthodes.
-    /**/
-
     public void addMethod(CastGameMethod method) {
         methods.add(method);
     }
 
-    public ArrayList<CastGameMethod> getMethods() {
+    private ArrayList<CastGameMethod> getMethods() {
         return methods;
     }
 
+    /**
+     * Cherche si cette carte possède la <b>searchedMethod</b>
+     *
+     * @param searchedMethod : La méthode que l'on cherche
+     * @return Le résultat booléen
+     */
     public boolean hasMethod(CastGameMethod searchedMethod) {
-
         if (methods.isEmpty()) {
             return false;
         }
-
         for (CastGameMethod method : methods) {
             if (method == searchedMethod) {
                 return true;

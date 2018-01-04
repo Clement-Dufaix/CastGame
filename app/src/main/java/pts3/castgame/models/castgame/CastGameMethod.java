@@ -1,7 +1,7 @@
 package pts3.castgame.models.castgame;
 
 /**
- * CastGameMethod
+ * Les méthodes du CastGame
  */
 public class CastGameMethod {
 

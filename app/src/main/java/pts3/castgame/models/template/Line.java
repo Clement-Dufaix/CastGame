@@ -1,30 +1,15 @@
 package pts3.castgame.models.template;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
- * La ligne, composée d'opérations.
+ * Les lignes du template
  */
-public class Line {
+public interface Line {
 
-    public List<Operation> operations;
+    String display();
 
-    public Line() {
-        super();
-        this.operations = new ArrayList<Operation>();
-    }
+    void compile();
 
-    public void add(Operation operation) {
-        operations.add(operation);
-    }
-
-    public String display() {
-        String line = "";
-        for (Operation operation : operations) {
-            line += operation.toString();
-        }
-        return line + ";";
-    }
+    void execute();
 
 }
+

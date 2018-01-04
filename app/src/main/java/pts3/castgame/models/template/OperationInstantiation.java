@@ -1,31 +1,51 @@
 package pts3.castgame.models.template;
 
 import pts3.castgame.models.castgame.CastGameCard;
+import pts3.castgame.models.castgame.CastGameObject;
 
 /**
- * Opération d'instanciation de la classe : 'new Class()'
+ * L'opération d'instanciation
  */
-public class OperationInstantiation implements Operation {
+public final class OperationInstantiation implements Operation {
 
-    private CastGameCard type;
+    private CastGameObject target;
+    private CastGameCard realType;
 
     /**
-     * Crée une opération d'instanciation vers le type <b>{@code CastGameCard}</b>.
+     * Instancie l'objet <b>target</b> avec pour type réel <b>realType</b>
      *
-     * @param type : Le type de l'instance.
+     * @param target   : L'objet cible à créer
+     * @param realType : Le type réel à lui donner
      */
-    public OperationInstantiation(CastGameCard type) {
+    public OperationInstantiation(CastGameObject target, CastGameCard realType) {
         super();
-        this.type = type;
+        this.target = target;
+        this.realType = realType;
     }
 
-    public CastGameCard getCard() {
-        return type;
+    @Override
+    public void compile() {
+        if (realType.isInterface()) {
+            System.out.print("ERREUR COMPILATION : ");
+            System.out.print(realType.getClassName() + " ne peut être instancié : c'est une interface");
+        } else if (!realType.hasParent(target.getType())) {
+            System.out.print("ERREUR COMPILATION : ");
+            System.out.print("Impossible de convertir " + realType.getClassName() + " vers " + target.getClassName());
+        } else {
+            System.out.print("COMPILE");
+        }
+    }
+
+    @Override
+    public void execute() {
+        // On ne relève pas d'erreur d'exécution ici.
+        System.out.print("EXECUTE ");
     }
 
     @Override
     public String toString() {
-        return "new [" + type.getClassName() + "]()";
+        return "new " + realType.getClassName() + "()";
     }
 
 }
+
