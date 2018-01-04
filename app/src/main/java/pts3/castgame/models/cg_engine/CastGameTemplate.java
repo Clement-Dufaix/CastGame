@@ -31,7 +31,7 @@ public class CastGameTemplate {
 		methodName = null;
 	}
 	
-	public String getString() {
+	public String toString() {
 		String result = "";
 		for (LignTemplate lt : lignList)
 			result += lt.getString(cardMap) + "\n";
@@ -69,6 +69,3 @@ public class CastGameTemplate {
 		return objectMap.get(finalObjectNumber).sysOutDisplay();
 	}
 }
-/*
-
-*/
