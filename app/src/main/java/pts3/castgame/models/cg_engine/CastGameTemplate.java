@@ -47,6 +47,9 @@ public class CastGameTemplate {
 		CastGameResult result;
 		for (LignTemplate lt : lignList) {
 			if (lt.getDeclarationTypeNumber() != null) {
+				// On a vraiment besoin de vérifier que l'objet est pas déclaré ?
+                // En principe les templates étant donnés par le prof, on a pas besoin de vérifier, c'est par contrat ^^
+                // (si j'ai bien compris ce que tu voulais faire par là)
 				if (objectMap.containsKey(lt.getDeclarationTypeNumber()))
 					return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Type deja declare", "");
 				objectMap.put(
