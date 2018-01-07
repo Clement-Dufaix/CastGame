@@ -165,4 +165,4 @@ public class TemplateFragment extends Fragment {
         return result;
     }
 }
-}
+
