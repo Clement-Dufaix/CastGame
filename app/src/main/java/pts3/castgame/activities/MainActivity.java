@@ -114,4 +114,9 @@ public class MainActivity extends AppCompatActivity {
         return facade;
     }
 
+    @Override
+    public void onBackPressed() {
+        // Nothing
+    }
+
 }

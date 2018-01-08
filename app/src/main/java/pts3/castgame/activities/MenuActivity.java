@@ -1,13 +1,8 @@
 package pts3.castgame.activities;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-
-import java.util.Timer;
-import java.util.TimerTask;
 
 import pts3.castgame.R;
 
@@ -17,22 +12,19 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(1000);
+                    Intent i = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(i);
+                } catch (InterruptedException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+        }).start();
+
     }
-
-    private void showMenu() {
-        long l = 1000;
-        Timer timer = new Timer();
-        timer.schedule(timerTask, l);
-    }
-
-    private TimerTask timerTask = new TimerTask() {
-        @Override
-        public void run() {
-
-        }
-    };
-
-    private void setActivity() {
-        Transaction transaction = getSupportFragmentManager().beginTransaction();
-        // On remplace l'ancien fragment par le nouveau.
 }

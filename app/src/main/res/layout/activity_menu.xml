@@ -6,15 +6,25 @@
     android:orientation="vertical"
     tools:context="pts3.castgame.activities.MenuActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
+
     <TextView
         style="@style/NomApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <ImageButton
-        android:layout_gravity="center"
         android:layout_width="wrap_content"
-        android:background="@drawable/swords"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/swords" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
 </LinearLayout>
