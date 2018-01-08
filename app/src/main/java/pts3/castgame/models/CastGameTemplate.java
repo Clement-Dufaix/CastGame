@@ -1,4 +1,4 @@
-package pts3.castgame.models.cg_engine;
+package pts3.castgame.models;
 
 import java.util.ArrayList;
 import java.util.Hashtable;

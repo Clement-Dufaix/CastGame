@@ -14,7 +14,7 @@ import pts3.castgame.fragments.ReponseFragment;
 import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.fragments.TypeJeuFragment;
-import pts3.castgame.models.cg_engine.lien.FacadeMoteur;
+import pts3.castgame.models.lien.FacadeMoteur;
 
 public class MainActivity extends AppCompatActivity {
 

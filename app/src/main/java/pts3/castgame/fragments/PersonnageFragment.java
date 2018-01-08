@@ -6,17 +6,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.models.cg_engine.CastGameTypable;
-import pts3.castgame.models.cg_engine.lien.FacadeMoteur;
+import pts3.castgame.models.CastGameTypable;
+import pts3.castgame.models.lien.FacadeMoteur;
 
 /**
  * A simple {@link Fragment} subclass.

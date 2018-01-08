@@ -1,4 +1,4 @@
-package pts3.castgame.models.cg_engine;
+package pts3.castgame.models;
 /*
     idees :
 	explication etape par etape pour chaque morceau de ligne

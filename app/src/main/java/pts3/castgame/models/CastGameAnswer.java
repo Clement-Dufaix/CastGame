@@ -1,4 +1,4 @@
-package pts3.castgame.models.cg_engine;
+package pts3.castgame.models;
 
 public class CastGameAnswer extends CastGameResult {
     private String explanation;

@@ -6,20 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.models.cg_engine.CastGameTemplate;
-import pts3.castgame.models.cg_engine.LignTemplate;
+import pts3.castgame.models.CastGameTemplate;
 
 public class TemplateFragment extends Fragment {
 

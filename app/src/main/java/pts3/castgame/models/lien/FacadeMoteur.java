@@ -1,14 +1,14 @@
-package pts3.castgame.models.cg_engine.lien;
+package pts3.castgame.models.lien;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import pts3.castgame.models.cg_engine.CastGameClass;
-import pts3.castgame.models.cg_engine.CastGameInterface;
-import pts3.castgame.models.cg_engine.CastGameTemplate;
-import pts3.castgame.models.cg_engine.CastGameTypable;
-import pts3.castgame.models.cg_engine.LignTemplate;
+import pts3.castgame.models.CastGameClass;
+import pts3.castgame.models.CastGameInterface;
+import pts3.castgame.models.CastGameTemplate;
+import pts3.castgame.models.CastGameTypable;
+import pts3.castgame.models.LignTemplate;
 
 public class FacadeMoteur {
 
