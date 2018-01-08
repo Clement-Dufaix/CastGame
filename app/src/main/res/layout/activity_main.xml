@@ -5,12 +5,12 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    android:padding="10dp"
     tools:context="pts3.castgame.activities.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorSecondary"
         android:orientation="horizontal"
         android:padding="10dp">
 
@@ -30,14 +30,19 @@
             android:layout_height="40dp"
             android:background="@drawable/map"
             android:onClick="voirMap" />
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorAccent" />
 
     <fragment
         android:id="@+id/fragment"
         android:name="pts3.castgame.fragments.DifficulteFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_difficulte">
-    </fragment>
+        tools:layout="@layout/fragment_difficulte" />
 
 </LinearLayout>

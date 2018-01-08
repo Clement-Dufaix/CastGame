@@ -5,6 +5,7 @@
     android:background="@color/colorPrimary"
     android:clickable="true"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context="pts3.castgame.fragments.MethodeFragment">
 
     <TextView

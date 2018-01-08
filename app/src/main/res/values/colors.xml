@@ -1,30 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#f2f2f2</color>
-    <color name="colorPrimaryDark">#e6e6e6</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#1D3E53</color>
     <color name="colorAccent">#000000</color>
-    <color name="colorSecondary">#e6e6e6</color>
-    <color name="colorSecondaryDark">#cccccc</color>
+    <color name="colorSecondary">#e6f7ff</color>
+    <color name="colorSecondaryDark">#cceeff</color>
 
-    <!-- Tons beiges
+    <!-- Anciens Tons beiges
     <color name="colorPrimary">#fdf4d0</color>
     <color name="colorPrimaryDark">#fdf4d0</color>
     <color name="colorAccent">#000000</color>
-    -->
-
-    <!--
-    <color name="colorD">222222</color>
-    <color name="colorPyD">#044343</color>
-    <color name="colorPy">#045757</color>
-    <color name="colorL">E4E4E4</color>
-    -->
-
-    <!--
-    <color name="colorD">1D3E53</color>
-    <color name="colorPyD">#254B62</color>
-    <color name="colorPy">#476D7C</color>
-    <color name="colorL">77ABB7</color>
     -->
 
 </resources>

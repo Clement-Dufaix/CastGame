@@ -5,6 +5,7 @@
     android:background="@color/colorPrimary"
     android:clickable="true"
     android:orientation="vertical"
+    android:paddingTop="20dp"
     tools:context="pts3.castgame.fragments.PersonnageFragment">
 
     <TextView
@@ -17,23 +18,26 @@
         android:id="@+id/templateChoixPersonnage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="vsdfgs"
-        android:textAlignment="center"/>
+        android:text=""
+        android:textAlignment="center" />
+
     <TextView
         android:id="@+id/ChoixActuelleCartePersonnage"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Carte 1 :"
-        android:textSize="20sp"
-      />
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ListView
             android:id="@+id/listPersonnage"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-        </ListView>
+            android:layout_height="match_parent" />
 
 
+    </LinearLayout>
 
 </LinearLayout>
