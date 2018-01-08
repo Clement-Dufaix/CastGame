@@ -14,18 +14,22 @@ import pts3.castgame.fragments.ReponseFragment;
 import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.fragments.TypeJeuFragment;
+import pts3.castgame.models.cg_engine.lien.FacadeMoteur;
 
 public class MainActivity extends AppCompatActivity {
 
     protected boolean isDifficile;      //false : le jeu est en mode facile, true le jeu est en mode difficile
     MapActivity map;
     Intent intentMap;
+    FacadeMoteur facade;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         intentMap = new Intent(this, MapActivity.class);
+
+        facade = new FacadeMoteur();
     }
 
     // J'ai crée une fonction générique pour ajouter nos Fragments plutôt que de dupliquer pour chaque possibilité.
@@ -106,6 +110,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentMap);
     }
 
-
+    public FacadeMoteur getFacade() {
+        return facade;
+    }
 
 }

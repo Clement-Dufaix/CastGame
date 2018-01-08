@@ -71,4 +71,5 @@ public class CastGameTemplate {
 		
 		return objectMap.get(finalObjectNumber).sysOutDisplay();
 	}
+
 }
