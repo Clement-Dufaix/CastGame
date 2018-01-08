@@ -13,6 +13,8 @@ package pts3.castgame.fragments;
 
         import pts3.castgame.R;
         import pts3.castgame.activities.MainActivity;
+        import pts3.castgame.models.cg_engine.CastGameTypable;
+        import pts3.castgame.models.cg_engine.lien.FacadeMoteur;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,10 +27,8 @@ public class PersonnageFragment extends Fragment {
     TextView choixActuelleTextView;
     int etat;
     String templateText;
-    String changeCarte1;
-    String changeCarte2;
-    String changeCarte3;
-    String changeCarteM;
+    FacadeMoteur facade;
+
 
     public PersonnageFragment() {
     }
@@ -37,13 +37,13 @@ public class PersonnageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_personnage, container, false);
-
+        facade = ((MainActivity)getActivity()).getFacade();
         choixActuelleTextView = v.findViewById(R.id.ChoixActuelleCartePersonnage);
 
-        templateText = ((MainActivity) getActivity()).getIntent().getStringExtra("template").replaceAll("[1-9]+\\) ", "");
+        templateText = facade.getTemplateChoisi().toString(); //Guigui dit : ca peut changer
 
-        carte = new String[]{"Défenseur", "Attaquant", "Mendiant", "Combattant", "Guerrisseur", "LanceurDeSortProfane", "Guerrier", "LanceurDeSortDivin",
-                "Magicien", "Sorceleur", "Clerc", "Pretre", "Sorcier", "LanceurDeSortMagique", "Necromancien"};
+//        carte = new String[]{"Défenseur", "Attaquant", "Mendiant", "Combattant", "Guerrisseur", "LanceurDeSortProfane", "Guerrier", "LanceurDeSortDivin",
+//                "Magicien", "Sorceleur", "Clerc", "Pretre", "Sorcier", "LanceurDeSortMagique", "Necromancien"};
         etat = 0; // 1 : on remplace Carte 1, 2 : on remplace Carte 2, 3: on remplace Carte 3, 4 : On remplace Carte M
 
         if (templateText.indexOf("[Carte1]") != -1) {  //est ce que il reste écrit [carte 1]
@@ -74,11 +74,19 @@ public class PersonnageFragment extends Fragment {
         }
 
         mListView = (ListView) v.findViewById(R.id.listPersonnage);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(    //on associe les valeurs des cartes à la liste
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                carte
-        );
+        if(etat==4){
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(    //on associe les valeurs des cartes à la liste
+                    getActivity(),
+                    android.R.layout.simple_list_item_1,
+                    facade.getCarteMethode()
+            );
+        }else {
+            ArrayAdapter<CastGameTypable> adapter = new ArrayAdapter<CastGameTypable>(    //on associe les valeurs des cartes à la liste
+                    getActivity(),
+                    android.R.layout.simple_list_item_1,
+                    facade.getCarteClasse()
+            );
+        }
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {    //quand on clique sur un choix
             @Override

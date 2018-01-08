@@ -65,7 +65,7 @@ public class LignTemplate {
             if (cardMap.containsKey(explicitCastNumber))
                 result += "(" + cardMap.get(explicitCastNumber).getName() + ") ";
             else
-                result += "([Carte" + explicitCastNumber + "]) ";
+                result += "[Carte" + explicitCastNumber + "] ";
         }
         if (useNew) {
             result += "new ";
