@@ -16,7 +16,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/arrow_icon"
+            android:background="@drawable/backarrow"
             android:onClick="quitterCarte" />
 
         <TextView
