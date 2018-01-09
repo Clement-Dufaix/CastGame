@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,7 +23,6 @@ public class CardFragment extends Fragment {
     ListView mListView;
     TextView choixActuelleTextView;
     int etat;
-    String templateText;
     FacadeMoteur facade;
 
     public CardFragment() {
@@ -34,92 +34,41 @@ public class CardFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_card, container, false);
         facade = ((MainActivity) getActivity()).getFacade();
         choixActuelleTextView = v.findViewById(R.id.ChoixActuelleCartePersonnage);
-
-        templateText = facade.getTemplateChoisi().toString(); //Guigui dit : ca peut changer
-
-//        carte = new String[]{"Défenseur", "Attaquant", "Mendiant", "Combattant", "Guerrisseur", "LanceurDeSortProfane", "Guerrier", "LanceurDeSortDivin",
-//                "Magicien", "Sorceleur", "Clerc", "Pretre", "Sorcier", "LanceurDeSortMagique", "Necromancien"};
-        etat = 0; // 1 : on remplace Carte 1, 2 : on remplace Carte 2, 3: on remplace Carte 3, 4 : On remplace Carte M
-
-        if (templateText.indexOf("[Carte1]") != -1) {  //est ce que il reste écrit [carte 1]
-            Log.e("etat : ", "1");
-            etat = 1;
-            choixActuelleTextView.setText("Carte 1 :");
-        } else {
-            if (templateText.indexOf("[Carte2]") != -1) {  //est ce que il reste écrit [carte 2]
-                Log.e("etat : ", "2");
-                etat = 2;
-                choixActuelleTextView.setText("Carte 2 :");
-            } else {
-                if (templateText.indexOf("[Carte3]") != -1) {  //est ce que il reste écrit [carte 3]
-                    Log.e("etat : ", "3");
-                    etat = 3;
-                    choixActuelleTextView.setText("Carte 3 :");
-                } else {
-                    if (templateText.indexOf("[CarteM]") != -1) {  //est ce que il reste écrit [carte M]
-                        Log.e("etat : ", "M");
-                        etat = 4;
-                        choixActuelleTextView.setText("Carte Méthode :");
-                        carte = new String[]{"defendre()", "attaquer()", "guerir()", "lancerSort()", "reveillerMort()", "toString()"};
-                    } else {  //il n'y a plus de carte à changer
-                        Log.e("etat : ", "fini");
-                    }
-                }
-            }
-        }
-
         mListView = v.findViewById(R.id.listPersonnage);
-        if (etat == 4) {
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
+        ArrayAdapter<String> adapter;
+
+        etat = facade.getEtat(); // 1 : on remplace Carte 1, 2 : on remplace Carte 2, 3: on remplace Carte 3, 0 : On remplace Carte M
+
+        if (etat > 0) {
+            choixActuelleTextView.setText("Carte " + etat + " :");
+            adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
+                    getActivity(),
+                    android.R.layout.simple_list_item_1,
+                    facade.getCarteClasseListString()
+            );
+        } else {
+            choixActuelleTextView.setText("Carte Méthode :");
+            adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
                     getActivity(),
                     android.R.layout.simple_list_item_1,
                     facade.getCarteMethode()
             );
-        } else {
-            ArrayAdapter<CastGameTypable> adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
-                    getActivity(),
-                    android.R.layout.simple_list_item_1,
-                    facade.getCarteClasse()
-            );
         }
-        /*
+
         mListView.setAdapter(adapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {    //quand on clique sur un choix
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  //on va se servir de la position de l'élément cliqué dans la liste
-                Log.e("etat actuelle : ", "" + etat);
-                if (etat == 1) {
-                    changeCarte1 = templateText;
-                    templateText = templateText.replaceAll("\\[Carte1\\]", carte[position]);
-                    Log.e("clique etat 1 : ", templateText);
-
-                } else {
-                    if (etat == 2) {
-                        changeCarte2 = templateText;
-                        templateText = templateText.replaceAll("\\[Carte2\\]", carte[position]);
-                        Log.e("clique etat 2 : ", templateText);
-                    } else {
-                        if (etat == 3) {
-                            changeCarte3 = templateText;
-                            templateText = templateText.replaceAll("\\[Carte3\\]", carte[position]);
-                        } else {
-                            if (etat == 4) {
-                                changeCarteM = templateText;
-                                templateText = templateText.replaceAll("\\[CarteM\\]", carte[position]);
-                            }
-                            Log.e("on quitte la page : ", "vers la réponse");
-                        }
-                    }
-                }
-                ((MainActivity) getActivity()).getIntent().putExtra("template", templateText);
-                if (templateText.indexOf("[Carte1]") != -1 || templateText.indexOf("[Carte2]") != -1 || templateText.indexOf("[Carte3]") != -1 || templateText.indexOf("[CarteM]") != -1)
-                    ((MainActivity) getActivity()).choisirTemplate();
-                else ((MainActivity) getActivity()).choisirReponsePapier();
+                facade.ajouterCarte(position);
+                if (facade.getEtat() != -1)
+                    ((MainActivity) getActivity()).selectTemplate();
+                else /*((MainActivity) getActivity()).choisirReponsePapier()*/;
+                //TODO coder methode choisirReponsePapier()
             }
         });
-        */
+
         templateTextView = v.findViewById(R.id.templateChoixPersonnage);
-        templateTextView.setText(templateText);
+        templateTextView.setText(facade.getTemplateString());
         //  Log.e("debug texte: ", (String) templateTextView.getText());
 
         return v;

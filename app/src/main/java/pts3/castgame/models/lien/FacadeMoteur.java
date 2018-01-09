@@ -54,7 +54,7 @@ public class FacadeMoteur {
         if (etat == 0)
             methodeSelectionnee = getCarteMethode().get(position);
         else if (etat > 0)
-            cartesClassesSelectionnee.put(getEtat(), getCarteClasse().get(position));
+            cartesClassesSelectionnee.put(etat, getCarteClasse().get(position));
     }
 
     //inutilisee

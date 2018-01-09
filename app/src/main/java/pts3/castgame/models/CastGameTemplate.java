@@ -6,6 +6,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class CastGameTemplate {
 	private List<LignTemplate> lignList;
@@ -104,7 +105,7 @@ public class CastGameTemplate {
 	}
 
 	public Set<Integer> getNumberClassCard() {
-		Set<Integer> result = new HashSet<Integer>();
+		Set<Integer> result = new TreeSet<Integer>();
 
 		for (LignTemplate lt : lignList) {
 			if (lt.getDeclarationTypeNumber() != null)
