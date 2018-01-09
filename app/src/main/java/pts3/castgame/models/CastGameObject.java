@@ -3,7 +3,7 @@ package pts3.castgame.models;
 public class CastGameObject {
 
     //TODO ecrires des textes pour les resultats
-    //TODO transformer des chaines en constantes
+    //TODO transformer des chaines en constantes (Pas Forcement si on utilise les noms de classes
     //TODO trouver une facon jolie d'espacer le code
 
     private CastGameTypable objectType;

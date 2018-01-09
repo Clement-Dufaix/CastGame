@@ -1,8 +1,11 @@
 package pts3.castgame.models.lien;
 
 import java.util.ArrayList;
+import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
@@ -20,13 +23,22 @@ public class FacadeMoteur {
 
     private CastGameTemplate templateChoisi;
 
-    private List<CastGameTemplate> listTemplate;
+   // private List<CastGameTemplate> listTemplate;
     private Map<Integer, CastGameTypable> cartesClassesSelectionnee;
     private String methodeSelectionnee;
     private boolean difficile;
 
     public FacadeMoteur() {
+        templateChoisi = null;
+        cartesClassesSelectionnee = new Hashtable<Integer, CastGameTypable>();
+        methodeSelectionnee = null;
         difficile = true;
+    }
+
+    public void reset() {
+        templateChoisi = null;
+        cartesClassesSelectionnee.clear();
+        methodeSelectionnee = null;
     }
 
     public void setTemplateChoisi(CastGameTemplate template) {
@@ -34,13 +46,61 @@ public class FacadeMoteur {
     }
 
     public List<CastGameTemplate> getListTemplate() {
-        return /*Temp*/CARTE_TEMPLATES;
+        return CARTE_TEMPLATES;
+    }
+
+    public void ajouterCarte(int position) {
+        int etat = getEtat();
+        if (etat == 0)
+            methodeSelectionnee = getCarteMethode().get(position);
+        else if (etat > 0)
+            cartesClassesSelectionnee.put(getEtat(), getCarteClasse().get(position));
+    }
+
+    //inutilisee
+    public int getNombreCarteClasse() {
+        return templateChoisi.getNumberClassCard().size();
+    }
+
+    //inutilisee
+    public boolean useMethod() {
+        return templateChoisi.getUseMethod();
+    }
+
+    /**
+     * Carte a traiter
+     * @return
+     * -1 : fini
+     * 0  : carte methode
+     * 1 - +infini : numero carte classe
+     */
+    public int getEtat() {
+        Set<Integer> classeManquantes = templateChoisi.getNumberClassCard();
+        classeManquantes.removeAll(cartesClassesSelectionnee.keySet());
+        if (!classeManquantes.isEmpty())
+            return classeManquantes.iterator().next();
+        if (templateChoisi.getUseMethod() && methodeSelectionnee == null)
+            return 0;
+        return -1;
     }
 
     public List<CastGameTypable> getCarteClasse() {
         if (difficile)
             return CARTE_CLASSES_DIFFICILE;
         return CARTE_CLASSES_FACILE;
+    }
+
+    public String getTemplateString() {
+        return templateChoisi.getCorrectString(cartesClassesSelectionnee, methodeSelectionnee);
+    }
+
+    public List<String> getCarteClasseListString() {
+        List<String> result = new LinkedList<String>();
+
+        for (CastGameTypable t : getCarteClasse())
+            result.add(t.toString());
+
+        return result;
     }
 
     public List<String> getCarteMethode() {

@@ -1,45 +1,76 @@
 package pts3.castgame.models;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 public class CastGameTemplate {
 	private List<LignTemplate> lignList;
 	private int finalObjectNumber;
 	private boolean useMethod;
 	
-	private Map<Integer, CastGameTypable> cardMap;
-	private String methodName;
+	//private Map<Integer, CastGameTypable> cardMap;
+	//private String methodName;
 	
 	public CastGameTemplate(List<LignTemplate> lignList, int finalObjectNumber, boolean useMethod) {
 		super();
 		this.lignList = new ArrayList<LignTemplate>(lignList);
 		this.finalObjectNumber = finalObjectNumber;
 		this.useMethod = useMethod;
-		cardMap = new Hashtable<Integer, CastGameTypable>();
-		methodName = null;
+		//cardMap = new Hashtable<Integer, CastGameTypable>();
+		//methodName = null;
 	}
 
-	public void addCard(Integer number, CastGameTypable card) {
-		cardMap.put(number, card);
-	}
+	//public void addCard(Integer number, CastGameTypable card) {
+	//	cardMap.put(number, card);
+	//}
 	
-	public void reset() {
-		cardMap.clear();
-		methodName = null;
-	}
+	//public void reset() {
+	//	cardMap.clear();
+	//	methodName = null;
+	//}
 	
 	public String toString() {
 		String result = "";
 		for (LignTemplate lt : lignList)
-			result += lt.getString(cardMap) + "\n";
+			result += lt.getString() + "\n";
 		if (useMethod)
-			result +="perso" + finalObjectNumber + "." + methodName == null ? "[CarteM]" : methodName + "();";
+			result +="perso" + finalObjectNumber + ".[CarteM]();";
 		else
 			result += "System.out.println(perso" + finalObjectNumber + ");";
 		return result;
+	}
+
+	public String getCorrectString(Map<Integer, CastGameTypable> cardMap) {
+		String result = "";
+		for (LignTemplate lt : lignList)
+			result += lt.getString(cardMap) + "\n";
+		if (useMethod)
+			result +="perso" + finalObjectNumber + ".[CarteM]();";
+		else
+			result += "System.out.println(perso" + finalObjectNumber + ");";
+		return result;
+	}
+
+	public String getCorrectString(Map<Integer, CastGameTypable> cardMap, String methodName) {
+		String result = "";
+		for (LignTemplate lt : lignList)
+			result += lt.getString(cardMap) + "\n";
+		if (useMethod) {
+			if (methodName == null)
+				methodName = "[CarteM]";
+			result += "perso" + finalObjectNumber + "." + methodName + "();";
+		}
+		else
+			result += "System.out.println(perso" + finalObjectNumber + ");";
+		return result;
+	}
+
+	public boolean getUseMethod() {
+		return useMethod;
 	}
 
 	public CastGameAnswer getAnswer(Map<Integer, CastGameTypable> cardMap, String methodName) {
@@ -72,4 +103,18 @@ public class CastGameTemplate {
 		return objectMap.get(finalObjectNumber).sysOutDisplay();
 	}
 
+	public Set<Integer> getNumberClassCard() {
+		Set<Integer> result = new HashSet<Integer>();
+
+		for (LignTemplate lt : lignList) {
+			if (lt.getDeclarationTypeNumber() != null)
+				result.add(lt.getDeclarationTypeNumber());
+			if (lt.getExplicitCastNumber() != null)
+				result.add(lt.getExplicitCastNumber());
+			if (lt.useNew())
+				result.add(lt.getOtherItemNumber());
+		}
+
+		return result;
+	}
 }

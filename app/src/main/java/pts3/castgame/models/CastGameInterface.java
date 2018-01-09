@@ -19,8 +19,17 @@ public class CastGameInterface extends CastGameTypable {
 
     public CastGameInterface(String name, Set<String> prototypeListWithinInterface, Set<CastGameInterface> extendsInterfaces) {
         super(name);
+        if (prototypeListWithinInterface == null)
+            prototypeListWithinInterface = NO_PROTOTYPE;
+        if (extendsInterfaces == null)
+            extendsInterfaces = NO_INTERFACE;
         this.prototypeListWithinInterface = new HashSet<String>(prototypeListWithinInterface);
         this.extendsInterfaces = new HashSet<CastGameInterface>(extendsInterfaces);
+    }
+
+    public Set<CastGameInterface> getExtendsInterfaces() {
+        //TODO
+        return null;
     }
 
     @Override

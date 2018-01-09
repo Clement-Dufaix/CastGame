@@ -49,7 +49,7 @@ public class CastGameClass extends CastGameTypable {
 
         Map<String, String> result = parentClass.getMethodList();
         for (Map.Entry<String, String> entry : methodList.entrySet())
-            result.put(entry.getKey(), entry.getValue()); //redefinition si la cle (le prototype) existe deja
+            result.put(entry.getKey(), entry.getValue()); //si la cle (le prototype) existe deja, redefinition
 
         return result;
     }
