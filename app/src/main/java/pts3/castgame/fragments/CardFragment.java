@@ -15,10 +15,7 @@ import pts3.castgame.activities.MainActivity;
 import pts3.castgame.models.CastGameTypable;
 import pts3.castgame.models.lien.FacadeMoteur;
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class PersonnageFragment extends Fragment {
+public class CardFragment extends Fragment {
 
     String[] carte;
     TextView templateTextView;
@@ -28,7 +25,7 @@ public class PersonnageFragment extends Fragment {
     String templateText;
     FacadeMoteur facade;
 
-    public PersonnageFragment() {
+    public CardFragment() {
     }
 
     @Override
@@ -71,15 +68,15 @@ public class PersonnageFragment extends Fragment {
             }
         }
 
-        mListView = (ListView) v.findViewById(R.id.listPersonnage);
+        mListView = v.findViewById(R.id.listPersonnage);
         if (etat == 4) {
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(    //on associe les valeurs des cartes à la liste
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
                     getActivity(),
                     android.R.layout.simple_list_item_1,
                     facade.getCarteMethode()
             );
         } else {
-            ArrayAdapter<CastGameTypable> adapter = new ArrayAdapter<CastGameTypable>(    //on associe les valeurs des cartes à la liste
+            ArrayAdapter<CastGameTypable> adapter = new ArrayAdapter<>(    //on associe les valeurs des cartes à la liste
                     getActivity(),
                     android.R.layout.simple_list_item_1,
                     facade.getCarteClasse()

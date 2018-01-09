@@ -9,11 +9,20 @@ import android.view.ViewGroup;
 
 import pts3.castgame.R;
 
-public class TypeJeuFragment extends Fragment {
+public class GameTypeFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_type_jeu, container, false);
+        return inflater.inflate(R.layout.fragment_game_type, container, false);
+    }
+
+    public void selectCompanionMode(View view) {
+        // Voir dans l'activité.
+    }
+
+    // Pas utilisé encore
+    public void selectAloneMode() {
+        // Voir dans l'activité.
     }
 
 }

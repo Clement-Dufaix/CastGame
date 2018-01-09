@@ -25,4 +25,5 @@ public class ReponseActivity extends AppCompatActivity {
         Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
+
 }

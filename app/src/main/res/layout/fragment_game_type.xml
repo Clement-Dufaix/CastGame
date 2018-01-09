@@ -3,9 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:clickable="true"
     android:orientation="vertical"
-    tools:context="pts3.castgame.fragments.TypeJeuFragment">
+    tools:context="pts3.castgame.fragments.GameTypeFragment">
 
     <TextView
         style="@style/TitrePage"
@@ -26,7 +25,7 @@
             android:layout_marginBottom="30dp"
             android:layout_marginTop="80dp"
             android:layout_weight="0.5"
-            android:onClick="choisirTypeJeu"
+            android:onClick="selectCompanionMode"
             android:text="@string/jeu_papier" />
 
         <Button
@@ -36,7 +35,6 @@
             android:layout_marginBottom="80dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
-            android:onClick="choisirTypeJeu"
             android:text="@string/jeu_solo" />
 
     </LinearLayout>

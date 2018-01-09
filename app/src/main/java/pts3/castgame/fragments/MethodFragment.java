@@ -8,11 +8,15 @@ import android.view.ViewGroup;
 
 import pts3.castgame.R;
 
-public class MethodeFragment extends Fragment {
+public class MethodFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_methode, container, false);
+    }
+
+    public void selectMethod(View view) {
+
     }
 
 }

@@ -18,13 +18,14 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/backarrow"
+            android:contentDescription="@string/icon_backarrow"
             android:onClick="quitterCarte" />
 
         <TextView
             style="@style/NomApp"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:text="@string/carte" />
 
     </LinearLayout>
 
@@ -33,17 +34,9 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
-    <LinearLayout
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/imageMap"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
-        android:paddingTop="10dp">
-
-        <com.github.chrisbanes.photoview.PhotoView
-            android:id="@+id/imageMap"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

@@ -3,10 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:clickable="true"
     android:orientation="vertical"
     android:paddingTop="20dp"
-    tools:context="pts3.castgame.fragments.MethodeFragment">
+    tools:context="pts3.castgame.fragments.MethodFragment">
 
     <TextView
         style="@style/TitrePage"
@@ -26,7 +25,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="choisirMethode"
+            android:onClick="selectMethod"
             android:text="@string/attaquer" />
 
         <Button
@@ -34,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="choisirMethode"
+            android:onClick="selectMethod"
             android:text="@string/defendre" />
 
         <Button
@@ -42,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="choisirMethode"
+            android:onClick="selectMethod"
             android:text="@string/querir" />
 
         <Button
@@ -50,7 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="choisirMethode"
+            android:onClick="selectMethod"
             android:text="@string/lancerSort" />
 
         <Button
@@ -58,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:onClick="choisirMethode"
+            android:onClick="selectMethod"
             android:text="@string/reveiller_mort" />
 
     </LinearLayout>

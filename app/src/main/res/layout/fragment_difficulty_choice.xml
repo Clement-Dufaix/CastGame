@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
+    tools:context="pts3.castgame.fragments.DifficultyChoiceFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/TitrePage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/page_difficulte" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical">
+
+        <Button
+            style="@style/Bouton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="1"
+            android:onClick="selectDifficultyEasy"
+            android:text="@string/facile" />
+
+        <Button
+            style="@style/Bouton"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="1"
+            android:onClick="selectDifficultyHard"
+            android:text="@string/difficile" />
+
+    </LinearLayout>
+
+</LinearLayout>

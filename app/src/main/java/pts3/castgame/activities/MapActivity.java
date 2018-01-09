@@ -24,25 +24,24 @@ public class MapActivity extends AppCompatActivity {
     MainActivity context;
     boolean zoom = false;
     ImageView map;
-    String isDifficile="false";
+    boolean isHardMode;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        isDifficile = getIntent().getStringExtra("isDifficile");    //on récupère dans le main si le mode est en difficile
-        Log.e("test ", isDifficile + "");
+        // On récupère la difficulté depuis l'activité.
+        isHardMode = getIntent().getBooleanExtra("isHardMode", false);
         map = (ImageView) findViewById(R.id.imageMap);
-        PhotoView photoView = (PhotoView) findViewById(R.id.imageMap);  //photoview vient d'une librairie qui permet le zoom
-        if (isDifficile!=null&&isDifficile.equals("false"))
-            photoView.setImageResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile si
-       else photoView.setImageResource(R.drawable.plateau_mode_difficile);
-
+        PhotoView photoView = (PhotoView) map;
+        if (!isHardMode)
+            photoView.setImageResource(R.drawable.plateau_mode_facile);
+        else photoView.setImageResource(R.drawable.plateau_mode_difficile);
     }
 
     public void quitterCarte(View view) {
         onBackPressed();
-
     }
+
 }

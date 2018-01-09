@@ -3,10 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:clickable="true"
     android:orientation="vertical"
-    android:paddingTop="20dp"
-    tools:context="pts3.castgame.fragments.PersonnageFragment">
+    tools:context="pts3.castgame.fragments.CardFragment">
 
     <TextView
         style="@style/TitrePage"
@@ -18,7 +16,6 @@
         android:id="@+id/templateChoixPersonnage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textAlignment="center" />
 
     <TextView
@@ -36,7 +33,6 @@
             android:id="@+id/listPersonnage"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
 
     </LinearLayout>
 
