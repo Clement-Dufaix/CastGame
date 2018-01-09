@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#1D3E53</color>
+    <color name="colorPrimary">#fef9e7</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#000000</color>
-    <color name="colorSecondary">#e6f7ff</color>
-    <color name="colorSecondaryDark">#cceeff</color>
+    <color name="colorSecondary">#fdf3ce</color>
+    <color name="colorSecondaryDark">#fcedb6</color>
 
     <!-- Anciens Tons beiges
-    <color name="colorPrimary">#fdf4d0</color>
-    <color name="colorPrimaryDark">#fdf4d0</color>
-    <color name="colorAccent">#000000</color>
+    <color name="colorPrimary">#fef9e7</color>
+    <color name="colorPrimaryDark">#fdf3ce</color>e6f7ff
+    <color name="colorPrimaryDarkDark">#fcedb6</color>
     -->
 
 </resources>

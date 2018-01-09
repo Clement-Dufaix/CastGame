@@ -31,7 +31,7 @@ public class CardFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_personnage, container, false);
+        View v = inflater.inflate(R.layout.fragment_card, container, false);
         facade = ((MainActivity) getActivity()).getFacade();
         choixActuelleTextView = v.findViewById(R.id.ChoixActuelleCartePersonnage);
 
