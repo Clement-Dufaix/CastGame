@@ -1,5 +1,7 @@
 package pts3.castgame.models.lien;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -27,6 +29,7 @@ public class FacadeMoteur {
     private Map<Integer, CastGameTypable> cartesClassesSelectionnee;
     private String methodeSelectionnee;
     private boolean difficile;
+    private int etape=0; //etape de du programme 0 : accueil (sélection difficulté et plateau) 1 : sélection template,
 
     public FacadeMoteur() {
         templateChoisi = null;
@@ -63,6 +66,7 @@ public class FacadeMoteur {
     }
 
     public void setTemplateChoisi(CastGameTemplate template) {
+        reset();
         this.templateChoisi = template;
     }
 

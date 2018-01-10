@@ -32,7 +32,7 @@ public class ResultatPapierFragment extends Fragment {
         executionImageView = v.findViewById(R.id.icon_execution);
         displayImageView = v.findViewById(R.id.icon_display);
         displayTextView = v.findViewById(R.id.text_display);
-        template.setText(((MainActivity) getActivity()).getIntent().getStringExtra("template"));
+        template.setText(facade.getTemplateString());
 
         // Pas pour les templates utilisant des méthodes...
         displayTextView.setText("Affichage\nen sortie");

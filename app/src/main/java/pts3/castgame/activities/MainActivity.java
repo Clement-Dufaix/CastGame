@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         intentMap = new Intent(this, MapActivity.class);
-
         facade = new FacadeMoteur();
     }
 
@@ -39,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         transaction.add(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         // On commit la transaction.
+
         transaction.commit();
     }
 
