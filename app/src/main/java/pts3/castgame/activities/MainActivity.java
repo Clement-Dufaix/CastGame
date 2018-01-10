@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
         // On va vers le type de jeu.
         GameTypeFragment newFragment = new GameTypeFragment();
         setFragment(newFragment, true);
-        isDifficile = true;  //le jeu est mit en mode facile
         intentMap.putExtra("isHard", true);
     }
 
