@@ -16,7 +16,6 @@ import pts3.castgame.models.CastGameTemplate;
 
 public class TemplateFragment extends Fragment {
 
-
     private ListView mListView;
     private MainActivity context;
 
@@ -38,10 +37,9 @@ public class TemplateFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("test : ", "Position=" + position);
                 context.getFacade().setTemplateChoisi(context.getFacade().getListTemplate().get(position));
-                ((MainActivity) getActivity()).selectTemplate();
+                ((MainActivity) getActivity()).selectCard();
             }
         });
-
         return v;
     }
 

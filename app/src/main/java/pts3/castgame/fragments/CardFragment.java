@@ -56,7 +56,7 @@ public class CardFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  //on va se servir de la position de l'élément cliqué dans la liste
                 facade.ajouterCarte(position);
                 if (facade.getEtat() != -1)
-                    ((MainActivity) getActivity()).selectTemplate();
+                    ((MainActivity) getActivity()).selectCard();
                 else ((MainActivity) getActivity()).choisirReponsePapier();
                 //TODO coder methode choisirReponsePapier()
             }

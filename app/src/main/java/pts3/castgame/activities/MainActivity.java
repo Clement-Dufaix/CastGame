@@ -8,12 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import pts3.castgame.R;
-import pts3.castgame.fragments.MethodFragment;
 import pts3.castgame.fragments.CardFragment;
+import pts3.castgame.fragments.GameTypeFragment;
 import pts3.castgame.fragments.ReponseFragment;
 import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
-import pts3.castgame.fragments.GameTypeFragment;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class MainActivity extends AppCompatActivity {
@@ -61,17 +60,15 @@ public class MainActivity extends AppCompatActivity {
         setFragment(newFragment);
     }
 
-    public void selectTemplate() {
+    /**
+     * Sélectionne une carte, tant qu'il reste des cartes à sélectionner (voir dans le fragment associé).
+     */
+    public void selectCard() {
         CardFragment newFragment = new CardFragment();
         setFragment(newFragment);
     }
 
-    public void selectCard() {
-        MethodFragment newFragment = new MethodFragment();
-        setFragment(newFragment);
-    }
-
-    public void selectMethod(View view) {
+    public void seleectMethod(View view) {
         ReponseFragment newFragment = new ReponseFragment();
         setFragment(newFragment);
     }
