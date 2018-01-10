@@ -20,16 +20,16 @@ public class ResultatPapierFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_answer, container, false);
+        View v = inflater.inflate(R.layout.fragment_answer_companion, container, false);
         template = v.findViewById(R.id.templateReponseTextView);
         template.setText(((MainActivity) getActivity()).getIntent().getStringExtra("template"));
-        compilePasTextView = v.findViewById(R.id.compilePasTextView);
-        compilePasTextView.setVisibility(View.VISIBLE);
-        executePasTextView = v.findViewById(R.id.executePasTextView);
-        compilePasTextView.setVisibility(View.VISIBLE);
-        executePasTextView = v.findViewById(R.id.executePasTextView);
-        executePasTextView.setVisibility(View.VISIBLE);
-        executePasTextView.setText("Affiche :\n'La carte'");
+        // compilePasTextView = v.findViewById(R.id.compilePasTextView);
+        // compilePasTextView.setVisibility(View.VISIBLE);
+        // executePasTextView = v.findViewById(R.id.executePasTextView);
+        // compilePasTextView.setVisibility(View.VISIBLE);
+        // executePasTextView = v.findViewById(R.id.executePasTextView);
+        // executePasTextView.setVisibility(View.VISIBLE);
+        // executePasTextView.setText("Affiche :\n'La carte'");
 
         return v;
     }

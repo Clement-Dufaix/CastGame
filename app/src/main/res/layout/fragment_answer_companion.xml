@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="pts3.castgame.fragments.ResultatPapierFragment">
+
+    <TextView
+        style="@style/TitrePage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/page_reponse" />
+
+    <TextView
+        android:id="@+id/templateReponseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        style="@style/ButtonContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/nok" />
+
+            <TextView
+                android:id="@+id/compilePasTextView"
+                style="@style/Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/rep_compilation" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/nok" />
+
+            <TextView
+                android:id="@+id/executePasTextView"
+                style="@style/Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/rep_execution" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/nok" />
+
+            <TextView
+                android:id="@+id/afficheTextView"
+                style="@style/Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/rep_display" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

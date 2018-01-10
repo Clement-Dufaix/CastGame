@@ -10,7 +10,7 @@ import android.view.View;
 import pts3.castgame.R;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameTypeFragment;
-import pts3.castgame.fragments.AnswerFragment;
+import pts3.castgame.fragments.AnswerCompanionFragment;
 import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.models.lien.FacadeMoteur;
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void seleectMethod(View view) {
-        AnswerFragment newFragment = new AnswerFragment();
+        AnswerCompanionFragment newFragment = new AnswerCompanionFragment();
         setFragment(newFragment);
     }
 

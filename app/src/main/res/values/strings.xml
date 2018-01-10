@@ -20,9 +20,9 @@
     <string name="carte">Carte</string>
 
     <!-- Réponses -->
-    <string name="rep_compilation">Ne compile pas</string>
-    <string name="rep_execution">Ne s\'exécute pas</string>
-    <string name="rep_display">Affichage en sortie</string>
+    <string name="rep_compilation">Compile</string>
+    <string name="rep_execution">S\'exécute</string>
+    <string name="rep_display">Affiche</string>
 
     <!-- Cartes Méthodes -->
     <string name="attaquer">attaquer()</string>
