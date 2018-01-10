@@ -21,4 +21,14 @@ public class DifficultyChoiceFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
     }
 
+    // Juste pour éviter les erreurs dans le preview du fragment
+    public void selectEasyMode(View view) {
+
+    }
+
+    // Juste pour éviter les erreurs dans le preview du fragment
+    public void selectHardMode(View view) {
+
+    }
+
 }

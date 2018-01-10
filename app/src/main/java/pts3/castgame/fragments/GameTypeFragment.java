@@ -16,4 +16,9 @@ public class GameTypeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_game_type, container, false);
     }
 
+    // Juste pour éviter les erreurs dans le preview du fragment
+    public void selectCompanionMode(View view) {
+
+    }
+
 }

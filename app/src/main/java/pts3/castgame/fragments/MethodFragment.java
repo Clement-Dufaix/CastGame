@@ -15,4 +15,9 @@ public class MethodFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_method, container, false);
     }
 
+    // Juste pour éviter les erreurs dans le preview du fragment
+    public void selectMethod(View view) {
+
+    }
+
 }

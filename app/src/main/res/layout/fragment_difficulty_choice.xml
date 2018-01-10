@@ -9,7 +9,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:orientation="vertical">
 
         <TextView
@@ -21,30 +20,30 @@
     </LinearLayout>
 
     <LinearLayout
+        style="@style/ButtonContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/b_easy"
-            style="@style/Bouton"
+            style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="60dp"
-            android:layout_weight="1"
-            android:onClick="choisirDifficulteFacile"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="80dp"
+            android:layout_weight=".5"
+            android:onClick="selectEasyMode"
             android:text="@string/facile" />
 
         <Button
-            style="@style/Bouton"
+            style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="60dp"
-            android:layout_marginTop="60dp"
-            android:layout_weight="1"
-            android:onClick="choisirDifficulteDifficile"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight=".5"
+            android:onClick="selectHardMode"
             android:text="@string/difficile" />
 
     </LinearLayout>

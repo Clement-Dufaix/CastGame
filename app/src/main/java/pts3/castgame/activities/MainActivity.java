@@ -10,7 +10,7 @@ import android.view.View;
 import pts3.castgame.R;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameTypeFragment;
-import pts3.castgame.fragments.ReponseFragment;
+import pts3.castgame.fragments.AnswerFragment;
 import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.models.lien.FacadeMoteur;
@@ -29,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
         facade = new FacadeMoteur();
     }
 
+    public FacadeMoteur getFacade() {
+        return facade;
+    }
+
     private void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // On remplace l'ancien fragment par le nouveau.
@@ -38,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void choisirDifficulteFacile(View view) {
+    public void selectEasyMode(View view) {
         GameTypeFragment newFragment = new GameTypeFragment();
         setFragment(newFragment);
         intentMap.putExtra("isHard", false);
     }
 
-    public void choisirDifficulteDifficile(View view) {
+    public void selectHardMode(View view) {
         GameTypeFragment newFragment = new GameTypeFragment();
         setFragment(newFragment);
         intentMap.putExtra("isHard", true);
@@ -69,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void seleectMethod(View view) {
-        ReponseFragment newFragment = new ReponseFragment();
+        AnswerFragment newFragment = new AnswerFragment();
         setFragment(newFragment);
     }
 
@@ -80,10 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMap(View view) {
         startActivity(intentMap);
-    }
-
-    public FacadeMoteur getFacade() {
-        return facade;
     }
 
 }

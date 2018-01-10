@@ -1,10 +1,7 @@
 package pts3.castgame.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,7 +20,7 @@ public class ResultatPapierFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_resultat_papier, container, false);
+        View v = inflater.inflate(R.layout.fragment_answer, container, false);
         template = v.findViewById(R.id.templateReponseTextView);
         template.setText(((MainActivity) getActivity()).getIntent().getStringExtra("template"));
         compilePasTextView = v.findViewById(R.id.compilePasTextView);

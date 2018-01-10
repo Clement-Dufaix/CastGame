@@ -2,7 +2,6 @@ package pts3.castgame.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -23,7 +22,7 @@ public class MapActivity extends AppCompatActivity {
         map = (ImageView) findViewById(R.id.imageMap);
         PhotoView photoView = (PhotoView) map;
         if (!isHard)
-            photoView.setImageResource(R.drawable.plateau_mode_facile);       //modifier le plateau est mode facile si
+            photoView.setImageResource(R.drawable.plateau_mode_facile);
         else photoView.setImageResource(R.drawable.plateau_mode_difficile);
 
     }

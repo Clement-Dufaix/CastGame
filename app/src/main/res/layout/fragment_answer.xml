@@ -17,45 +17,46 @@
         android:id="@+id/templateReponseTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAlignment="center"/>
+        android:textAlignment="center" />
 
     <LinearLayout
+        style="@style/ButtonContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
+        android:orientation="vertical">
 
-        <TextView
+        <Button
             android:id="@+id/compilePasTextView"
+            style="@style/Button"
             android:layout_width="match_parent"
-            android:layout_weight="0.3"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/rep_compile_pas"
-            android:textSize="30dp"
-            android:textColor="#FF0000"
-            android:textAlignment="center"/>
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0.3"
+            android:text="@string/rep_compilation"
+            android:textColor="#FF0000" />
 
-        <TextView
+        <Button
             android:id="@+id/executePasTextView"
+            style="@style/Button"
             android:layout_width="match_parent"
-            android:layout_weight="0.3"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/rep_execute_pas"
-            android:textSize="30dp"
-            android:textColor="#FF0000"
-            android:textAlignment="center"/>
-        <TextView
-            android:id="@+id/afficheTextView"
-            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="0.3"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Affiche :\n'La carte'"
-            android:textSize="30dp"
-            android:textAlignment="center"/>
-    </LinearLayout>
+            android:text="@string/rep_execution"
+            android:textColor="#FF0000" />
 
+        <Button
+            android:id="@+id/afficheTextView"
+            style="@style/Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.3"
+            android:text="@string/rep_display" />
+
+    </LinearLayout>
 
 </LinearLayout>
