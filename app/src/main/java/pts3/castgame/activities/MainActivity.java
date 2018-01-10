@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         setFragment(newFragment);
     }
 
+    public void selectCompanionMode() {
+        TemplateFragment newFragment = new TemplateFragment();
+        setFragment(newFragment);
+    }
+
     public void choisirReponsePapier() {
         ResultatPapierFragment newFragment = new ResultatPapierFragment();
         setFragment(newFragment);

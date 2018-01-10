@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,11 +21,12 @@ public class ResultatPapierFragment extends Fragment {
     ImageView displayImageView;
     TextView displayTextView;
     FacadeMoteur facade;
+    Button button;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_answer_companion, container, false);
-
+        button = v.findViewById(R.id.buttonNewAnswer);
         MainActivity mainActivity = (MainActivity) getActivity();
         facade = mainActivity.getFacade();
         template = v.findViewById(R.id.templateReponseTextView);
@@ -36,6 +38,13 @@ public class ResultatPapierFragment extends Fragment {
 
         // Pas pour les templates utilisant des méthodes...
         displayTextView.setText("Affichage\nen sortie");
+
+
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                ((MainActivity) getActivity()).selectCompanionMode();
+            }
+        });
 
         return v;
     }
