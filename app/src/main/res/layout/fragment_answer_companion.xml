@@ -20,13 +20,13 @@
         android:textAlignment="center" />
 
     <LinearLayout
-        style="@style/ButtonContainer"
+        style="@style/Container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
-            style="@style/Button"
+            style="@style/TextContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
@@ -38,44 +38,28 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/nok" />
-
-            <TextView
-                android:id="@+id/compilePasTextView"
-                style="@style/Text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/rep_compilation" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            style="@style/Button"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_weight="0.3"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/nok" />
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ok" />
 
             <TextView
                 android:id="@+id/executePasTextView"
-                style="@style/Text"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="@string/rep_execution" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/rep_compilation"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/nok" />
 
         </LinearLayout>
 
         <LinearLayout
-            style="@style/Button"
+            style="@style/TextContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
@@ -87,14 +71,56 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ok" />
+
+            <TextView
+                android:id="@+id/compilePasTextView"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/rep_execution"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
                 android:background="@drawable/nok" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/TextContainer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="0.3"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/ok" />
 
             <TextView
                 android:id="@+id/afficheTextView"
-                style="@style/Text"
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:text="@string/rep_display" />
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/rep_display"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/nok" />
 
         </LinearLayout>
 
