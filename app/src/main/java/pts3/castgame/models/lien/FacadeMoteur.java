@@ -35,6 +35,27 @@ public class FacadeMoteur {
         difficile = true;
     }
 
+    /**
+     * @return
+     * false : doit aller au fragment template
+     * true : doit rester sur le fragment carte
+     */
+    public boolean back() {
+        if (methodeSelectionnee != null) {
+            methodeSelectionnee = null;
+            return true;
+        }
+        if (cartesClassesSelectionnee.isEmpty())
+            return false;
+
+        int imax = cartesClassesSelectionnee.keySet().iterator().next();
+        for (Integer integer : cartesClassesSelectionnee.keySet())
+            if (imax < integer)
+                imax = integer;
+        cartesClassesSelectionnee.remove(imax);
+        return true;
+    }
+
     public void reset() {
         templateChoisi = null;
         cartesClassesSelectionnee.clear();
@@ -320,11 +341,11 @@ public class FacadeMoteur {
         //TODO Reprendre toute les methodes des classes
         List<String> result = new ArrayList<String>();
 
-        result.add("defendre()");
-        result.add("attaquer()");
-        result.add("guerir()");
-        result.add("lancerSort()");
-        result.add("reveillerMort()");
+        result.add("defendre");
+        result.add("attaquer");
+        result.add("guerir");
+        result.add("lancerSort");
+        result.add("reveillerMort");
 
         return result;
     }
@@ -333,11 +354,11 @@ public class FacadeMoteur {
         //TODO Reprendre toute les methodes des classes
         List<String> result = new ArrayList<String>();
 
-        result.add("defendre()");
-        result.add("attaquer()");
-        result.add("guerir()");
-        result.add("lancerSort()");
-        result.add("reveillerMort()");
+        result.add("defendre");
+        result.add("attaquer");
+        result.add("guerir");
+        result.add("lancerSort");
+        result.add("reveillerMort");
 
         return result;
     }
