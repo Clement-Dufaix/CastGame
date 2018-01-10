@@ -2,7 +2,6 @@ package pts3.castgame.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.models.CastGameTypable;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class CardFragment extends Fragment {
@@ -25,7 +23,6 @@ public class CardFragment extends Fragment {
     int etat;
     FacadeMoteur facade;
 
-    /*
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -60,7 +57,7 @@ public class CardFragment extends Fragment {
                 facade.ajouterCarte(position);
                 if (facade.getEtat() != -1)
                     ((MainActivity) getActivity()).selectTemplate();
-                else /*((MainActivity) getActivity()).choisirReponsePapier();
+                else ((MainActivity) getActivity()).choisirReponsePapier();
                 //TODO coder methode choisirReponsePapier()
             }
         });
@@ -70,13 +67,6 @@ public class CardFragment extends Fragment {
         //  Log.e("debug texte: ", (String) templateTextView.getText());
 
         return v;
-    }*/
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_card, container, false);
     }
-
 
 }

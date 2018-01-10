@@ -38,7 +38,7 @@ public class TemplateFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("test : ", "Position=" + position);
                 context.getFacade().setTemplateChoisi(context.getFacade().getListTemplate().get(position));
-                ((MainActivity) getActivity()).choisirPersonnage();
+                ((MainActivity) getActivity()).selectTemplate();
             }
         });
 

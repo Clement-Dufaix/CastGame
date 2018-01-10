@@ -30,80 +30,59 @@ public class MainActivity extends AppCompatActivity {
         facade = new FacadeMoteur();
     }
 
-    // J'ai crée une fonction générique pour ajouter nos Fragments plutôt que de dupliquer pour chaque possibilité.
-    // Le booléen sert à savoir si on permet le retour sur la page précédente ou pas.
-    private void setFragment(Fragment fragment, boolean backStack) {
+    private void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // On remplace l'ancien fragment par le nouveau.
-        transaction.add(R.id.fragment_main, fragment);
-
-        // ATTENTION : Les boutons parents ne sont pas désactivés.
-        // (Essayez de cliquer sur une zone vide qui contenait un bouton vous verrez)
-
-        //Si on souhaite pouvoir revenir en arrière.
-        if (backStack) {
-            transaction.addToBackStack(null);
-        }
+        transaction.add(R.id.fragment_container, fragment);
+        transaction.addToBackStack(null);
         // On commit la transaction.
         transaction.commit();
     }
 
     public void choisirDifficulteFacile(View view) {
-        // On va vers le type de jeu.
         GameTypeFragment newFragment = new GameTypeFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
         intentMap.putExtra("isHard", false);
     }
 
     public void choisirDifficulteDifficile(View view) {
-        // On va vers le type de jeu.
         GameTypeFragment newFragment = new GameTypeFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
         intentMap.putExtra("isHard", true);
     }
 
-    public void choisirTypeJeu(View view) {
-        // On va vers le choix de template.
+    public void selectCompanionMode(View view) {
         TemplateFragment newFragment = new TemplateFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
     public void choisirReponsePapier() {
-        // On va vers la réponse du jeu papier (après avoir choisi le template et les cartes).
         ResultatPapierFragment newFragment = new ResultatPapierFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
-    public void choisirTemplate() {
-        // On va vers le choix de carte personnage.
+    public void selectTemplate() {
         CardFragment newFragment = new CardFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
-    // Attention le nombre d'appels varie en fonction du template (1, 2 ou 3 personnages).
-    public void choisirPersonnage() {
-        // On va vers le choix de carte methode.
+    public void selectCard() {
         MethodFragment newFragment = new MethodFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
-    public void choisirMethode(View view) {
-        // On va vers le choix de la réponse.
+    public void selectMethod(View view) {
         ReponseFragment newFragment = new ReponseFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
     public void choisirReponse(View view) {
-        // On va vers le choix d'un nouveau template.
-        // Il faudrait refaire une IHM entre les deux nn ?
         TemplateFragment newFragment = new TemplateFragment();
-        setFragment(newFragment, true);
+        setFragment(newFragment);
     }
 
-    // On laisse pour le moment le fait de changer d'activité car la carte ne reprend rien du reste.
-    public void voirMap(View view) {
-        // map = new MapActivity(this);
-        // startActivity(intentMap);
+    public void showMap(View view) {
+        startActivity(intentMap);
     }
 
     public FacadeMoteur getFacade() {

@@ -29,7 +29,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/map"
-            android:onClick="voirMap" />
+            android:onClick="showMap" />
 
     </LinearLayout>
 
@@ -39,7 +39,7 @@
         android:background="@color/colorAccent" />
 
     <FrameLayout
-        android:id="@+id/fragment_main"
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
