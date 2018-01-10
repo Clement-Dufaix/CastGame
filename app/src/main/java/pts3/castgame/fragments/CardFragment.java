@@ -1,9 +1,7 @@
 package pts3.castgame.fragments;
 
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +12,10 @@ import android.widget.TextView;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.models.CastGameTypable;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class CardFragment extends Fragment {
 
-    String[] carte;
     TextView templateTextView;
     ListView mListView;
     TextView choixActuelleTextView;
@@ -60,7 +56,7 @@ public class CardFragment extends Fragment {
                 facade.ajouterCarte(position);
                 if (facade.getEtat() != -1)
                     ((MainActivity) getActivity()).selectCard();
-                else ((MainActivity) getActivity()).choisirReponsePapier();
+                else ((MainActivity) getActivity()).loadCompanionAnswer();
                 //TODO coder methode choisirReponsePapier()
             }
         });

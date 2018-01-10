@@ -3,6 +3,7 @@ package pts3.castgame.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     Intent intentMap;
     FacadeMoteur facade;
 
+    private static final String fragTag = "FRAG";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,9 +39,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // On remplace l'ancien fragment par le nouveau.
         transaction.add(R.id.fragment_container, fragment);
-        transaction.addToBackStack(null);
+        transaction.addToBackStack(fragTag);
         // On commit la transaction.
-
         transaction.commit();
     }
 
@@ -59,13 +61,15 @@ public class MainActivity extends AppCompatActivity {
         setFragment(newFragment);
     }
 
-    public void selectCompanionMode() {
+    public void loadNewTemplate(View view) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack(fragTag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
         TemplateFragment newFragment = new TemplateFragment();
         setFragment(newFragment);
     }
 
-    public void choisirReponsePapier() {
-        ResultatPapierFragment newFragment = new ResultatPapierFragment();
+    public void loadCompanionAnswer() {
+        AnswerCompanionFragment newFragment = new AnswerCompanionFragment();
         setFragment(newFragment);
     }
 
@@ -77,13 +81,8 @@ public class MainActivity extends AppCompatActivity {
         setFragment(newFragment);
     }
 
-    public void seleectMethod(View view) {
+    public void selectMethod(View view) {
         AnswerCompanionFragment newFragment = new AnswerCompanionFragment();
-        setFragment(newFragment);
-    }
-
-    public void choisirReponse(View view) {
-        TemplateFragment newFragment = new TemplateFragment();
         setFragment(newFragment);
     }
 
