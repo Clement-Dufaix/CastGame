@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:clickable="true"
     android:gravity="center"
     android:orientation="vertical"
     tools:context="pts3.castgame.fragments.ResultatPapierFragment">
@@ -15,19 +14,20 @@
         android:text="@string/page_reponse" />
 
     <TextView
-        android:id="@+id/templateReponseTextView"
+        android:id="@+id/template_container"
+        style="@style/TemplateContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:textAlignment="center" />
 
     <LinearLayout
-        style="@style/Container"
+        style="@style/TemplateContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp">
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,14 +37,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorSecondary"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="5dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/content_description" />
 
             <TextView
                 style="@style/Text"
@@ -55,10 +55,11 @@
 
             <ImageView
                 android:id="@+id/icon_compilation"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/ok" />
+                android:background="@drawable/ok"
+                android:contentDescription="@string/content_description" />
 
         </LinearLayout>
 
@@ -70,14 +71,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorSecondary"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="5dp">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/content_description" />
 
             <TextView
                 style="@style/Text"
@@ -88,10 +89,11 @@
 
             <ImageView
                 android:id="@+id/icon_execution"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/nok" />
+                android:background="@drawable/nok"
+                android:contentDescription="@string/content_description" />
 
         </LinearLayout>
 
@@ -101,16 +103,18 @@
             android:background="@color/colorAccent" />
 
         <LinearLayout
+            android:id="@+id/display_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorSecondary"
             android:orientation="horizontal"
-            android:padding="10dp">
+            android:padding="5dp">
+
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center_vertical" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="@string/content_description" />
 
             <TextView
                 android:id="@+id/text_display"
@@ -122,10 +126,11 @@
 
             <ImageView
                 android:id="@+id/icon_display"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/nok" />
+                android:background="@drawable/nok"
+                android:contentDescription="@string/content_description" />
 
         </LinearLayout>
 
@@ -139,9 +144,9 @@
     <Button
         android:id="@+id/buttonNewAnswer"
         style="@style/Button"
-        android:onClick="loadNewTemplate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="loadNewTemplate"
         android:text="@string/new_template" />
 
 </LinearLayout>

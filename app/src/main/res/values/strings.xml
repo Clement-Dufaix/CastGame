@@ -36,4 +36,6 @@
     <string name="icon_map">map_icon</string>
     <string name="icon_backarrow">backarrow_icon</string>
 
+    <string name="content_description">icone</string>
+
 </resources>

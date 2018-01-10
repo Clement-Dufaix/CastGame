@@ -1,7 +1,5 @@
 package pts3.castgame.models.lien;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -9,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import pts3.castgame.models.CastGameAnswer;
 import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
 import pts3.castgame.models.CastGameTemplate;
@@ -25,11 +24,11 @@ public class FacadeMoteur {
 
     private CastGameTemplate templateChoisi;
 
-   // private List<CastGameTemplate> listTemplate;
+    // private List<CastGameTemplate> listTemplate;
     private Map<Integer, CastGameTypable> cartesClassesSelectionnee;
     private String methodeSelectionnee;
     private boolean difficile;
-    private int etape=0; //etape de du programme 0 : accueil (sélection difficulté et plateau) 1 : sélection template,
+    private int etape = 0; //etape de du programme 0 : accueil (sélection difficulté et plateau) 1 : sélection template,
 
     public FacadeMoteur() {
         templateChoisi = null;
@@ -39,8 +38,7 @@ public class FacadeMoteur {
     }
 
     /**
-     * @return
-     * false : doit aller au fragment template
+     * @return false : doit aller au fragment template
      * true : doit rester sur le fragment carte
      */
     public boolean back() {
@@ -94,8 +92,8 @@ public class FacadeMoteur {
 
     /**
      * Carte a traiter
-     * @return
-     * -1 : fini
+     *
+     * @return -1 : fini
      * 0  : carte methode
      * 1 - +infini : numero carte classe
      */
@@ -115,9 +113,20 @@ public class FacadeMoteur {
         return CARTE_CLASSES_FACILE;
     }
 
+    /**
+     * Retourne le template sous format texte.
+     *
+     * @return La chaîne de caractères
+     */
     public String getTemplateString() {
         return templateChoisi.getCorrectString(cartesClassesSelectionnee, methodeSelectionnee);
     }
+
+    /*
+    public CastGameAnswer getTemplateAnswer() {
+        return templateChoisi.getAnswer(cartesClassesSelectionnee, methodeSelectionnee);
+    }
+    */
 
     public List<String> getCarteClasseListString() {
         List<String> result = new LinkedList<String>();

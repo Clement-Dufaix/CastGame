@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadCompanionAnswer() {
-        AnswerCompanionFragment newFragment = new AnswerCompanionFragment();
+        ResultatPapierFragment newFragment = new ResultatPapierFragment();
         setFragment(newFragment);
     }
 
