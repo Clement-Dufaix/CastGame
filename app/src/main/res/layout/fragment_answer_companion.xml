@@ -26,7 +26,6 @@
         android:orientation="vertical">
 
         <LinearLayout
-            style="@style/TextContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
@@ -38,15 +37,14 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/ok" />
+                android:layout_gravity="center_vertical" />
 
             <TextView
                 android:id="@+id/executePasTextView"
+                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/rep_compilation"
                 android:textSize="30dp" />
 
@@ -54,12 +52,11 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/nok" />
+                android:background="@drawable/ok" />
 
         </LinearLayout>
 
         <LinearLayout
-            style="@style/TextContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
@@ -71,15 +68,14 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/ok" />
+                android:layout_gravity="center_vertical" />
 
             <TextView
                 android:id="@+id/compilePasTextView"
+                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/rep_execution"
                 android:textSize="30dp" />
 
@@ -92,7 +88,6 @@
         </LinearLayout>
 
         <LinearLayout
-            style="@style/TextContainer"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="20dp"
@@ -104,15 +99,14 @@
             <ImageView
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_gravity="center_vertical"
-                android:background="@drawable/ok" />
+                android:layout_gravity="center_vertical" />
 
             <TextView
                 android:id="@+id/afficheTextView"
+                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:gravity="center"
                 android:text="@string/rep_display"
                 android:textSize="30dp" />
 

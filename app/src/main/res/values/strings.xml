@@ -8,7 +8,7 @@
     <string name="page_templates">Choix du template</string>
     <string name="page_personnage">Choix de la carte personnage</string>
     <string name="page_methode">Choix de la carte méthode</string>
-    <string name="page_reponse">Que se passe-t-il ?</string>
+    <string name="page_reponse">Résultat</string>
 
     <!-- Difficulté -->
     <string name="facile">Facile</string>
