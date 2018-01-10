@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:clickable="true"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context="pts3.castgame.fragments.ResultatPapierFragment">
 
@@ -17,40 +18,45 @@
         android:id="@+id/templateReponseTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:textAlignment="center" />
 
     <LinearLayout
         style="@style/Container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_weight="0.3"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/executePasTextView"
                 style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_compilation"
-                android:textSize="30dp" />
+                android:text="@string/rep_compilation" />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:id="@+id/icon_compilation"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/ok" />
 
@@ -58,30 +64,32 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_weight="0.3"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/compilePasTextView"
                 style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_execution"
-                android:textSize="30dp" />
+                android:text="@string/rep_execution" />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:id="@+id/icon_execution"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/nok" />
 
@@ -89,35 +97,49 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="40dp"
-            android:layout_weight="0.3"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
             android:orientation="horizontal"
             android:padding="10dp">
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical" />
 
             <TextView
-                android:id="@+id/afficheTextView"
+                android:id="@+id/text_display"
                 style="@style/Text"
                 android:layout_width="0dp"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/rep_display"
-                android:textSize="30dp" />
+                android:text="@string/rep_display" />
 
             <ImageView
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:id="@+id/icon_display"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_gravity="center_vertical"
                 android:background="@drawable/nok" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorAccent" />
+
     </LinearLayout>
+
+    <Button
+        style="@style/Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/new_template" />
 
 </LinearLayout>
