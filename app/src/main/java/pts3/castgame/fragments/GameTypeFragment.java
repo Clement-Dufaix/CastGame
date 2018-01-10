@@ -16,13 +16,4 @@ public class GameTypeFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_game_type, container, false);
     }
 
-    public void selectCompanionMode(View view) {
-        // Voir dans l'activité.
-    }
-
-    // Pas utilisé encore
-    public void selectAloneMode() {
-        // Voir dans l'activité.
-    }
-
 }

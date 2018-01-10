@@ -28,12 +28,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/b_easy"
             style="@style/Bouton"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="60dp"
             android:layout_weight="1"
-            android:onClick="selectDifficultyEasy"
+            android:onClick="choisirDifficulteFacile"
             android:text="@string/facile" />
 
         <Button
@@ -43,7 +44,7 @@
             android:layout_marginBottom="60dp"
             android:layout_marginTop="60dp"
             android:layout_weight="1"
-            android:onClick="selectDifficultyHard"
+            android:onClick="choisirDifficulteDifficile"
             android:text="@string/difficile" />
 
     </LinearLayout>

@@ -7,10 +7,4 @@
     <color name="colorSecondary">#fdf3ce</color>
     <color name="colorSecondaryDark">#fcedb6</color>
 
-    <!-- Anciens Tons beiges
-    <color name="colorPrimary">#fef9e7</color>
-    <color name="colorPrimaryDark">#fdf3ce</color>e6f7ff
-    <color name="colorPrimaryDarkDark">#fcedb6</color>
-    -->
-
 </resources>

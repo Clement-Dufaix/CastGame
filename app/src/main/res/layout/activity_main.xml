@@ -17,8 +17,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/menu"
-            android:contentDescription="@string/icon_menu" />
+            android:background="@drawable/menu" />
 
         <TextView
             style="@style/NomApp"
@@ -30,8 +29,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/map"
-            android:contentDescription="@string/icon_map"
-            android:onClick="showMap" />
+            android:onClick="voirMap" />
 
     </LinearLayout>
 
@@ -40,11 +38,17 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
-    <fragment
-        android:id="@+id/fragment"
-        android:name="pts3.castgame.fragments.DifficultyChoiceFragment"
+    <FrameLayout
+        android:id="@+id/fragment_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_difficulty_choice" />
+        android:layout_height="match_parent">
+
+        <fragment
+            android:name="pts3.castgame.fragments.DifficultyChoiceFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_difficulty_choice" />
+
+    </FrameLayout>
 
 </LinearLayout>

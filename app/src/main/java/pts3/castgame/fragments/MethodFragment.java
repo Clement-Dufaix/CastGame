@@ -15,8 +15,4 @@ public class MethodFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_method, container, false);
     }
 
-    public void selectMethod(View view) {
-
-    }
-
 }

@@ -25,7 +25,7 @@ public class TemplateFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_template, container, false);
 
         mListView = v.findViewById(R.id.listTemplate);
-        context = ((MainActivity)getActivity());
+        context = ((MainActivity) getActivity());
         ArrayAdapter<CastGameTemplate> adapter = new ArrayAdapter<>(
                 getActivity(),
                 android.R.layout.simple_list_item_1,
@@ -38,9 +38,10 @@ public class TemplateFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Log.i("test : ", "Position=" + position);
                 context.getFacade().setTemplateChoisi(context.getFacade().getListTemplate().get(position));
-                ((MainActivity)getActivity()).selectTemplate();
+                ((MainActivity) getActivity()).choisirPersonnage();
             }
         });
+
         return v;
     }
 

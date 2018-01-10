@@ -21,12 +21,4 @@ public class DifficultyChoiceFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
     }
 
-    private void selectDifficultyEasy(View view) {
-        // Voir dans l'activité.
-    }
-
-    private void selectDifficultyHard(View view) {
-        // Voir dans l'activité.
-    }
-
 }

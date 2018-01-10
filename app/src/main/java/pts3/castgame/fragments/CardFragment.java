@@ -25,9 +25,7 @@ public class CardFragment extends Fragment {
     int etat;
     FacadeMoteur facade;
 
-    public CardFragment() {
-    }
-
+    /*
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -62,7 +60,7 @@ public class CardFragment extends Fragment {
                 facade.ajouterCarte(position);
                 if (facade.getEtat() != -1)
                     ((MainActivity) getActivity()).selectTemplate();
-                else /*((MainActivity) getActivity()).choisirReponsePapier()*/;
+                else /*((MainActivity) getActivity()).choisirReponsePapier();
                 //TODO coder methode choisirReponsePapier()
             }
         });
@@ -72,6 +70,12 @@ public class CardFragment extends Fragment {
         //  Log.e("debug texte: ", (String) templateTextView.getText());
 
         return v;
+    }*/
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_card, container, false);
     }
 
 
