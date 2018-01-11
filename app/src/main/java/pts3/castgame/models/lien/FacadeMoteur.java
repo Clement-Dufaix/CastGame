@@ -85,7 +85,7 @@ public class FacadeMoteur {
         List<Integer> i = new ArrayList<>();
         for (Map.Entry<Integer, CastGameTypable> entry : cartesClassesSelectionnee.entrySet()){ //si l'utilisateur est revenu en arriere on supprime les cartes qu'il avait déjà sélectionné
             //Log.e("clé : ",entry.getKey()+"");
-            if(entry.getKey()>=etatActuel){
+            if(entry.getKey()>=etatActuel&&etatActuel!=0){
                 i.add(entry.getKey());
             }
         }
