@@ -5,7 +5,7 @@
     android:background="@color/colorPrimary"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="pts3.castgame.fragments.ResultatPapierFragment">
+    tools:context="pts3.castgame.fragments.AnswerCompanionFragment">
 
     <TextView
         style="@style/TitrePage"
@@ -28,11 +28,6 @@
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorAccent" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -109,7 +104,6 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-
             <ImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
@@ -133,11 +127,6 @@
                 android:contentDescription="@string/content_description" />
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/colorAccent" />
 
     </LinearLayout>
 

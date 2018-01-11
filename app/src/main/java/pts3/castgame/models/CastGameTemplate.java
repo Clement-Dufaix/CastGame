@@ -8,98 +8,97 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class CastGameTemplate {
-	private List<LignTemplate> lignList;
-	private int finalObjectNumber;
-	private boolean useMethod;
-	
-	//private Map<Integer, CastGameTypable> cardMap;
-	//private String methodName;
-	
-	public CastGameTemplate(List<LignTemplate> lignList, int finalObjectNumber, boolean useMethod) {
-		super();
-		this.lignList = new ArrayList<LignTemplate>(lignList);
-		this.finalObjectNumber = finalObjectNumber;
-		this.useMethod = useMethod;
-		//cardMap = new Hashtable<Integer, CastGameTypable>();
-		//methodName = null;
-	}
+    private List<LignTemplate> lignList;
+    private int finalObjectNumber;
+    private boolean useMethod;
 
-	//public void addCard(Integer number, CastGameTypable card) {
-	//	cardMap.put(number, card);
-	//}
-	
-	//public void reset() {
-	//	cardMap.clear();
-	//	methodName = null;
-	//}
-	
-	public String toString() {
-		return getCorrectString(null);
-	}
+    //private Map<Integer, CastGameTypable> cardMap;
+    //private String methodName;
 
-	public String getCorrectString(Map<Integer, CastGameTypable> cardMap) {
-		return getCorrectString(cardMap, null);
-	}
+    public CastGameTemplate(List<LignTemplate> lignList, int finalObjectNumber, boolean useMethod) {
+        super();
+        this.lignList = new ArrayList<>(lignList);
+        this.finalObjectNumber = finalObjectNumber;
+        this.useMethod = useMethod;
+        //cardMap = new Hashtable<Integer, CastGameTypable>();
+        //methodName = null;
+    }
 
-	public String getCorrectString(Map<Integer, CastGameTypable> cardMap, String methodName) {
-		StringBuilder result = new StringBuilder();
-		for (LignTemplate lt : lignList)
-			result.append(lt.getString(cardMap)).append("\n");
-		if (useMethod) {
-			if (methodName == null)
-				methodName = "[CarteM]";
-			result.append("perso").append(finalObjectNumber).append(".").append(methodName).append("();");
-		}
-		else
-			result.append("System.out.println(perso").append(finalObjectNumber).append(");");
-		return result.toString();
-	}
+    //public void addCard(Integer number, CastGameTypable card) {
+    //	cardMap.put(number, card);
+    //}
 
-	public boolean getUseMethod() {
-		return useMethod;
-	}
+    //public void reset() {
+    //	cardMap.clear();
+    //	methodName = null;
+    //}
 
-	public FinalAnswer getAnswer(Map<Integer, CastGameTypable> cardMap, String methodName) {
-		Map<Integer, CastGameObject> objectMap = new Hashtable<Integer, CastGameObject>();
-		CastGameResult result;
-		int i = 1;
-		for (LignTemplate lt : lignList) {
-			if (lt.getDeclarationTypeNumber() != null) {
-				if (objectMap.containsKey(lt.getDeclarationTypeNumber()))
-					return new FinalAnswer(InstructionResult.COMPILATION_FAIL, "Type déjà déclaré", "", i);
-				objectMap.put(
-					lt.getObjectNumber(),
-					new CastGameObject(cardMap.get(lt.getDeclarationTypeNumber()), "perso" + lt.getObjectNumber())
-				);
-			}
-			if (lt.useNew()) {
-				result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), cardMap.get(lt.getOtherItemNumber()));
-			} else {
-				result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), objectMap.get(lt.getOtherItemNumber()));
-			}
-			if (result instanceof CastGameAnswer)
-				return new FinalAnswer((CastGameAnswer) result, i);
-			i++;
-		}
-		
-		if (useMethod)
-			return new FinalAnswer(objectMap.get(finalObjectNumber).executeMethod(methodName), i);
-		
-		return new FinalAnswer(objectMap.get(finalObjectNumber).sysOutDisplay(), i);
-	}
+    public String toString() {
+        return getCorrectString(null);
+    }
 
-	public Set<Integer> getNumberClassCard() {
-		Set<Integer> result = new TreeSet<Integer>();
+    public String getCorrectString(Map<Integer, CastGameTypable> cardMap) {
+        return getCorrectString(cardMap, null);
+    }
 
-		for (LignTemplate lt : lignList) {
-			if (lt.getDeclarationTypeNumber() != null)
-				result.add(lt.getDeclarationTypeNumber());
-			if (lt.getExplicitCastNumber() != null)
-				result.add(lt.getExplicitCastNumber());
-			if (lt.useNew())
-				result.add(lt.getOtherItemNumber());
-		}
+    public String getCorrectString(Map<Integer, CastGameTypable> cardMap, String methodName) {
+        StringBuilder result = new StringBuilder();
+        for (LignTemplate lt : lignList)
+            result.append(lt.getString(cardMap)).append("\n");
+        if (useMethod) {
+            if (methodName == null)
+                methodName = "[CarteM]";
+            result.append("perso").append(finalObjectNumber).append(".").append(methodName).append("();");
+        } else
+            result.append("System.out.println(perso").append(finalObjectNumber).append(");");
+        return result.toString();
+    }
 
-		return result;
-	}
+    public boolean getUseMethod() {
+        return useMethod;
+    }
+
+    public FinalAnswer getAnswer(Map<Integer, CastGameTypable> cardMap, String methodName) {
+        Map<Integer, CastGameObject> objectMap = new Hashtable<Integer, CastGameObject>();
+        CastGameResult result;
+        int i = 1;
+        for (LignTemplate lt : lignList) {
+            if (lt.getDeclarationTypeNumber() != null) {
+                if (objectMap.containsKey(lt.getDeclarationTypeNumber()))
+                    return new FinalAnswer(InstructionResult.COMPILATION_FAIL, "Type déjà déclaré", "", i);
+                objectMap.put(
+                        lt.getObjectNumber(),
+                        new CastGameObject(cardMap.get(lt.getDeclarationTypeNumber()), "perso" + lt.getObjectNumber())
+                );
+            }
+            if (lt.useNew()) {
+                result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), cardMap.get(lt.getOtherItemNumber()));
+            } else {
+                result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), objectMap.get(lt.getOtherItemNumber()));
+            }
+            if (result instanceof CastGameAnswer)
+                return new FinalAnswer((CastGameAnswer) result, i);
+            i++;
+        }
+
+        if (useMethod)
+            return new FinalAnswer(objectMap.get(finalObjectNumber).executeMethod(methodName), i);
+
+        return new FinalAnswer(objectMap.get(finalObjectNumber).sysOutDisplay(), i);
+    }
+
+    public Set<Integer> getNumberClassCard() {
+        Set<Integer> result = new TreeSet<Integer>();
+
+        for (LignTemplate lt : lignList) {
+            if (lt.getDeclarationTypeNumber() != null)
+                result.add(lt.getDeclarationTypeNumber());
+            if (lt.getExplicitCastNumber() != null)
+                result.add(lt.getExplicitCastNumber());
+            if (lt.useNew())
+                result.add(lt.getOtherItemNumber());
+        }
+
+        return result;
+    }
 }

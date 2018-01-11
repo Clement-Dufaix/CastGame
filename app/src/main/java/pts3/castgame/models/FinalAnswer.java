@@ -1,8 +1,5 @@
 package pts3.castgame.models;
 
-import pts3.castgame.models.CastGameAnswer;
-import pts3.castgame.models.InstructionResult;
-
 public class FinalAnswer extends CastGameAnswer {
 
     private int lineNumber;

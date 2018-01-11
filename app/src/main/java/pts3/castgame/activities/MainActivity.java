@@ -12,14 +12,15 @@ import pts3.castgame.R;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameTypeFragment;
 import pts3.castgame.fragments.AnswerCompanionFragment;
-import pts3.castgame.fragments.ResultatPapierFragment;
 import pts3.castgame.fragments.TemplateFragment;
+import pts3.castgame.models.lien.FacadeAnswer;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class MainActivity extends AppCompatActivity {
 
     Intent intentMap;
     FacadeMoteur facade;
+    FacadeAnswer facadeAnswer;
 
     private static final String fragTag = "FRAG";
 
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
     public FacadeMoteur getFacade() {
         return facade;
+    }
+
+    public FacadeAnswer getFacadeAnswer() {
+        return facadeAnswer;
     }
 
     private void setFragment(Fragment fragment) {
@@ -69,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadCompanionAnswer() {
-        ResultatPapierFragment newFragment = new ResultatPapierFragment();
+        AnswerCompanionFragment newFragment = new AnswerCompanionFragment();
         setFragment(newFragment);
     }
 
