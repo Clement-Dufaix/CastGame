@@ -32,5 +32,11 @@
     <string name="icon_map">map_icon</string>
     <string name="icon_menu">menu_icon</string>
     <string name="content_description">icon</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
 
 </resources>
