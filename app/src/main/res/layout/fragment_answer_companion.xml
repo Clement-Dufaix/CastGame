@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    android:gravity="center"
     android:orientation="vertical"
     tools:context="pts3.castgame.fragments.AnswerCompanionFragment">
 
@@ -35,11 +34,9 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <ImageView
+            <View
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/content_description" />
+                android:layout_height="40dp" />
 
             <TextView
                 style="@style/Text"
@@ -69,11 +66,9 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <ImageView
+            <View
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/content_description" />
+                android:layout_height="40dp" />
 
             <TextView
                 style="@style/Text"
@@ -104,11 +99,9 @@
             android:orientation="horizontal"
             android:padding="5dp">
 
-            <ImageView
+            <View
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:contentDescription="@string/content_description" />
+                android:layout_height="40dp" />
 
             <TextView
                 android:id="@+id/text_display"
@@ -131,11 +124,10 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/buttonNewAnswer"
+        android:id="@+id/b_new_template"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="loadNewTemplate"
         android:text="@string/new_template" />
 
 </LinearLayout>

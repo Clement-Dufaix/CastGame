@@ -6,24 +6,36 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import pts3.castgame.R;
+import pts3.castgame.activities.MainActivity;
 
 public class DifficultyChoiceFragment extends Fragment {
 
+    private Button bEasy;
+    private Button bHard;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
-    }
+        View view = inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
 
-    // Juste pour éviter les erreurs dans le preview du fragment
-    public void selectEasyMode(View view) {
+        bEasy = view.findViewById(R.id.b_easy);
+        bEasy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).setDifficulty("easy");
+            }
+        });
 
-    }
-
-    // Juste pour éviter les erreurs dans le preview du fragment
-    public void selectHardMode(View view) {
-
+        bHard = view.findViewById(R.id.b_hard);
+        bHard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).setDifficulty("hard");
+            }
+        });
+        return view;
     }
 
 }

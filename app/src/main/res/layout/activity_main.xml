@@ -17,19 +17,21 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/menu" />
+            android:background="@drawable/menu"
+            android:contentDescription="@string/content_description" />
 
         <TextView
             style="@style/NomApp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".8" />
+            android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/b_map"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/map"
-            android:onClick="showMap" />
+            android:contentDescription="@string/content_description" />
 
     </LinearLayout>
 
@@ -47,6 +49,7 @@
             android:name="pts3.castgame.fragments.DifficultyChoiceFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:tag="TAG"
             tools:layout="@layout/fragment_difficulty_choice" />
 
     </FrameLayout>

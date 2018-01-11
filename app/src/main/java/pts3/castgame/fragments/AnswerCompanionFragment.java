@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,6 +15,8 @@ import pts3.castgame.models.lien.FacadeAnswer;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class AnswerCompanionFragment extends Fragment {
+
+    Button bNewTemplate;
 
     FacadeMoteur facadeMoteur;
     FacadeAnswer facadeAnswer;
@@ -30,10 +33,19 @@ public class AnswerCompanionFragment extends Fragment {
 
         initializeContainers(view);
 
+        bNewTemplate = view.findViewById(R.id.b_new_template);
+        bNewTemplate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MainActivity) getActivity()).loadNewTemplate();
+            }
+        });
+
         // On n'affiche rien en sortie si on utilise une méthode.
         if (facadeMoteur.useMethod()) {
             displayTextView.setText("Pas d'affichage,\n appel à une méthode");
         } else {
+            // Crash
             // displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
         }
         return view;
@@ -42,7 +54,6 @@ public class AnswerCompanionFragment extends Fragment {
     private void initializeContainers(View view) {
         MainActivity mainActivity = (MainActivity) getActivity();
         facadeMoteur = mainActivity.getFacade();
-        facadeAnswer = mainActivity.getFacadeAnswer();
 
         templateContainer = view.findViewById(R.id.template_container);
         templateContainer.setText(facadeMoteur.getTemplateString());
