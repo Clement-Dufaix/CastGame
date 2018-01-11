@@ -2,17 +2,13 @@ package pts3.castgame.models;
 
 public class CastGameObject {
 
-    //TODO ecrires des textes pour les resultats
-    //TODO transformer des chaines en constantes (Pas Forcement si on utilise les noms de classes
-    //TODO trouver une facon jolie d'espacer le code
+    //TODO ecrires des bons textes pour les resultats
 
     private CastGameTypable objectType;
     private CastGameClass realObjectType;
     private String variableName;
 
-
     // [objectType.getName()] variableName;
-
     public CastGameObject(CastGameTypable objectType, String variableName) throws IllegalArgumentException {
 
         if (objectType == null) // Programmation defensive. A voir si je dois faire ca ailleurs
@@ -29,7 +25,6 @@ public class CastGameObject {
 
 
     // new [realObjectType.getName()]();
-
     private CastGameObject(CastGameClass realObjectType) { //private car aucun interet de faire un new dans le vide
 
         this.objectType = null;
@@ -40,7 +35,6 @@ public class CastGameObject {
 
 
     // (cast) [object.variableName];
-
     private CastGameObject castedTo(CastGameTypable castType) { //private car la fonction ne contient aucune securitee
         CastGameObject o = new CastGameObject(realObjectType);
         o.objectType = castType;
@@ -49,10 +43,9 @@ public class CastGameObject {
     }
 
     // variableName = new [instanciatedClass.getName()]();
-
     public CastGameResult affectation(CastGameTypable instanciatedClass) {
         if (instanciatedClass instanceof CastGameInterface)
-            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface, donc non instanciable.", "");
+            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, instanciatedClass.getName() + " est une interface, donc non instanciable.", "");
 
         return affectation(new CastGameObject((CastGameClass) instanciatedClass));
 
@@ -60,10 +53,9 @@ public class CastGameObject {
 
 
     // variableName = (castType) new [instanciatedClass.getName()]();
-
     public CastGameResult affectation(CastGameTypable castType, CastGameTypable instanciatedClass) {
         if (instanciatedClass instanceof CastGameInterface)
-            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface, donc non instanciable.", "");
+            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, instanciatedClass.getName() + " est une interface, donc non instanciable.", "");
 
         return affectation(castType, new CastGameObject((CastGameClass) instanciatedClass));
 
@@ -71,7 +63,6 @@ public class CastGameObject {
 
 
     // variableName = [object.getVariableName()];
-
     public CastGameResult affectation(CastGameObject object) { //Les differents cas sont separes, au cas ou on aurait besoin d'explication
 
         CastGameClass otherObjectRealType = object.getRealObjectType();
@@ -86,11 +77,11 @@ public class CastGameObject {
                 return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Dans l'autre sens", "");
 
             if (!objectTypeClass.isRelatedOrEqual(otherObjectRealType))
-                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Rien a voir", "");
+                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, objectTypeClass.getName() + " et "  + otherObjectRealType.getName() + " ne sont pas liées", "");
 
-            // cas general de reussite : isParentOrEqual()
+            //cas general de reussite : isParentOrEqual()
 
-            realObjectType = otherObjectRealType; // affectation concrete
+            realObjectType = otherObjectRealType; //affectation concrete
 
             if (objectTypeClass.equals(otherObjectRealType))
                 return new CastGameResult(InstructionResult.OK);
@@ -111,13 +102,12 @@ public class CastGameObject {
 
         }
 
-        return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "WTF !!??!?!", "");
+        return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, ":(", ":(");
 
     }
 
 
     // variableName = ([castType.getName()]) [object.getVariableName()];
-
     public CastGameResult affectation(CastGameTypable castType, CastGameObject object) {
 
         if (castType == null)
@@ -151,7 +141,6 @@ public class CastGameObject {
 
 
     // variableName.methodName();
-
     public CastGameAnswer executeMethod(String methodName) { // Je ne sais pas si il faut faire plus de verification sachant que bcp ont ete faite avant
 
         if (!isInitialized())
@@ -169,7 +158,6 @@ public class CastGameObject {
 
 
     // System.out.println(variableName);
-
     public CastGameAnswer sysOutDisplay() {
 
         if (!isInitialized())

@@ -12,6 +12,7 @@ import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
 import pts3.castgame.models.CastGameTemplate;
 import pts3.castgame.models.CastGameTypable;
+import pts3.castgame.models.FinalAnswer;
 import pts3.castgame.models.LignTemplate;
 
 public class FacadeMoteur {
@@ -55,6 +56,10 @@ public class FacadeMoteur {
                 imax = integer;
         cartesClassesSelectionnee.remove(imax);
         return true;
+    }
+
+    public FinalAnswer getAnswer() {
+        return templateChoisi.getAnswer(cartesClassesSelectionnee, methodeSelectionnee);
     }
 
     public void reset() {

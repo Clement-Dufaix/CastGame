@@ -1,13 +1,8 @@
 package pts3.castgame.models;
-/*
-    idees :
-	explication etape par etape pour chaque morceau de ligne
-	donne la ligne de code qui correspond � l'instruction
-*/
 
 public class CastGameResult {
 
-    protected InstructionResult instructionResult;
+    private InstructionResult instructionResult;
 
     public CastGameResult(InstructionResult instructionResult) {
         this.instructionResult = instructionResult;
