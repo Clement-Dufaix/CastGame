@@ -63,6 +63,9 @@ public class CastGameClass extends CastGameTypable {
         for (CastGameInterface i : implementedInterfaces)
             result.addAll(i.getExtendsInterfaces());
 
+        if (parentClass != null)
+            result.addAll(parentClass.getImplementedInterfaces());
+
         return result;
     }
 

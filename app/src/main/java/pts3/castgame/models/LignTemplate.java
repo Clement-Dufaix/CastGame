@@ -5,8 +5,7 @@ import java.util.Map;
 
 public class LignTemplate {
 
-    // C'est pas trop objet tout ça ^^
-    private Integer declarationTypeNumber; // C'est juste pour nommer le nom de la carte ? Comment Clément modifie-t-il alors pour qu'au lieu de "Carte 1" on est "Guerrier" par exemple ?
+    private Integer declarationTypeNumber;
     private int objectNumber;
     private Integer explicitCastNumber;
     private boolean useNew;
@@ -47,9 +46,6 @@ public class LignTemplate {
         return otherItemNumber;
     }
 
-
-    // Du coup, à faire des conditions plutôt que prendre des objets pour remplir (juste mon avis) ce qui fait que
-    // la fonction de récupération sous forme de chaîne est pas top :/
     public String getString(Map<Integer, CastGameTypable> cardMap) {
         if (cardMap == null)
             cardMap = new Hashtable<Integer, CastGameTypable>();
@@ -62,10 +58,12 @@ public class LignTemplate {
         }
         result += "perso" + objectNumber + " = ";
         if (explicitCastNumber != null) {
+            result += "(";
             if (cardMap.containsKey(explicitCastNumber))
-                result += "(" + cardMap.get(explicitCastNumber).getName() + ") ";
+                result += cardMap.get(explicitCastNumber).getName();
             else
-                result += "[Carte" + explicitCastNumber + "] ";
+                result += "[Carte" + explicitCastNumber + "]";
+            result += ") ";
         }
         if (useNew) {
             result += "new ";

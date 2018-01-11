@@ -1,11 +1,13 @@
 package pts3.castgame.models.lien;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
@@ -173,109 +175,109 @@ public class FacadeMoteur {
 
     public static List<CastGameTemplate> templatesDuProf() {
         List<CastGameTemplate> result = new ArrayList<CastGameTemplate>(18);
+        List<LignTemplate> lignList = new ArrayList<LignTemplate>(3);
 
         //1
-        List<LignTemplate> lignList = new ArrayList<LignTemplate>(3);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         lignList.add(new LignTemplate(2, 2, null, true, 2));
         lignList.add(new LignTemplate(null, 1, 1, false, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
+        lignList.clear();
 
         //2
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         lignList.add(new LignTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
+        lignList.clear();
 
         //3
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         lignList.add(new LignTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
+        lignList.clear();
 
         //4
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         lignList.add(new LignTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
+        lignList.clear();
 
         //5
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         lignList.add(new LignTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
+        lignList.clear();
 
         //6
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
+        lignList.clear();
 
         //7
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         lignList.add(new LignTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
+        lignList.clear();
 
         //8
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         result.add(new CastGameTemplate(lignList, 1, false));
+        lignList.clear();
 
         //9
-        lignList = new ArrayList<LignTemplate>(3);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         lignList.add(new LignTemplate(2, 2, null, true, 2));
-        lignList.add(new LignTemplate(null, 1, null, false, 1));
+        lignList.add(new LignTemplate(null, 1, null, false, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
+        lignList.clear();
 
         //10
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         lignList.add(new LignTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
+        lignList.clear();
 
         //11
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         lignList.add(new LignTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
+        lignList.clear();
 
         //12
-        lignList = new ArrayList<LignTemplate>(3);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         lignList.add(new LignTemplate(2, 2, null, true, 2));
         lignList.add(new LignTemplate(null, 1, 1, false, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
+        lignList.clear();
 
         //13
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
+        lignList.clear();
 
         //14
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
+        lignList.clear();
 
         //15
-        lignList = new ArrayList<LignTemplate>(3);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         lignList.add(new LignTemplate(2, 2, null, true, 2));
         lignList.add(new LignTemplate(null, 1, null, false, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
+        lignList.clear();
 
         //16
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, 1, true, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
+        lignList.clear();
 
         //17
-        lignList = new ArrayList<LignTemplate>(1);
         lignList.add(new LignTemplate(1, 1, null, true, 1));
         result.add(new CastGameTemplate(lignList, 1, true));
+        lignList.clear();
 
         //18
-        lignList = new ArrayList<LignTemplate>(2);
         lignList.add(new LignTemplate(1, 1, null, true, 2));
         lignList.add(new LignTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
@@ -284,120 +286,182 @@ public class FacadeMoteur {
     }
 
     private static List<CastGameTypable> carteClasseDifficileDuProf() {
-        //TODO Faire les liens entres les classes
-        //TODO Ajouter des méthodes
-
         List<CastGameTypable> result = new ArrayList<CastGameTypable>(15);
+        Map<String, String> methodList = new Hashtable<String, String>();
+        Set<String> prototypeList = new HashSet<String>();
+        Set<CastGameInterface> interfaces = new HashSet<CastGameInterface>();
 
         //Classe Mendiant
-        result.add(new CastGameClass("Mendiant", "Je suis un mendiant"));
+        CastGameClass mendiant = new CastGameClass("Mendiant", "Je suis un mendiant");
+        result.add(mendiant);
 
         //Interface Defenseur
-        result.add(new CastGameInterface("Defenseur"));
+        prototypeList.add("defendre");
+        CastGameInterface defenseur = new CastGameInterface("Defenseur", prototypeList);
+        result.add(defenseur);
 
         //Interface Attaquant
-        result.add(new CastGameInterface("Attaquant"));
+        prototypeList.clear();
+        prototypeList.add("attaquer");
+        CastGameInterface attaquant = new CastGameInterface("Attaquant", prototypeList);
+        result.add(attaquant);
 
         //Interface Combattant
-        result.add(new CastGameInterface("Combattant"));
+        interfaces.add(defenseur);
+        interfaces.add(attaquant);
+        CastGameInterface combattant = new CastGameInterface("Combattant", null, interfaces);
+        result.add(combattant);
 
         //Interface Guerisseur
-        result.add(new CastGameInterface("Guerisseur"));
+        prototypeList.clear();
+        prototypeList.add("guerir");
+        CastGameInterface guerisseur = new CastGameInterface("Guerisseur", prototypeList);
+        result.add(guerisseur);
 
         //Interface LanceurSortProfane
-        result.add(new CastGameInterface("LanceurSortProfane"));
+        prototypeList.clear();
+        prototypeList.add("lancerSort");
+        CastGameInterface lanceurSortProfane = new CastGameInterface("LanceurSortProfane", prototypeList);
+        result.add(lanceurSortProfane);
 
         //Classe Guerrier
-        result.add(new CastGameClass("Guerrier", "Je suis un guerrier"));
+        interfaces.clear();
+        methodList.put("attaquer", "J'attaque");
+        methodList.put("defendre", "Je défends");
+        interfaces.add(combattant);
+        CastGameClass guerrier = new CastGameClass("Guerrier", "Je suis un guerrier", methodList, interfaces);
+        result.add(guerrier);
 
         //Interface LanceurSortDivin
-        result.add(new CastGameInterface("LanceurSortDivin"));
+        CastGameInterface lanceurSortDivin = new CastGameInterface("LanceurSortDivin", prototypeList);
+        result.add(lanceurSortDivin);
 
         //Classe Magicien
-        result.add(new CastGameClass("Magicien", "Je suis un magicien"));
+        methodList.clear();
+        interfaces.clear();
+        methodList.put("lancerSort", "Je lance un sort");
+        methodList.put("guerir", "Je guéris");
+        interfaces.add(guerisseur);
+        interfaces.add(lanceurSortProfane);
+        CastGameClass magicien = new CastGameClass("Magicien", "Je suis un magicien", methodList, interfaces);
+        result.add(magicien);
 
         //Classe Sorceleur
-        result.add(new CastGameClass("Sorceleur", "Je suis un sorceleur"));
+        methodList.clear();
+        methodList.put("defendre", "Défense magique");
+        methodList.put("lancerSort", "Je lance un sort d'attaque");
+        methodList.put("guerir", "Guérison");
+        CastGameClass sorceleur = new CastGameClass("Sorceleur", "Je suis un sorceleur", methodList, guerrier, interfaces);
+        result.add(sorceleur);
 
         //Classe Clerc
-        result.add(new CastGameClass("Clerc", "Je suis un clerc"));
+        methodList.clear();
+        interfaces.clear();
+        methodList.put("attaquer", "Au nom de dieu, J'attaque");
+        methodList.put("lancerSort", "Au nom de dieu, je lance un sort");
+        interfaces.add(lanceurSortDivin);
+        CastGameClass clerc = new CastGameClass("Clerc", "Je suis un clerc", methodList, guerrier, interfaces);
+        result.add(clerc);
 
         //Classe Pretre
-        result.add(new CastGameClass("Pretre", "Je suis un pretre"));
+        methodList.clear();
+        methodList.put("lancerSort", "Je prie pour lancer un sort");
+        CastGameClass pretre = new CastGameClass("Pretre", "Je suis un pretre", methodList, interfaces);
+        result.add(pretre);
 
         //Classe Sorcier
-        result.add(new CastGameClass("Sorcier", "Je suis un sorcier"));
+        methodList.clear();
+        methodList.put("lancerSort", "Je lance un sort puissant");
+        CastGameClass sorcier = new CastGameClass("Sorcier", "Je suis un sorcier", methodList, magicien);
+        result.add(sorcier);
 
         //Interface LanceurSortMalefique
-        result.add(new CastGameInterface("LanceurSortMalefique"));
+        prototypeList.clear();
+        prototypeList.add("reveillerMort");
+        CastGameInterface lanceurSortMalefique = new CastGameInterface("LanceurSortMalefique", prototypeList, interfaces);
+        result.add(lanceurSortMalefique);
 
         //Classe Necromancien
-        result.add(new CastGameClass("Necromancien", "Je suis un necromancien"));
+        methodList.clear();
+        interfaces.clear();
+        methodList.put("lancerSort", "Je lance un sort mortel");
+        methodList.put("reveillerMort", "Je réveille les morts");
+        interfaces.add(lanceurSortMalefique);
+        CastGameClass necromancien = new CastGameClass("Necromancien", "Je suis un necromancien", methodList, sorcier, interfaces);
+        result.add(necromancien);
 
         return result;
     }
 
     private static List<CastGameTypable> carteClasseFacileDuProf() {
-        //TODO Faire les liens entres les classes
-        //TODO Ajouter des méthodes
-        List<CastGameTypable> result = new ArrayList<CastGameTypable>();
-
-        //Classe Guerisseur
-        result.add(new CastGameClass("Guerisseur", "Je suis un guerisseur"));
-
-        //Classe Guerrier
-        result.add(new CastGameClass("Guerrier", "Je suis un guerrier"));
+        List<CastGameTypable> result = new ArrayList<CastGameTypable>(15);
+        Map<String, String> methodList = new Hashtable<String, String>();
 
         //Classe Mendiant
-        result.add(new CastGameClass("Mendiant", "Je suis un mendiant"));
+        CastGameClass mendiant = new CastGameClass("Mendiant", "Je suis un mendiant");
+        result.add(mendiant);
 
-        //Classe Sorcier
-        result.add(new CastGameClass("Sorcier", "Je suis un sorcier"));
+        //Classe Guerisseur
+        methodList.put("guerir", "Je guéris");
+        CastGameClass guerisseur = new CastGameClass("Guerisseur", "Je suis un guérisseur", methodList);
+        result.add(guerisseur);
+
+        //Classe Guerrier
+        methodList.clear();
+        methodList.put("attaquer", "J'attaque");
+        methodList.put("defendre", "Je défends");
+        CastGameClass guerrier = new CastGameClass("Guerrier", "Je suis un guerrier", methodList);
+        result.add(guerrier);
 
         //Classe Sorceleur
-        result.add(new CastGameClass("Sorceleur", "Je suis un sorceleur"));
+        methodList.clear();
+        methodList.put("attaquer", "Attaque de sorceleur");
+        CastGameClass sorceleur = new CastGameClass("Sorceleur", "Je suis un sorceleur", methodList, guerrier);
+        result.add(sorceleur);
 
         //Classe Clerc
-        result.add(new CastGameClass("Clerc", "Je suis un clerc"));
+        methodList.clear();
+        methodList.put("defendre", "Au nom de dieu, je défends");
+        CastGameClass clerc = new CastGameClass("Clerc", "Je suis un clerc", methodList, guerrier);
+        result.add(clerc);
+
+        //Classe Sorcier
+        methodList.clear();
+        methodList.put("attaquer", "J'attaque grâce à mon baton magique");
+        methodList.put("defendre", "Je défends grâce à mon baton magique");
+        CastGameClass sorcier = new CastGameClass("Sorcier", "Je suis un sorcier", methodList, guerisseur);
+        result.add(sorcier);
 
         //Classe Necromancien
-        result.add(new CastGameClass("Necromancien", "Je suis un necromancien"));
+        methodList.clear();
+        methodList.put("reveillerMort", "Debout, c'est l'heure de se réveiller.");
+        CastGameClass necromancien = new CastGameClass("Necromancien", "Je suis un necromancien", methodList, sorcier);
+        result.add(necromancien);
 
         return result;
     }
 
     private static List<String> carteMethodeDifficileDuProf() {
-        //TODO Reprendre toute les methodes des classes
         List<String> result = new ArrayList<String>();
+        Set<String> set = new TreeSet<String>();
 
-        result.add("defendre");
-        result.add("attaquer");
-        result.add("guerir");
-        result.add("lancerSort");
-        result.add("reveillerMort");
+        for (CastGameTypable t : CARTE_CLASSES_DIFFICILE)
+            set.addAll(t.getPrototypeList());
+
+        result.addAll(set);
 
         return result;
     }
 
     private static List<String> carteMethodeFacileDuProf() {
-        //TODO Reprendre toute les methodes des classes
         List<String> result = new ArrayList<String>();
+        Set<String> set = new TreeSet<String>();
 
-        result.add("defendre");
-        result.add("attaquer");
-        result.add("guerir");
-        result.add("lancerSort");
-        result.add("reveillerMort");
+        for (CastGameTypable t : CARTE_CLASSES_FACILE)
+            set.addAll(t.getPrototypeList());
+
+        result.addAll(set);
 
         return result;
     }
-
-    public static List<CastGameTypable> carteClasseDuProf() {
-        return null; //NFOIEIOHFSOIDGJFGIO
-    }
 }
-
-/*
-"Défenseur", "Attaquant", "Mendiant", "Combattant", "Guerrisseur", "LanceurDeSortProfane", "Guerrier", "LanceurDeSortDivin",
-                "Magicien", "Sorceleur", "Clerc", "Pretre", "Sorcier", "LanceurDeSortMagique", "Necromancien"
- */

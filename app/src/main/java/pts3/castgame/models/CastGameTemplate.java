@@ -12,26 +12,12 @@ public class CastGameTemplate {
     private int finalObjectNumber;
     private boolean useMethod;
 
-    //private Map<Integer, CastGameTypable> cardMap;
-    //private String methodName;
-
     public CastGameTemplate(List<LignTemplate> lignList, int finalObjectNumber, boolean useMethod) {
         super();
         this.lignList = new ArrayList<>(lignList);
         this.finalObjectNumber = finalObjectNumber;
         this.useMethod = useMethod;
-        //cardMap = new Hashtable<Integer, CastGameTypable>();
-        //methodName = null;
     }
-
-    //public void addCard(Integer number, CastGameTypable card) {
-    //	cardMap.put(number, card);
-    //}
-
-    //public void reset() {
-    //	cardMap.clear();
-    //	methodName = null;
-    //}
 
     public String toString() {
         return getCorrectString(null);
@@ -71,10 +57,15 @@ public class CastGameTemplate {
                         new CastGameObject(cardMap.get(lt.getDeclarationTypeNumber()), "perso" + lt.getObjectNumber())
                 );
             }
+            CastGameTypable cast;
+            if (cardMap.get(lt.getExplicitCastNumber()) == null)
+                cast = null;
+            else
+                cast = cardMap.get(lt.getExplicitCastNumber());
             if (lt.useNew()) {
-                result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), cardMap.get(lt.getOtherItemNumber()));
+                result = objectMap.get(lt.getObjectNumber()).affectation(cast, cardMap.get(lt.getOtherItemNumber()));
             } else {
-                result = objectMap.get(lt.getObjectNumber()).affectation(cardMap.get(lt.getExplicitCastNumber()), objectMap.get(lt.getOtherItemNumber()));
+                result = objectMap.get(lt.getObjectNumber()).affectation(cast, objectMap.get(lt.getOtherItemNumber()));
             }
             if (result instanceof CastGameAnswer)
                 return new FinalAnswer((CastGameAnswer) result, i);
