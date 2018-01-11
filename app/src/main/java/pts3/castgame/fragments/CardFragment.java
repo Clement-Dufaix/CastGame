@@ -69,5 +69,4 @@ public class CardFragment extends Fragment {
         return v;
     }
 
-
 }
