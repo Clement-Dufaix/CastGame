@@ -1,6 +1,12 @@
 <resources>
 
     <string name="app_name">CastGame</string>
+    <string name="nav_home">Revenir au menu</string>
+    <string name="nav_help">Afficher l\'aide</string>
+    <string name="nav_exit">Quitter le jeu</string>
+    <string name="nav_about">A propos</string>
+
+    <string name="ic_desc">icône</string>
 
     <!-- nom des pages -->
     <string name="page_difficulte">Choix de la difficulté</string>
@@ -27,12 +33,6 @@
     <string name="rep_display">Affiche\n\n</string>
     <string name="new_template">Nouveau template</string>
 
-    <!-- Icônes -->
-    <string name="icon_backarrow">backarrow_icon</string>
-    <string name="icon_map">map_icon</string>
-    <string name="icon_menu">menu_icon</string>
-    <string name="content_description">icon</string>
-    <string name="title_activity_main">MainActivity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

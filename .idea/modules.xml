@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://C:\work\android\CastGame1101\CastGame.iml" filepath="C:\work\android\CastGame1101\CastGame.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/CastGame1101.iml" filepath="$PROJECT_DIR$/.idea/CastGame1101.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CastGame.iml" filepath="$PROJECT_DIR$/CastGame.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://C:\work\android\CastGame1101\app\app.iml" filepath="C:\work\android\CastGame1101\app\app.iml" />
     </modules>
   </component>
 </project>

@@ -19,7 +19,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/backarrow"
-            android:contentDescription="@string/icon_backarrow" />
+            android:contentDescription="@string/ic_desc" />
 
         <TextView
             style="@style/NomApp"
