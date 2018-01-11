@@ -34,7 +34,7 @@ public class AnswerCompanionFragment extends Fragment {
         if (facadeMoteur.useMethod()) {
             displayTextView.setText("Pas d'affichage,\n appel à une méthode");
         } else {
-            displayTextView.setText("Affiche :\n" + facadeAnswer);
+            // displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
         }
         return view;
     }
