@@ -30,8 +30,11 @@ public class CastGameClass extends CastGameTypable {
     }
 
     public CastGameClass(String name, String resultToString, Map<String, String> methodList, CastGameClass parentClass, Set<CastGameInterface> implementedInterfaces) {
-        //TODO verifier si methodList est compatible avec implementedInterfaces
         super(name);
+        //Vérification
+        //for (CastGameInterface i : implementedInterfaces)
+        //    if (!methodList.keySet().containsAll(i.getPrototypeList()))
+        //        throw new Exception();
         this.resultToString = resultToString;
         this.methodList = new Hashtable<String, String>(methodList);
         this.parentClass = parentClass;
@@ -55,15 +58,18 @@ public class CastGameClass extends CastGameTypable {
     }
 
     public Set<CastGameInterface> getImplementedInterfaces() {
-        //TODO c'est pas encore bon car il faut reprendre les autres interfaces
-        return implementedInterfaces;
+        Set<CastGameInterface> result = new HashSet<CastGameInterface>(implementedInterfaces);
+
+        for (CastGameInterface i : implementedInterfaces)
+            result.addAll(i.getExtendsInterfaces());
+
+        return result;
     }
 
     public boolean implementsThis(CastGameInterface theInterface) {
         return getImplementedInterfaces().contains(theInterface);
     }
 
-    //Parmis les 6 fonctions suivantes, utilsez en priorite isChild ou isChildOrEqual
     public boolean isChild(CastGameClass supposedParent) {
         if (parentClass == null)
             return false;
@@ -98,11 +104,5 @@ public class CastGameClass extends CastGameTypable {
 
     public String getResultToString() {
         return resultToString;
-    }
-
-    //Methode peut-etre pas necessaire mais il vaut mieux la coder pour le constructeur (prog defensive)
-    public boolean implementAllMethods() {
-        // TODO
-        return false;
     }
 }

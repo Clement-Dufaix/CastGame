@@ -28,8 +28,12 @@ public class CastGameInterface extends CastGameTypable {
     }
 
     public Set<CastGameInterface> getExtendsInterfaces() {
-        //TODO
-        return null;
+        Set<CastGameInterface> result = new HashSet<CastGameInterface>(extendsInterfaces);
+
+        for (CastGameInterface i : extendsInterfaces) // Pas de cycle, pas de probleme
+            result.addAll(i.getExtendsInterfaces());
+
+        return result;
     }
 
     @Override

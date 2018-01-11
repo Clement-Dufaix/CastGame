@@ -48,7 +48,6 @@ public class CastGameObject {
             return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, instanciatedClass.getName() + " est une interface, donc non instanciable.", "");
 
         return affectation(new CastGameObject((CastGameClass) instanciatedClass));
-
     }
 
 
@@ -94,7 +93,7 @@ public class CastGameObject {
         if (objectType instanceof CastGameInterface) {
 
             if (!otherObjectRealType.implementsThis((CastGameInterface) objectType))
-                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface non implementee par l'autre objet", "");
+                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Interface " + objectType.getName() + " non implementee par l'autre objet de type réel " + otherObjectRealType.getName(), "");
 
             realObjectType = otherObjectRealType; // affectation concrete
 
@@ -103,7 +102,6 @@ public class CastGameObject {
         }
 
         return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, ":(", ":(");
-
     }
 
 
@@ -120,7 +118,7 @@ public class CastGameObject {
             CastGameClass castTypeClass = (CastGameClass) castType;
 
             if (!castTypeClass.isRelatedOrEqual(otherObjectRealType))
-                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "Rien a voir", "");
+                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, castTypeClass.getName() + " et "  + otherObjectRealType.getName() + " ne sont pas liées", "");
 
             if (castTypeClass.isChild(otherObjectRealType))
                 return new CastGameAnswer(InstructionResult.EXECUTION_FAIL, "Dans l'autre sens", "");
@@ -131,12 +129,11 @@ public class CastGameObject {
         if (castType instanceof CastGameInterface) {
 
             if (!otherObjectRealType.implementsThis((CastGameInterface) castType))
-                return new CastGameAnswer(InstructionResult.EXECUTION_FAIL, "Interface non implementee par l'autre objet", "");
+                return new CastGameAnswer(InstructionResult.EXECUTION_FAIL, "Interface " + objectType.getName() + " non implementee par l'autre objet de type réel " + otherObjectRealType.getName(), "");
 
         }
 
         return affectation(object.castedTo(castType)); // un cast comme en vrai mais ca ne change rien dans les calculs
-
     }
 
 
@@ -144,16 +141,15 @@ public class CastGameObject {
     public CastGameAnswer executeMethod(String methodName) { // Je ne sais pas si il faut faire plus de verification sachant que bcp ont ete faite avant
 
         if (!isInitialized())
-            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "", "");
+            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "executeMethod : !isInitialized()", "");
 
         if (!objectType.getPrototypeList().contains(methodName))
-            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "", "");
+            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "executeMethod : !objectType.getPrototypeList().contains(methodName)", "");
 
         if (!realObjectType.getPrototypeList().contains(methodName))
-            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "", "");
+            return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "executeMethod : !realObjectType.getPrototypeList().contains(methodName)", "");
 
         return new CastGameAnswer(InstructionResult.OK, "Ca marche", realObjectType.getMethodList().get(methodName));
-
     }
 
 
@@ -164,7 +160,6 @@ public class CastGameObject {
             return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, "", "");
 
         return new CastGameAnswer(InstructionResult.OK, "Ca marche", realObjectType.getResultToString());
-
     }
 
     public CastGameTypable getObjectType() {
