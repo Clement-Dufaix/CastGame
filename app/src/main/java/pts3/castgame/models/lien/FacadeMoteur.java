@@ -58,8 +58,8 @@ public class FacadeMoteur {
         return true;
     }
 
-    public FinalAnswer getAnswer() {
-        return templateChoisi.getAnswer(cartesClassesSelectionnee, methodeSelectionnee);
+    public FacadeAnswer getAnswer() {
+        return new FacadeAnswer(templateChoisi.getAnswer(cartesClassesSelectionnee, methodeSelectionnee));
     }
 
     public void reset() {

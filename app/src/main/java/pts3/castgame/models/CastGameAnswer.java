@@ -18,13 +18,4 @@ public class CastGameAnswer extends CastGameResult {
         return outputDisplay;
     }
 
-    @Override
-    public String toString() {
-        switch (instructionResult) {
-            case OK:
-                return super.toString() + " : output display = " + outputDisplay;
-            default:
-                return super.toString();
-        }
-    }
 }
