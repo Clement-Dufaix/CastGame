@@ -53,7 +53,7 @@ public class CardFragment extends Fragment {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {    //quand on clique sur un choix
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {  //on va se servir de la position de l'élément cliqué dans la liste
-                facade.ajouterCarte(position);
+                facade.ajouterCarte(position,etat);
                 if (facade.getEtat() != -1)
                     ((MainActivity) getActivity()).selectCard();
                 else ((MainActivity) getActivity()).loadCompanionAnswer();
