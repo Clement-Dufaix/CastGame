@@ -16,8 +16,10 @@
     <string name="difficile">Difficile</string>
 
     <!-- Type de jeu -->
-    <string name="jeu_papier">Mode compagnon</string>
-    <string name="jeu_solo">Jeu solo</string>
+    <string name="mode_companion">Mode compagnon</string>
+    <string name="mode_solo">Mode révisions</string>
+
+    <string name="start_game">C\'est parti !\nBonne chance</string>
 
     <!-- Réponses -->
     <string name="rep_compilation">Compile</string>
@@ -25,17 +27,10 @@
     <string name="rep_display">Affiche\n\n</string>
     <string name="new_template">Nouveau template</string>
 
-    <!-- Cartes Méthodes -->
-    <string name="attaquer">attaquer</string>
-    <string name="defendre">defendre</string>
-    <string name="querir">guerir</string>
-    <string name="lancerSort">lancerSort</string>
-    <string name="reveiller_mort">reveillerMort</string>
-
-    <string name="icon_menu">menu_icon</string>
-    <string name="icon_map">map_icon</string>
+    <!-- Icônes -->
     <string name="icon_backarrow">backarrow_icon</string>
-
-    <string name="content_description">icone</string>
+    <string name="icon_map">map_icon</string>
+    <string name="icon_menu">menu_icon</string>
+    <string name="content_description">icon</string>
 
 </resources>

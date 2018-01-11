@@ -26,7 +26,7 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/b_easy"
+            android:id="@+id/b_diff_easy"
             style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -36,7 +36,7 @@
             android:text="@string/facile" />
 
         <Button
-            android:id="@+id/b_hard"
+            android:id="@+id/b_diff_hard"
             style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"

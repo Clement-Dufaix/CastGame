@@ -20,7 +20,7 @@ public class DifficultyChoiceFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
 
-        bEasy = view.findViewById(R.id.b_easy);
+        bEasy = view.findViewById(R.id.b_diff_easy);
         bEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,7 +28,7 @@ public class DifficultyChoiceFragment extends Fragment {
             }
         });
 
-        bHard = view.findViewById(R.id.b_hard);
+        bHard = view.findViewById(R.id.b_diff_hard);
         bHard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

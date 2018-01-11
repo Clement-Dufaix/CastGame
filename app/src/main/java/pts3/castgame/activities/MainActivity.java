@@ -6,19 +6,15 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import pts3.castgame.R;
 import pts3.castgame.fragments.AnswerCompanionFragment;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameTypeFragment;
+import pts3.castgame.fragments.GameStartFragment;
 import pts3.castgame.fragments.TemplateFragment;
-import pts3.castgame.models.FinalAnswer;
-import pts3.castgame.models.InstructionResult;
-import pts3.castgame.models.lien.FacadeAnswer;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class MainActivity extends AppCompatActivity {
@@ -68,14 +64,13 @@ public class MainActivity extends AppCompatActivity {
      * @param difficulty La difficulté voulue
      */
     public void setDifficulty(String difficulty) {
-        Log.e("PASS", "Difficulté : " + difficulty);
         intentMap.putExtra("difficulty", difficulty);
         GameTypeFragment newFragment = new GameTypeFragment();
         setFragment(newFragment);
     }
 
-    public void selectCompanionMode(View view) {
-        TemplateFragment newFragment = new TemplateFragment();
+    public void startNewGame() {
+        GameStartFragment newFragment = new GameStartFragment();
         setFragment(newFragment);
     }
 

@@ -19,23 +19,24 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/b_mode_companion"
             style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="80dp"
             android:layout_weight="0.5"
-            android:onClick="selectCompanionMode"
-            android:text="@string/jeu_papier" />
+            android:text="@string/mode_companion" />
 
         <Button
+            android:id="@+id/b_mode_solo"
             style="@style/Button"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginBottom="80dp"
             android:layout_marginTop="30dp"
             android:layout_weight="0.5"
-            android:text="@string/jeu_solo" />
+            android:text="@string/mode_solo" />
 
     </LinearLayout>
 

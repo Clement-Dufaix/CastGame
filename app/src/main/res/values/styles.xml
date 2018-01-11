@@ -9,6 +9,7 @@
     </style>
 
     <style name="NomApp">
+        <item name="android:fontFamily">casual</item>
         <item name="android:gravity">center</item>
         <item name="android:text">@string/app_name</item>
         <item name="android:textSize">30sp</item>
@@ -16,6 +17,7 @@
     </style>
 
     <style name="TitrePage">
+        <item name="android:fontFamily">casual</item>
         <item name="android:paddingTop">10dp</item>
         <item name="android:textSize">30sp</item>
     </style>
