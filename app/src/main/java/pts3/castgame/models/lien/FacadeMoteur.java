@@ -1,7 +1,5 @@
 package pts3.castgame.models.lien;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.LinkedList;
@@ -9,12 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import pts3.castgame.models.CastGameAnswer;
 import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
 import pts3.castgame.models.CastGameTemplate;
 import pts3.castgame.models.CastGameTypable;
-import pts3.castgame.models.FinalAnswer;
 import pts3.castgame.models.LignTemplate;
 
 public class FacadeMoteur {
@@ -83,13 +79,13 @@ public class FacadeMoteur {
         //Log.e("etat facade :", getEtat()+", etat fragment : "+etatActuel);
         methodeSelectionnee = null;
         List<Integer> i = new ArrayList<>();
-        for (Map.Entry<Integer, CastGameTypable> entry : cartesClassesSelectionnee.entrySet()){ //si l'utilisateur est revenu en arriere on supprime les cartes qu'il avait déjà sélectionné
+        for (Map.Entry<Integer, CastGameTypable> entry : cartesClassesSelectionnee.entrySet()) { //si l'utilisateur est revenu en arriere on supprime les cartes qu'il avait déjà sélectionné
             //Log.e("clé : ",entry.getKey()+"");
-            if(entry.getKey()>=etatActuel&&etatActuel!=0){
+            if (entry.getKey() >= etatActuel && etatActuel != 0) {
                 i.add(entry.getKey());
             }
         }
-        for (int y : i){    //après avoir enregistrer les id des cartes a supprimer.... ba on les supprimer...
+        for (int y : i) {    //après avoir enregistrer les id des cartes a supprimer.... ba on les supprimer...
             cartesClassesSelectionnee.remove(y);
         }
 
