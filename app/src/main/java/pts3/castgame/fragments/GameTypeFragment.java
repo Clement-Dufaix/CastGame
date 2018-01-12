@@ -17,6 +17,7 @@ public class GameTypeFragment extends Fragment {
     private Button bCompanion;
     private Button bSolo;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_game_type, container, false);
@@ -32,7 +33,7 @@ public class GameTypeFragment extends Fragment {
         bSolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getActivity(), "Impossible pour le moment !", Toast.LENGTH_SHORT).show();
+                ((MainActivity) getActivity()).startNewGameSolo();
             }
         });
         return view;

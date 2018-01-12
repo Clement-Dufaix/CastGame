@@ -21,6 +21,7 @@ import android.widget.ImageButton;
 
 import pts3.castgame.R;
 import pts3.castgame.fragments.AnswerCompanionFragment;
+import pts3.castgame.fragments.AnswerSoloFragment;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameStartFragment;
 import pts3.castgame.fragments.GameTypeFragment;
@@ -143,6 +144,11 @@ public class MainActivity extends AppCompatActivity
 
     public void startNewCompanionGame() {
         GameStartFragment newFragment = new GameStartFragment();
+        setFragment(newFragment);
+    }
+
+    public void startNewGameSolo() {
+        AnswerSoloFragment newFragment = new AnswerSoloFragment();
         setFragment(newFragment);
     }
 
