@@ -10,6 +10,9 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
 import pts3.castgame.models.CastGameTemplate;
@@ -26,17 +29,25 @@ public class TemplateFragment extends Fragment {
         mListView = v.findViewById(R.id.listTemplate);
         context = ((MainActivity) getActivity());
         context.getFacade().reset();
-        ArrayAdapter<CastGameTemplate> adapter = new ArrayAdapter<>(
-                getActivity(),
-                android.R.layout.simple_list_item_1,
-                context.getFacade().getListTemplate()
-        );
+
+        // Ajout des numéros aux templates
+        List<CastGameTemplate> templates = context.getFacade().getListTemplate();
+        List<String> templatesString = new ArrayList<>();
+
+        int i = 1;
+        for (CastGameTemplate template : templates) {
+            templatesString.add("N°" + i + "\n" + template.toString());
+            i++;
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
+                android.R.layout.simple_list_item_1, templatesString);
         mListView.setAdapter(adapter);
+
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Log.i("test : ", "Position=" + position);
                 context.getFacade().setTemplateChoisi(context.getFacade().getListTemplate().get(position));
                 ((MainActivity) getActivity()).setFragmentCardSelection();
             }
