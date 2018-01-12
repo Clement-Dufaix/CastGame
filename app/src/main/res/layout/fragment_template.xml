@@ -10,16 +10,15 @@
     tools:context="pts3.castgame.fragments.TemplateFragment">
 
     <TextView
-        style="@style/TitrePage"
+        style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_templates" />
+        android:text="@string/page_template" />
 
     <ListView
         android:id="@+id/listTemplate"
+        style="@style/ListContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </ListView>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

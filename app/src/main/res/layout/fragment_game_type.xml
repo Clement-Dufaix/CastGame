@@ -9,10 +9,10 @@
     tools:context="pts3.castgame.fragments.GameTypeFragment">
 
     <TextView
-        style="@style/TitrePage"
+        style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_type_de_jeu" />
+        android:text="@string/page_game_type" />
 
     <LinearLayout
         style="@style/ButtonContainer"

@@ -9,34 +9,30 @@
     tools:context="pts3.castgame.fragments.CardFragment">
 
     <TextView
-        style="@style/TitrePage"
+        style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_personnage" />
+        android:text="@string/page_card" />
 
     <TextView
-        android:id="@+id/templateChoixPersonnage"
+        android:id="@+id/slected_template"
+        style="@style/ListContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="8dp"
         android:textAlignment="center" />
 
     <TextView
-        android:id="@+id/ChoixActuelleCartePersonnage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Carte 1 :"
-        android:textSize="20sp" />
-
-    <LinearLayout
-        style="@style/ButtonContainer"
+        android:id="@+id/actual_card"
+        style="@style/SmallTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:text="Carte 1 :" />
 
-        <ListView
-            android:id="@+id/listPersonnage"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
+    <ListView
+        android:id="@+id/list_cards"
+        style="@style/ListContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

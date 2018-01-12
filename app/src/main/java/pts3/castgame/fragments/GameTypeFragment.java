@@ -25,10 +25,8 @@ public class GameTypeFragment extends Fragment {
         bCompanion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).startNewGame();
-
+                ((MainActivity) getActivity()).startNewCompanionGame();
             }
-
         });
         bSolo = view.findViewById(R.id.b_mode_solo);
         bSolo.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +34,6 @@ public class GameTypeFragment extends Fragment {
             public void onClick(View view) {
                 Toast.makeText(getActivity(), "Impossible pour le moment !", Toast.LENGTH_SHORT).show();
             }
-
         });
         return view;
     }

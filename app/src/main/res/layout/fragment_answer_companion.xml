@@ -9,25 +9,27 @@
     tools:context="pts3.castgame.fragments.AnswerCompanionFragment">
 
     <TextView
-        style="@style/TitrePage"
+        style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_reponse" />
+        android:text="@string/page_answer" />
 
     <TextView
         android:id="@+id/template_container"
         style="@style/TemplateContainer"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
         android:textAlignment="center" />
 
     <LinearLayout
-        style="@style/TemplateContainer"
+        style="@style/SimpleContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -41,11 +43,11 @@
                 android:layout_height="40dp" />
 
             <TextView
-                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_compilation" />
+                android:text="@string/rep_compilation"
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/icon_compilation"
@@ -57,9 +59,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/colorAccent" />
 
         <LinearLayout
@@ -73,11 +75,11 @@
                 android:layout_height="40dp" />
 
             <TextView
-                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_execution" />
+                android:text="@string/rep_execution"
+                android:textSize="20sp" />
 
             <ImageView
                 android:id="@+id/icon_execution"
@@ -89,9 +91,9 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/colorAccent" />
 
         <LinearLayout
@@ -107,7 +109,6 @@
 
             <TextView
                 android:id="@+id/text_display"
-                style="@style/Text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -125,11 +126,17 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></LinearLayout>
+
     <Button
         android:id="@+id/b_new_template"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/new_template" />
 
 </LinearLayout>

@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity
         setFragment(newFragment);
     }
 
-    public void startNewGame() {
+    public void startNewCompanionGame() {
         GameStartFragment newFragment = new GameStartFragment();
         setFragment(newFragment);
     }

@@ -2,68 +2,56 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorAccent</item>
         <item name="android:textColor">#000000</item>
         <item name="android:gravity">center</item>
+        <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">casual</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat" />
 
-    <style name="NomApp">
-        <item name="android:fontFamily">casual</item>
-        <item name="android:gravity">center</item>
-        <item name="android:text">@string/app_name</item>
+    <style name="BigTitle">
         <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="TitrePage">
-        <item name="android:fontFamily">casual</item>
-        <item name="android:paddingTop">10dp</item>
+    <style name="SimpleTitle">
         <item name="android:textSize">30sp</item>
     </style>
 
+    <style name="SmallTitle">
+        <item name="android:gravity">left</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="Button">
-        <item name="android:background">@drawable/button</item>
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginBottom">20dp</item>
         <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/button</item>
         <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">24sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
+    <!-- Containers -->
     <style name="ButtonContainer">
+        <item name="android:layout_marginLeft">32dp</item>
+        <item name="android:layout_marginRight">32dp</item>
+    </style>
+
+    <style name="SimpleContainer">
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>
     </style>
 
-    <style name="Text">
-        <item name="android:fontFamily">casual</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textSize">20sp</item>
+    <style name="TemplateContainer" parent="SimpleContainer">
+        <item name="android:background">@drawable/container_list</item>
     </style>
 
-    <style name="TemplateContainer">
-        <item name="android:background">@drawable/text_container</item>
-        <item name="android:fontFamily">casual</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-        <item name="android:textSize">18sp</item>
-    </style>
-
-    <style name="Container">
-        <item name="android:background">@color/colorSecondary</item>
-        <item name="android:layout_marginLeft">16dp</item>
-        <item name="android:layout_marginRight">16dp</item>
-    </style>
-
-    <style name="TextContainer">
-        <item name="android:background">@drawable/text_container</item>
-        <item name="android:gravity">center</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">20sp</item>
+    <style name="ListContainer" parent="SimpleContainer">
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:background">@drawable/container_list</item>
     </style>
 
 </resources>

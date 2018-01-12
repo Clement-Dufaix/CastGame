@@ -14,10 +14,10 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/TitrePage"
+            style="@style/SimpleTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/page_difficulte" />
+            android:text="@string/page_difficulty" />
 
     </LinearLayout>
 

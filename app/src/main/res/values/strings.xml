@@ -9,13 +9,12 @@
     <string name="ic_desc">icône</string>
 
     <!-- nom des pages -->
-    <string name="page_difficulte">Choix de la difficulté</string>
-    <string name="page_type_de_jeu">Choix du type de jeu</string>
-    <string name="page_templates">Choix du template</string>
-    <string name="page_personnage">Choix de la carte personnage</string>
-    <string name="page_methode">Choix de la carte méthode</string>
-    <string name="page_reponse">Résultat</string>
-    <string name="page_carte">Carte</string>
+    <string name="page_difficulty">Choix de la difficulté</string>
+    <string name="page_game_type">Choix du type de jeu</string>
+    <string name="page_template">Choix du template</string>
+    <string name="page_card">Choix de carte</string>
+    <string name="page_answer">Résultat</string>
+    <string name="page_map">Carte</string>
 
     <!-- Difficulté -->
     <string name="facile">Facile</string>
