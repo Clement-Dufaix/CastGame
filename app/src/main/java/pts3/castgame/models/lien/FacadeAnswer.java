@@ -11,8 +11,16 @@ public class FacadeAnswer {
         this.fa = fa;
     }
 
-    public InstructionResult getInstructionResult() {
-        return fa.getInstructionResult();
+    public boolean codeIsWorking() {
+        return fa.getInstructionResult() == InstructionResult.OK;
+    }
+
+    public boolean compilationError() {
+        return fa.getInstructionResult() == InstructionResult.COMPILATION_FAIL;
+    }
+
+    public boolean executionError() {
+        return fa.getInstructionResult() == InstructionResult.EXECUTION_FAIL || fa.getInstructionResult() == InstructionResult.COMPILATION_FAIL;
     }
 
     public String getExplanation() {

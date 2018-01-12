@@ -25,6 +25,7 @@ public class DifficultyChoiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity) getActivity()).setDifficulty("easy");
+                ((MainActivity) getActivity()).getFacade().setDifficile(false);
             }
         });
 
@@ -33,6 +34,7 @@ public class DifficultyChoiceFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((MainActivity) getActivity()).setDifficulty("hard");
+                ((MainActivity) getActivity()).getFacade().setDifficile(true);
             }
         });
         return view;

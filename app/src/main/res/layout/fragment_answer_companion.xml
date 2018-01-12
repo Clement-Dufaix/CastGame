@@ -50,7 +50,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:background="@drawable/ok"
+                android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc" />
 
         </LinearLayout>

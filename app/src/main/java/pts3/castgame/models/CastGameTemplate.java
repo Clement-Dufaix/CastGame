@@ -1,5 +1,7 @@
 package pts3.castgame.models;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -47,6 +49,9 @@ public class CastGameTemplate {
     public FinalAnswer getAnswer(Map<Integer, CastGameTypable> cardMap, String methodName) {
         Map<Integer, CastGameObject> objectMap = new Hashtable<Integer, CastGameObject>();
         CastGameResult result;
+        if (cardMap == null) {
+            cardMap = new Hashtable<>();
+        }
         int i = 1;
         for (LignTemplate lt : lignList) {
             if (lt.getDeclarationTypeNumber() != null) {
@@ -58,7 +63,7 @@ public class CastGameTemplate {
                 );
             }
             CastGameTypable cast;
-            if (cardMap.get(lt.getExplicitCastNumber()) == null)
+            if (lt.getExplicitCastNumber() == null)
                 cast = null;
             else
                 cast = cardMap.get(lt.getExplicitCastNumber());

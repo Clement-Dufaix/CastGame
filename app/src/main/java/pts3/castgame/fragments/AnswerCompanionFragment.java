@@ -2,6 +2,7 @@ package pts3.castgame.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,12 +42,22 @@ public class AnswerCompanionFragment extends Fragment {
             }
         });
 
+        if (!facadeAnswer.compilationError()) {
+            compilationImageView.setBackgroundResource(R.drawable.ok);
+        }
+        if (!facadeAnswer.executionError()) {
+            executionImageView.setBackgroundResource(R.drawable.ok);
+        }
+        if (facadeAnswer.codeIsWorking()) {
+            displayImageView.setBackgroundResource(R.drawable.ok);
+        }
+
         // On n'affiche rien en sortie si on utilise une méthode.
         if (facadeMoteur.useMethod()) {
             displayTextView.setText("Pas d'affichage,\n appel à une méthode");
         } else {
             // Crash
-            // displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
+            displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
         }
         return view;
     }
@@ -54,6 +65,7 @@ public class AnswerCompanionFragment extends Fragment {
     private void initializeContainers(View view) {
         MainActivity mainActivity = (MainActivity) getActivity();
         facadeMoteur = mainActivity.getFacade();
+        facadeAnswer = facadeMoteur.getAnswer();
 
         templateContainer = view.findViewById(R.id.template_container);
         templateContainer.setText(facadeMoteur.getTemplateString());
