@@ -1,7 +1,5 @@
 package pts3.castgame.models;
 
-import android.util.Log;
-
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
@@ -10,11 +8,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class CastGameTemplate {
-    private List<LignTemplate> lignList;
+    private List<LineTemplate> lignList;
     private int finalObjectNumber;
     private boolean useMethod;
 
-    public CastGameTemplate(List<LignTemplate> lignList, int finalObjectNumber, boolean useMethod) {
+    public CastGameTemplate(List<LineTemplate> lignList, int finalObjectNumber, boolean useMethod) {
         super();
         this.lignList = new ArrayList<>(lignList);
         this.finalObjectNumber = finalObjectNumber;
@@ -31,7 +29,7 @@ public class CastGameTemplate {
 
     public String getCorrectString(Map<Integer, CastGameTypable> cardMap, String methodName) {
         StringBuilder result = new StringBuilder();
-        for (LignTemplate lt : lignList)
+        for (LineTemplate lt : lignList)
             result.append(lt.getString(cardMap)).append("\n");
         if (useMethod) {
             if (methodName == null)
@@ -53,7 +51,7 @@ public class CastGameTemplate {
             cardMap = new Hashtable<>();
         }
         int i = 1;
-        for (LignTemplate lt : lignList) {
+        for (LineTemplate lt : lignList) {
             if (lt.getDeclarationTypeNumber() != null) {
                 if (objectMap.containsKey(lt.getDeclarationTypeNumber()))
                     return new FinalAnswer(InstructionResult.COMPILATION_FAIL, "Type déjà déclaré", "", i);
@@ -86,7 +84,7 @@ public class CastGameTemplate {
     public Set<Integer> getNumberClassCard() {
         Set<Integer> result = new TreeSet<Integer>();
 
-        for (LignTemplate lt : lignList) {
+        for (LineTemplate lt : lignList) {
             if (lt.getDeclarationTypeNumber() != null)
                 result.add(lt.getDeclarationTypeNumber());
             if (lt.getExplicitCastNumber() != null)

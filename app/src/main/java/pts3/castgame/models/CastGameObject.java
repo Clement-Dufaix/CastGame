@@ -8,7 +8,6 @@ public class CastGameObject {
     private CastGameTypable objectType;
     private CastGameClass realObjectType;
     private String variableName;
-    public static final String DISPLAY_NONE = "none";
 
     // [objectType.getName()] variableName;
     public CastGameObject(CastGameTypable objectType, String variableName) throws IllegalArgumentException {
@@ -22,7 +21,6 @@ public class CastGameObject {
         this.variableName = variableName;
 
         realObjectType = null;
-
     }
 
 
@@ -32,7 +30,6 @@ public class CastGameObject {
         this.objectType = null;
         variableName = null;
         this.realObjectType = realObjectType;
-
     }
 
 

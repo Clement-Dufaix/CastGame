@@ -5,7 +5,9 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     android:fitsSystemWindows="true"
+    android:focusable="true"
     tools:openDrawer="start">
 
     <LinearLayout
@@ -39,7 +41,7 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" >
+        app:menu="@menu/activity_main_drawer">
 
     </android.support.design.widget.NavigationView>
 

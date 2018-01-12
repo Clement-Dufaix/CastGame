@@ -23,12 +23,12 @@ public class CastGameInterface extends CastGameTypable {
             prototypeListWithinInterface = NO_PROTOTYPE;
         if (extendsInterfaces == null)
             extendsInterfaces = NO_INTERFACE;
-        this.prototypeListWithinInterface = new HashSet<String>(prototypeListWithinInterface);
-        this.extendsInterfaces = new HashSet<CastGameInterface>(extendsInterfaces);
+        this.prototypeListWithinInterface = new HashSet<>(prototypeListWithinInterface);
+        this.extendsInterfaces = new HashSet<>(extendsInterfaces);
     }
 
     public Set<CastGameInterface> getExtendsInterfaces() {
-        Set<CastGameInterface> result = new HashSet<CastGameInterface>(extendsInterfaces);
+        Set<CastGameInterface> result = new HashSet<>(extendsInterfaces);
 
         for (CastGameInterface i : extendsInterfaces) // Pas de cycle, pas de probleme
             result.addAll(i.getExtendsInterfaces());
@@ -45,4 +45,5 @@ public class CastGameInterface extends CastGameTypable {
 
         return result;
     }
+
 }

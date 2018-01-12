@@ -3,7 +3,7 @@ package pts3.castgame.models;
 import java.util.Hashtable;
 import java.util.Map;
 
-public class LignTemplate {
+public class LineTemplate {
 
     private Integer declarationTypeNumber;
     private int objectNumber;
@@ -11,7 +11,7 @@ public class LignTemplate {
     private boolean useNew;
     private int otherItemNumber;
 
-    public LignTemplate(Integer declarationTypeNumber, int objectNumber, Integer explicitCastNumber, boolean useNew,
+    public LineTemplate(Integer declarationTypeNumber, int objectNumber, Integer explicitCastNumber, boolean useNew,
                         int otherItemNumber) {
         super();
         this.declarationTypeNumber = declarationTypeNumber;

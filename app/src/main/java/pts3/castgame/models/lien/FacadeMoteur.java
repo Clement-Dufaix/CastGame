@@ -13,7 +13,7 @@ import pts3.castgame.models.CastGameClass;
 import pts3.castgame.models.CastGameInterface;
 import pts3.castgame.models.CastGameTemplate;
 import pts3.castgame.models.CastGameTypable;
-import pts3.castgame.models.LignTemplate;
+import pts3.castgame.models.LineTemplate;
 
 public class FacadeMoteur {
 
@@ -175,111 +175,111 @@ public class FacadeMoteur {
 
     public static List<CastGameTemplate> templatesDuProf() {
         List<CastGameTemplate> result = new ArrayList<CastGameTemplate>(18);
-        List<LignTemplate> lignList = new ArrayList<LignTemplate>(3);
+        List<LineTemplate> lignList = new ArrayList<LineTemplate>(3);
 
         //1
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
-        lignList.add(new LignTemplate(2, 2, null, true, 2));
-        lignList.add(new LignTemplate(null, 1, 1, false, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(2, 2, null, true, 2));
+        lignList.add(new LineTemplate(null, 1, 1, false, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
         lignList.clear();
 
         //2
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
-        lignList.add(new LignTemplate(3, 2, 3, false, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
         lignList.clear();
 
         //3
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
-        lignList.add(new LignTemplate(3, 2, 3, false, 1));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
         lignList.clear();
 
         //4
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
-        lignList.add(new LignTemplate(3, 2, null, false, 1));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
         lignList.clear();
 
         //5
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
-        lignList.add(new LignTemplate(3, 2, null, false, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, false));
         lignList.clear();
 
         //6
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
         lignList.clear();
 
         //7
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
-        lignList.add(new LignTemplate(3, 2, null, false, 1));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
         lignList.clear();
 
         //8
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
         result.add(new CastGameTemplate(lignList, 1, false));
         lignList.clear();
 
         //9
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
-        lignList.add(new LignTemplate(2, 2, null, true, 2));
-        lignList.add(new LignTemplate(null, 1, null, false, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(2, 2, null, true, 2));
+        lignList.add(new LineTemplate(null, 1, null, false, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
         lignList.clear();
 
         //10
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
-        lignList.add(new LignTemplate(3, 2, 3, false, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
         lignList.clear();
 
         //11
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
-        lignList.add(new LignTemplate(3, 2, 3, false, 1));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(3, 2, 3, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
         lignList.clear();
 
         //12
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
-        lignList.add(new LignTemplate(2, 2, null, true, 2));
-        lignList.add(new LignTemplate(null, 1, 1, false, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(2, 2, null, true, 2));
+        lignList.add(new LineTemplate(null, 1, 1, false, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
         lignList.clear();
 
         //13
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
         lignList.clear();
 
         //14
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
         result.add(new CastGameTemplate(lignList, 1, true));
         lignList.clear();
 
         //15
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
-        lignList.add(new LignTemplate(2, 2, null, true, 2));
-        lignList.add(new LignTemplate(null, 1, null, false, 2));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(2, 2, null, true, 2));
+        lignList.add(new LineTemplate(null, 1, null, false, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
         lignList.clear();
 
         //16
-        lignList.add(new LignTemplate(1, 1, 1, true, 2));
+        lignList.add(new LineTemplate(1, 1, 1, true, 2));
         result.add(new CastGameTemplate(lignList, 1, false));
         lignList.clear();
 
         //17
-        lignList.add(new LignTemplate(1, 1, null, true, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 1));
         result.add(new CastGameTemplate(lignList, 1, true));
         lignList.clear();
 
         //18
-        lignList.add(new LignTemplate(1, 1, null, true, 2));
-        lignList.add(new LignTemplate(3, 2, null, false, 1));
+        lignList.add(new LineTemplate(1, 1, null, true, 2));
+        lignList.add(new LineTemplate(3, 2, null, false, 1));
         result.add(new CastGameTemplate(lignList, 2, true));
 
         return result;
