@@ -52,12 +52,23 @@ public class AnswerCompanionFragment extends Fragment {
             displayImageView.setBackgroundResource(R.drawable.ok);
         }
 
-        // On n'affiche rien en sortie si on utilise une méthode.
         if (facadeMoteur.useMethod()) {
-            displayTextView.setText("Pas d'affichage,\n appel à une méthode");
+            if (facadeAnswer.codeIsWorking()) {
+                displayTextView.setText("Pas d'affichage,\n appel à une méthode");
+
+            } else {
+                displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
+                // On n'affiche pas d'icône puisqu'on se sert du layout pour afficher l'erreur.
+                displayImageView.setVisibility(View.INVISIBLE);
+            }
         } else {
-            // Crash
-            displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
+            if (facadeAnswer.getOutputDisplay().equals("")) {
+                displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
+                // On n'affiche pas d'icône puisqu'on se sert du layout pour afficher l'erreur.
+                displayImageView.setVisibility(View.INVISIBLE);
+            } else {
+                displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
+            }
         }
         return view;
     }

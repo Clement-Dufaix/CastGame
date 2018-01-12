@@ -26,6 +26,7 @@ public class CardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_card, container, false);
+
         facade = ((MainActivity) getActivity()).getFacade();
         choixActuelleTextView = v.findViewById(R.id.ChoixActuelleCartePersonnage);
         mListView = v.findViewById(R.id.listPersonnage);

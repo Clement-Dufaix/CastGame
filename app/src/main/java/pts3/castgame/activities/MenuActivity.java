@@ -15,8 +15,8 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        img = (ImageButton) findViewById(R.id.anim_image);
-        img.animate().translationY(-600);
+        img = findViewById(R.id.anim_image);
+        img.animate().translationY(-400);
 
         new Thread(new Runnable() {
             @Override

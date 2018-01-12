@@ -21,34 +21,30 @@ public class LignTemplate {
         this.otherItemNumber = otherItemNumber;
     }
 
-
     public Integer getDeclarationTypeNumber() {
         return declarationTypeNumber;
     }
-
 
     public int getObjectNumber() {
         return objectNumber;
     }
 
-
     public Integer getExplicitCastNumber() {
         return explicitCastNumber;
     }
-
 
     public boolean useNew() {
         return useNew;
     }
 
-
     public int getOtherItemNumber() {
         return otherItemNumber;
     }
 
+    // Guillaume, faudra voir pour diviser en objet opérations pour faire plus d'OO.
     public String getString(Map<Integer, CastGameTypable> cardMap) {
         if (cardMap == null)
-            cardMap = new Hashtable<Integer, CastGameTypable>();
+            cardMap = new Hashtable<>();
         String result = "";
         if (declarationTypeNumber != null) {
             if (cardMap.containsKey(declarationTypeNumber))

@@ -3,34 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical"
     tools:context="pts3.castgame.fragments.GameStartFragment">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
-        android:orientation="horizontal">
-
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/archery" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/axe"
-            android:rotation="-90" />
-
-    </LinearLayout>
+        android:orientation="horizontal" />
 
     <TextView
         style="@style/TitrePage"
@@ -38,30 +20,10 @@
         android:layout_height="wrap_content"
         android:text="@string/start_game" />
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight=".5"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/book"
-            android:gravity="" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="wrap_content" />
-
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/crossbow"
-            android:rotation="-90" />
-
-    </LinearLayout>
+        android:orientation="horizontal" />
 
 </LinearLayout>

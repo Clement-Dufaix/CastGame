@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="pts3.castgame.activities.MenuActivity">
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1" />
@@ -17,16 +17,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <LinearLayout
+    <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="1" />
+        android:layout_weight="1">
 
-    <ImageButton
-        android:id="@+id/anim_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@drawable/swords" />
+        <ImageButton
+            android:id="@+id/anim_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/swords"
+            android:contentDescription="@string/ic_desc" />
+
+    </View>
+
 
 </LinearLayout>

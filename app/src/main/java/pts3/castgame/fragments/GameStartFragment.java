@@ -19,7 +19,7 @@ public class GameStartFragment extends Fragment {
             @Override
             public void run() {
                 try {
-                    Thread.sleep(800);
+                    Thread.sleep(1000);
                     TemplateFragment fragment = new TemplateFragment();
                     FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
                     // On remplace l'ancien fragment par le nouveau.
