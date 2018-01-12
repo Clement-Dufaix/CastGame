@@ -6,15 +6,14 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.models.CastGameTemplate;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class AnswerSoloFragment extends Fragment {
@@ -22,11 +21,20 @@ public class AnswerSoloFragment extends Fragment {
     private TextView templateTextView;
     private Spinner spinner;
     private FacadeMoteur facade;
+    private ImageButton buttonNokCompile;
+    private ImageButton buttonOkCompile;
+    private ImageButton buttonNokExecute;
+    private ImageButton buttonOkExecute;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_answer_solo, container, false);
+
+        buttonNokCompile = v.findViewById(R.id.buttonNokCompile);
+        buttonOkCompile = v.findViewById(R.id.buttonOkCompile);
+        buttonNokExecute = v.findViewById(R.id.buttonNokExecute);
+        buttonOkExecute = v.findViewById(R.id.buttonOkExecute);
 
         facade = ((MainActivity) getActivity()).getFacade();
 
@@ -36,11 +44,10 @@ public class AnswerSoloFragment extends Fragment {
 
 
         while (facade.getEtat() > 0) { //on choisit aléatoirement les cartes classe
-            Log.e("ça passe", "onCreateView: ");
             facade.ajouterCarte((int) (Math.random() * (facade.getCarteClasseListString().size()) - 1), facade.getEtat());
         }
 
-        if(facade.getEtat()==0){    //si il faut ajouter une carte méthode, on en ajoute une aléatoire
+        if (facade.getEtat() == 0) {    //si il faut ajouter une carte méthode, on en ajoute une aléatoire
             facade.ajouterCarte((int) (Math.random() * (facade.getCarteMethode().size()) - 1), facade.getEtat());
         }
 
@@ -60,6 +67,58 @@ public class AnswerSoloFragment extends Fragment {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+
+
+
+
+        buttonNokCompile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonNokCompile.setImageResource(R.drawable.nok);
+                buttonNokCompile.setTag("white");
+                if(buttonOkCompile.getTag().equals("white")){
+                    buttonOkCompile.setImageResource(R.drawable.ok_black_white);
+                    buttonOkCompile.setTag("black");
+                }
+            }
+        });
+
+        buttonOkCompile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonOkCompile.setImageResource(R.drawable.ok);
+                buttonOkCompile.setTag("white");
+                if(buttonNokCompile.getTag().equals("white")){
+                    buttonNokCompile.setImageResource(R.drawable.nok_black_white);
+                    buttonNokCompile.setTag("black");
+                }
+            }
+        });
+
+        buttonNokExecute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonNokExecute.setTag("white");
+                buttonNokExecute.setImageResource(R.drawable.nok);
+                if(buttonOkExecute.getTag().equals("white")){
+                    buttonOkExecute.setImageResource(R.drawable.ok_black_white);
+                    buttonOkExecute.setTag("black");
+                }
+            }
+        });
+
+        buttonOkExecute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonOkExecute.setTag("white");
+                buttonOkExecute.setImageResource(R.drawable.ok);
+                if(buttonNokExecute.getTag().equals("white")){
+                    buttonNokExecute.setImageResource(R.drawable.nok_black_white);
+                    buttonNokExecute.setTag("black");
+                }
             }
         });
 

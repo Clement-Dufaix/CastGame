@@ -20,14 +20,14 @@
         android:id="@+id/template_selected_Solo"
         style="@style/TemplateContainer"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_weight="1"
+        android:layout_height="150dp"
+
         android:textAlignment="center" />
 
     <LinearLayout
         style="@style/TemplateContainer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="170dp"
         android:layout_marginBottom="20dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical">
@@ -39,13 +39,15 @@
             android:padding="5dp">
 
             <ImageButton
+                android:id="@+id/buttonNokCompile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nok" />
+                android:src="@drawable/nok_black_white"
+                android:tag="black" />
 
             <TextView
                 android:layout_width="0dp"
@@ -54,6 +56,7 @@
                 android:text="@string/rep_compilation" />
 
             <ImageButton
+                android:id="@+id/buttonOkCompile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
@@ -61,7 +64,8 @@
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ok" />
+                android:src="@drawable/ok_black_white"
+                android:tag="black" />
 
         </LinearLayout>
 
@@ -77,13 +81,15 @@
             android:padding="5dp">
 
             <ImageButton
+                android:id="@+id/buttonNokExecute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="20dp"
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nok" />
+                android:src="@drawable/nok_black_white"
+                android:tag="black" />
 
             <TextView
                 android:layout_width="0dp"
@@ -92,6 +98,7 @@
                 android:text="@string/rep_compilation" />
 
             <ImageButton
+                android:id="@+id/buttonOkExecute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
@@ -99,7 +106,8 @@
                 android:adjustViewBounds="true"
                 android:background="#FFFFFF"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ok" />
+                android:src="@drawable/ok_black_white"
+                android:tag="black" />
 
         </LinearLayout>
 
@@ -113,19 +121,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:padding="5dp">
+           >
 
             <View
                 android:layout_width="40dp"
-                android:layout_height="40dp" />
+                android:layout_height="match_parent" />
 
             <LinearLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -133,9 +143,13 @@
 
                 <Spinner
                     android:id="@+id/spinnerSolo"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1" />
+                    android:layout_weight="1"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    />
             </LinearLayout>
 
         </LinearLayout>
@@ -147,7 +161,7 @@
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="@string/new_template" />
+        android:layout_marginBottom="20dp"
+        android:text="@string/view_answer" />
 
 </LinearLayout>
