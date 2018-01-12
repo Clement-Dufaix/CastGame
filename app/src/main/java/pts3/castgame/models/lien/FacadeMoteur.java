@@ -98,6 +98,20 @@ public class FacadeMoteur {
             cartesClassesSelectionnee.put(etat, getCarteClasse().get(position));
     }
 
+    public List<String> getPossibleAnswer() {
+        List<String> result = new LinkedList<String>();
+        if (templateChoisi.getUseMethod()) {
+            for (CastGameTypable t : getCarteClasse())
+                if (t instanceof CastGameClass)
+                    if (((CastGameClass) t).getMethodList().containsKey(methodeSelectionnee))
+                        result.add(((CastGameClass) t).getMethodList().get(methodeSelectionnee));
+        } else {
+            for (CastGameTypable t : cartesClassesSelectionnee.values())
+                if (t instanceof CastGameClass)
+                    result.add(((CastGameClass) t).getResultToString());
+        }
+        return result;
+    }
     //inutilisee
     public int getNombreCarteClasse() {
         return templateChoisi.getNumberClassCard().size();
