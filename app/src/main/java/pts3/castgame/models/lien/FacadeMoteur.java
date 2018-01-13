@@ -98,7 +98,7 @@ public class FacadeMoteur {
             cartesClassesSelectionnee.put(etat, getCarteClasse().get(position));
     }
 
-    public List<String> getPossibleAnswer() {
+    public List<String> getPossibleAnswers() {
         List<String> result = new LinkedList<String>();
         if (templateChoisi.getUseMethod()) {
             for (CastGameTypable t : getCarteClasse())

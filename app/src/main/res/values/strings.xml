@@ -17,12 +17,13 @@
     <string name="page_answer_companion">Résultat</string>
     <string name="page_answer_solo">Entrez votre réponse</string>
     <string name="page_map">Carte</string>
+    <string name="page_answer">Solution</string>
 
     <string name="map_selection">Aucune carte affichable pour le moment\nVeuillez choisir une difficulté</string>
 
     <!-- Difficulté -->
-    <string name="facile">Facile</string>
-    <string name="difficile">Difficile</string>
+    <string name="easy">Facile</string>
+    <string name="hard">Difficile</string>
 
     <!-- Type de jeu -->
     <string name="mode_companion">Mode compagnon</string>
