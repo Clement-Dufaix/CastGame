@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MenuActivity"
+            android:name=".activities.LoadingActivity"
             android:noHistory="true"
             android:screenOrientation="sensorPortrait">
             <intent-filter>
@@ -24,7 +24,13 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activities.MapActivity"
+            android:noHistory="true"
             android:screenOrientation="sensorPortrait" />
+        <activity
+        android:name=".activities.AboutActivity"
+        android:noHistory="true"
+        android:screenOrientation="sensorPortrait" />
+        <activity android:name=".activities.SolutionActivity"></activity>
     </application>
 
 </manifest>

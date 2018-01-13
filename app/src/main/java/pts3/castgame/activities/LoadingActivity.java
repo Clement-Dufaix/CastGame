@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 
 import pts3.castgame.R;
 
-public class MenuActivity extends AppCompatActivity {
+public class LoadingActivity extends AppCompatActivity {
 
     private ImageButton img;
 

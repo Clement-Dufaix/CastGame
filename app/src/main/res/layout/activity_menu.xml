@@ -7,7 +7,7 @@
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
-    tools:context="pts3.castgame.activities.MenuActivity">
+    tools:context="pts3.castgame.activities.LoadingActivity">
 
     <View
         android:layout_width="match_parent"

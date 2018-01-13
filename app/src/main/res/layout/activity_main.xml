@@ -15,10 +15,38 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            layout="@layout/app_bar_main"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:background="@color/colorSecondary"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <TextView
+                style="@style/BigTitle"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".8"
+                android:text="@string/app_name" />
+
+            <ImageButton
+                android:id="@+id/b_map"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/map"
+                android:contentDescription="@string/ic_desc" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent" />
 
         <FrameLayout
             android:id="@+id/fragment_container"
@@ -32,6 +60,7 @@
                 tools:layout="@layout/fragment_difficulty_choice" />
 
         </FrameLayout>
+
     </LinearLayout>
 
     <android.support.design.widget.NavigationView

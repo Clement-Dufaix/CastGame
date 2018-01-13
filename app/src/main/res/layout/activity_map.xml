@@ -41,6 +41,13 @@
         android:layout_height="1dp"
         android:background="@color/colorAccent" />
 
+    <TextView
+        android:id="@+id/t_map_selection"
+        style="@style/SmallTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/map_selection" />
+
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/imageMap"
         android:layout_width="match_parent"

@@ -13,19 +13,21 @@ import pts3.castgame.activities.MainActivity;
 
 public class DifficultyChoiceFragment extends Fragment {
 
+    private MainActivity context;
     private Button bEasy;
     private Button bHard;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_difficulty_choice, container, false);
+        context = (MainActivity) getActivity();
 
         bEasy = view.findViewById(R.id.b_diff_easy);
         bEasy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).setDifficulty("easy");
-                ((MainActivity) getActivity()).getFacade().setDifficile(false);
+                context.setDifficulty("easy", false);
             }
         });
 
@@ -33,8 +35,7 @@ public class DifficultyChoiceFragment extends Fragment {
         bHard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((MainActivity) getActivity()).setDifficulty("hard");
-                ((MainActivity) getActivity()).getFacade().setDifficile(true);
+                context.setDifficulty("hard", true);
             }
         });
         return view;

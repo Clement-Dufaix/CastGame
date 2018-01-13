@@ -9,16 +9,30 @@
     <string name="ic_desc">icône</string>
 
     <!-- nom des pages -->
+    <string name="page_welcome">Bienvenue dans le jeu du cast !</string>
     <string name="page_difficulty">Choix de la difficulté</string>
     <string name="page_game_type">Choix du type de jeu</string>
     <string name="page_template">Choix du template</string>
     <string name="page_card">Choix de carte</string>
-    <string name="page_answer">Résultat</string>
+    <string name="page_answer_companion">Résultat</string>
+    <string name="page_answer_solo">Entrez votre réponse</string>
     <string name="page_map">Carte</string>
+    <string name="page_about">A propos</string>
+    <string name="page_answer">Solution</string>
+
+    <string name="map_selection">Aucune carte affichable pour le moment\nVeuillez choisir une difficulté</string>
+
+    <!-- A propos -->
+    <string name="about_title1">Informations</string>
+    <string name="about_title2">Credits</string>
+    <string name="about_text1">Ce projet a été réalisé dans le cadre du projet tuteuré du Semestre 3 du département informatique de l\'IUT de Laval (2017 – 2018).\n\nL\'objectif était de transformer un jeu existant en version papier, en une version mobile plus interactive permettant aux étudiants de vérifier directement la réponse choisi. De plus, cette version permet de mieux visualiser la carte Template choisie. </string>
+    <string name="about_text2">Ce jeu est utile à l\'apprentissage de la Programmation Orientée Objet, notamment pour comprendre le principe de Cast en Java.</string>
+    <string name="about_credits">TOUCHAIS Mickael\nVUILLEMIN Thomas\nCHAUVIN Dimitri\nDUFAIX Clément\nBRIAND Guillaume</string>
+
 
     <!-- Difficulté -->
-    <string name="facile">Facile</string>
-    <string name="difficile">Difficile</string>
+    <string name="easy">Facile</string>
+    <string name="hard">Difficile</string>
 
     <!-- Type de jeu -->
     <string name="mode_companion">Mode compagnon</string>
@@ -26,7 +40,7 @@
 
     <string name="start_game">C\'est parti !\nBonne chance</string>
 
-    <!-- Réponses -->
+    <!-- Réponses pour les différents modes de jeu -->
     <string name="rep_compilation">Compile</string>
     <string name="rep_execution">S\'exécute</string>
     <string name="rep_display">Affiche\n\n</string>
