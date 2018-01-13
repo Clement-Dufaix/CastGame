@@ -124,6 +124,18 @@ public class MainActivity extends AppCompatActivity
         return facadeMoteur;
     }
 
+    public boolean getSupposedCompilation() {
+        return compilationSupposed;
+    }
+
+    public boolean getSupposedExecution() {
+        return executionSupposed;
+    }
+
+    public String getSupposedDisplay() {
+        return displaySupposed;
+    }
+
     /**
      * Applique le fragment à l'activité courante.
      *
@@ -191,9 +203,10 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void showAnswerComparaison(boolean compilationSupposed, boolean executionSupposed, String displaySupposed) {
-        setFragment(new AnswerSoloVerificationFragment());
         this.compilationSupposed = compilationSupposed;
         this.executionSupposed = executionSupposed;
         this.displaySupposed = displaySupposed;
+        setFragment(new AnswerSoloVerificationFragment());
     }
+
 }

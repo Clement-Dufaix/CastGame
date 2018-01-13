@@ -19,6 +19,7 @@ public class AnswerSoloVerificationFragment extends Fragment {
     private FacadeMoteur facadeMoteur;
     private FacadeAnswer facadeAnswer;
 
+    private TextView templateContainer;
     private ImageView supposedCompilation;
     private ImageView supposedExecution;
     private TextView supposedDisplay;
@@ -34,6 +35,7 @@ public class AnswerSoloVerificationFragment extends Fragment {
         context = (MainActivity) getActivity();
 
         initializeContainers(view);
+        getPlayerSupposition();
         getSolution();
 
         return view;
@@ -44,6 +46,8 @@ public class AnswerSoloVerificationFragment extends Fragment {
         facadeMoteur = context.getFacade();
         facadeAnswer = facadeMoteur.getAnswer();
 
+        templateContainer = view.findViewById(R.id.template_selected);
+        templateContainer.setText(facadeMoteur.getTemplateString());
         supposedCompilation = view.findViewById(R.id.supposed_compilation);
         supposedExecution = view.findViewById(R.id.supposed_execution);
         supposedDisplay = view.findViewById(R.id.supposed_display);
@@ -52,6 +56,18 @@ public class AnswerSoloVerificationFragment extends Fragment {
         solutionExecution = view.findViewById(R.id.solution_execution);
         solutionDisplay = view.findViewById(R.id.solution_display);
         errorDisplay = view.findViewById(R.id.error_display);
+    }
+
+    private void getPlayerSupposition() {
+        // Si le joueur pense que le code compile
+        if (context.getSupposedCompilation()) {
+            supposedCompilation.setBackgroundResource(R.drawable.ok);
+        }
+        // Si le joueur pense que le code s'exécute
+        if (context.getSupposedExecution()) {
+            supposedExecution.setBackgroundResource(R.drawable.ok);
+        }
+        supposedDisplay.setText(context.getSupposedDisplay());
     }
 
     // Code dupliqué par rapport à la récupération de solution de mode compagnon
