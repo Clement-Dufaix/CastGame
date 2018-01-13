@@ -112,7 +112,7 @@ public class AnswerSoloFragment extends Fragment {
         spinner = view.findViewById(R.id.spinnerSolo);
         List<String> temp = new ArrayList<>();
         //l'utilisateur peut choisir entre aucun et les différentes classes présentes dans le code
-        temp.add("aucun");
+        temp.add("Aucun");
         temp.addAll(facadeMoteur.getPossibleAnswers());
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, temp);
         spinner.setAdapter(adapter);
