@@ -15,6 +15,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
 import pts3.castgame.models.lien.FacadeMoteur;
@@ -98,8 +101,11 @@ public class AnswerSoloFragment extends Fragment {
             }
         });
 
-        spinner = view.findViewById(R.id.spinnerSolo);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, facade.getCarteMethode());
+        spinner = view.findViewById(R.id.spinnerSolo);  //spinner pour la sélection de l'affichage en sortie
+        List<String> temp = new ArrayList<String>();
+        temp.add("aucun");  //l'utilisateur peut choisir entre aucun et les différentes classes présentes dans le code
+        temp.addAll(facade.getPossibleAnswer());
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,temp );
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
