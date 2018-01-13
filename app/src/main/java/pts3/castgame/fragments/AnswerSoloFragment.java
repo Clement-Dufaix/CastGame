@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,30 +13,29 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pts3.castgame.R;
 import pts3.castgame.activities.MainActivity;
-import pts3.castgame.activities.SolutionActivity;
-import pts3.castgame.models.lien.FacadeAnswer;
 import pts3.castgame.models.lien.FacadeMoteur;
 
 public class AnswerSoloFragment extends Fragment {
 
-    private TextView templateTextView;
-    private Spinner spinner;
     private FacadeMoteur facadeMoteur;
+
+    private TextView templateTextView;
+    private Button bValidate;
     private ImageButton buttonNokCompile;
     private ImageButton buttonOkCompile;
     private ImageButton buttonNokExecute;
     private ImageButton buttonOkExecute;
-    private Button bValidate;
+    private Spinner spinner;
 
     private boolean compilationSelected = false;
     private boolean executionSelected = false;
+
     private boolean compilationSupposed;
     private boolean executionSupposed;
     private String displaySupposed;
@@ -158,11 +156,7 @@ public class AnswerSoloFragment extends Fragment {
      * @param displaySupposed     : La chaîne de caractèrtes donnant l'avis du joueur sur l'affichage en sortie
      */
     public void validate(boolean compilationSupposed, boolean executionSupposed, String displaySupposed) {
-        Intent intent = new Intent(this.getContext(), SolutionActivity.class);
-        intent.putExtra("compilationSupposed", compilationSupposed);
-        intent.putExtra("executionSupposed", executionSupposed);
-        intent.putExtra("displaySupposed", displaySupposed);
-        startActivity(intent);
+        ((MainActivity) getActivity()).showAnswerComparaison(compilationSupposed, executionSupposed, displaySupposed);
     }
 
 }

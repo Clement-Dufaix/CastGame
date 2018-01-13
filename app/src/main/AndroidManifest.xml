@@ -24,13 +24,11 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".activities.MapActivity"
-            android:noHistory="true"
             android:screenOrientation="sensorPortrait" />
         <activity
-        android:name=".activities.AboutActivity"
-        android:noHistory="true"
-        android:screenOrientation="sensorPortrait" />
-        <activity android:name=".activities.SolutionActivity"></activity>
+            android:name=".activities.AboutActivity"
+            android:noHistory="true"
+            android:screenOrientation="sensorPortrait" />
     </application>
 
 </manifest>

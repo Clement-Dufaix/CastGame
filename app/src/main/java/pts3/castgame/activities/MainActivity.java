@@ -19,6 +19,7 @@ import android.widget.ImageButton;
 import pts3.castgame.R;
 import pts3.castgame.fragments.AnswerCompanionFragment;
 import pts3.castgame.fragments.AnswerSoloFragment;
+import pts3.castgame.fragments.AnswerSoloVerificationFragment;
 import pts3.castgame.fragments.CardFragment;
 import pts3.castgame.fragments.GameTypeFragment;
 import pts3.castgame.fragments.TemplateFragment;
@@ -31,6 +32,10 @@ public class MainActivity extends AppCompatActivity
     private FacadeMoteur facadeMoteur;
 
     private ImageButton bMap;
+
+    private boolean compilationSupposed;
+    private boolean executionSupposed;
+    private String displaySupposed;
 
     private static final String FRAGMENT_TAG = "TAG";
 
@@ -185,4 +190,10 @@ public class MainActivity extends AppCompatActivity
         setFragment(new CardFragment());
     }
 
+    public void showAnswerComparaison(boolean compilationSupposed, boolean executionSupposed, String displaySupposed) {
+        setFragment(new AnswerSoloVerificationFragment());
+        this.compilationSupposed = compilationSupposed;
+        this.executionSupposed = executionSupposed;
+        this.displaySupposed = displaySupposed;
+    }
 }
