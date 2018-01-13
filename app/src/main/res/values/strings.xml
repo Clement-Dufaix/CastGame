@@ -17,9 +17,18 @@
     <string name="page_answer_companion">Résultat</string>
     <string name="page_answer_solo">Entrez votre réponse</string>
     <string name="page_map">Carte</string>
+    <string name="page_about">A propos</string>
     <string name="page_answer">Solution</string>
 
     <string name="map_selection">Aucune carte affichable pour le moment\nVeuillez choisir une difficulté</string>
+
+    <!-- A propos -->
+    <string name="about_title1">Informations</string>
+    <string name="about_title2">Credits</string>
+    <string name="about_text1">Ce projet a été réalisé dans le cadre du projet tuteuré du Semestre 3 du département informatique de l\'IUT de Laval (2017 – 2018).\n\nL\'objectif était de transformer un jeu existant en version papier, en une version mobile plus interactive permettant aux étudiants de vérifier directement la réponse choisi. De plus, cette version permet de mieux visualiser la carte Template choisie. </string>
+    <string name="about_text2">Ce jeu est utile à l\'apprentissage de la Programmation Orientée Objet, notamment pour comprendre le principe de Cast en Java.</string>
+    <string name="about_credits">TOUCHAIS Mickael\nVUILLEMIN Thomas\nCHAUVIN Dimitri\nDUFAIX Clément\nBRIAND Guillaume</string>
+
 
     <!-- Difficulté -->
     <string name="easy">Facile</string>

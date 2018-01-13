@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CastGame.iml" filepath="$PROJECT_DIR$/CastGame.iml" />
+      <module fileurl="file://C:\Users\Yanato\StudioProjects\CastGame1301\CastGame.iml" filepath="C:\Users\Yanato\StudioProjects\CastGame1301\CastGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CastGame1301 - Copy.iml" filepath="$PROJECT_DIR$/CastGame1301 - Copy.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

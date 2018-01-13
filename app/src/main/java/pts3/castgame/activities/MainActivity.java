@@ -92,6 +92,11 @@ public class MainActivity extends AppCompatActivity
             this.finish();
             System.exit(0);
         } else if (id == R.id.nav_about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            // Nettoyage de la pile
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+
 
         }
 
