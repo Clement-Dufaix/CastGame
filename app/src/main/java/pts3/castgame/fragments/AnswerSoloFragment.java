@@ -37,9 +37,12 @@ public class AnswerSoloFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_answer_solo, container, false);
+        View view = inflater.inflate(R.layout.fragment_answer_solo, container, false);
 
-        buttonNokCompile = v.findViewById(R.id.buttonNokCompile);
+        facade = ((MainActivity) getActivity()).getFacade();
+        createTemplate(view);
+
+        buttonNokCompile = view.findViewById(R.id.buttonNokCompile);
         buttonNokCompile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,7 +52,7 @@ public class AnswerSoloFragment extends Fragment {
             }
         });
 
-        buttonOkCompile = v.findViewById(R.id.buttonOkCompile);
+        buttonOkCompile = view.findViewById(R.id.buttonOkCompile);
         buttonOkCompile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +63,7 @@ public class AnswerSoloFragment extends Fragment {
             }
         });
 
-        buttonNokExecute = v.findViewById(R.id.buttonNokExecute);
+        buttonNokExecute = view.findViewById(R.id.buttonNokExecute);
         buttonNokExecute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,7 +73,7 @@ public class AnswerSoloFragment extends Fragment {
             }
         });
 
-        buttonOkExecute = v.findViewById(R.id.buttonOkExecute);
+        buttonOkExecute = view.findViewById(R.id.buttonOkExecute);
         buttonOkExecute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,45 +83,22 @@ public class AnswerSoloFragment extends Fragment {
             }
         });
 
-        bValidate = v.findViewById(R.id.b_validate);
+        bValidate = view.findViewById(R.id.b_validate);
         bValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Si le joueur n'a rien sélectionné pour la compilation
-                if (compilationOpinion == -1) {
-                    Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix de compilation", Toast.LENGTH_LONG);
-                    t.setGravity(Gravity.BOTTOM, 0, 400);
-                    t.show();
-                }
-                // Si le joueur n'a rien sélectionné pour l'exécution
-                if (executionOpinion == -1) {
-                    Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix d'exécution", Toast.LENGTH_LONG);
+                // Si le joueur n'a rien sélectionné pour la compilation ou l'exécutnio
+                if (compilationOpinion == -1 || executionOpinion == -1) {
+                    Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix de compilation/exécution", Toast.LENGTH_LONG);
                     t.setGravity(Gravity.BOTTOM, 0, 200);
                     t.show();
+                } else {
+                    // Vérifier
                 }
             }
         });
 
-        facade = ((MainActivity) getActivity()).getFacade();
-
-        facade.reset();
-
-        facade.setTemplateChoisi(facade.getListTemplate().get((int) Math.random() * (facade.getListTemplate().size() - 1)));    //on choisit un template aléatoire
-
-        //on choisit aléatoirement les cartes classe
-        while (facade.getEtat() > 0) {
-            facade.ajouterCarte((int) (Math.random() * (facade.getCarteClasseListString().size()) - 1), facade.getEtat());
-        }
-
-        //si il faut ajouter une carte méthode, on en ajoute une aléatoire
-        if (facade.getEtat() == 0) {
-            facade.ajouterCarte((int) (Math.random() * (facade.getCarteMethode().size()) - 1), facade.getEtat());
-        }
-
-        templateTextView = v.findViewById(R.id.template_selected);
-        templateTextView.setText(facade.getTemplateString());
-
-        spinner = v.findViewById(R.id.spinnerSolo);
+        spinner = view.findViewById(R.id.spinnerSolo);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, facade.getCarteMethode());
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -132,7 +112,29 @@ public class AnswerSoloFragment extends Fragment {
 
             }
         });
-        return v;
+        return view;
+    }
+
+    private void createTemplate(View view) {
+
+        // Nettoyage de la facade.
+        facade.reset();
+
+        //on choisit un template aléatoire
+        facade.setTemplateChoisi(facade.getListTemplate().get((int) Math.random() * (facade.getListTemplate().size() - 1)));
+
+        //on choisit aléatoirement les cartes classe
+        while (facade.getEtat() > 0) {
+            facade.ajouterCarte((int) (Math.random() * (facade.getCarteClasseListString().size()) - 1), facade.getEtat());
+        }
+
+        //S'il faut ajouter une carte méthode, on en ajoute une aléatoire
+        if (facade.getEtat() == 0) {
+            facade.ajouterCarte((int) (Math.random() * (facade.getCarteMethode().size()) - 1), facade.getEtat());
+        }
+
+        templateTextView = view.findViewById(R.id.template_selected);
+        templateTextView.setText(facade.getTemplateString());
     }
 
     public void validate() {
