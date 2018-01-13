@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +29,9 @@ public class AnswerSoloVerificationFragment extends Fragment {
     private TextView solutionDisplay;
     private TextView errorDisplay;
 
+    private Button bReturn;
+    private Button bNewRandomTemplate;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,6 +41,24 @@ public class AnswerSoloVerificationFragment extends Fragment {
         initializeContainers(view);
         getPlayerSupposition();
         getSolution();
+
+        bReturn = view.findViewById(R.id.b_return);
+        bReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.canBackAgain();
+                context.loadHome();
+            }
+        });
+
+        bNewRandomTemplate = view.findViewById(R.id.b_new_random_template);
+        bNewRandomTemplate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                context.canBackAgain();
+                context.startNewGameSolo();
+            }
+        });
 
         return view;
     }
@@ -58,6 +80,9 @@ public class AnswerSoloVerificationFragment extends Fragment {
         errorDisplay = view.findViewById(R.id.error_display);
     }
 
+    /**
+     * Affiche les réponses proposées par le joueur.
+     */
     private void getPlayerSupposition() {
         // Si le joueur pense que le code compile
         if (context.getSupposedCompilation()) {

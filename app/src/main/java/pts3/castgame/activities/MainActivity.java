@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     private boolean compilationSupposed;
     private boolean executionSupposed;
     private String displaySupposed;
+    private boolean canBack = true;
 
     private static final String FRAGMENT_TAG = "TAG";
 
@@ -86,11 +87,7 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Faudra demander à l'utilisateur s'il est sûr avant de revenir à l'accueil.
-            Intent intent = new Intent(this, MainActivity.class);
-            // Nettoyage de la pile
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            loadHome();
         } else if (id == R.id.nav_help) {
 
         } else if (id == R.id.nav_exit) {
@@ -115,7 +112,7 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        } else {
+        } else if (canBack) {
             super.onBackPressed();
         }
     }
@@ -134,6 +131,10 @@ public class MainActivity extends AppCompatActivity
 
     public String getSupposedDisplay() {
         return displaySupposed;
+    }
+
+    public void canBackAgain() {
+        canBack = true;
     }
 
     /**
@@ -203,10 +204,19 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void showAnswerComparaison(boolean compilationSupposed, boolean executionSupposed, String displaySupposed) {
+        canBack = false;
         this.compilationSupposed = compilationSupposed;
         this.executionSupposed = executionSupposed;
         this.displaySupposed = displaySupposed;
         setFragment(new AnswerSoloVerificationFragment());
+    }
+
+    public void loadHome() {
+        // Faudra demander à l'utilisateur s'il est sûr avant de revenir à l'accueil.
+        Intent intent = new Intent(this, MainActivity.class);
+        // Nettoyage de la pile
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 
 }

@@ -175,20 +175,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="left"
-        android:textSize="20sp" />
+        android:textSize="16sp" />
 
     <!-- Prend la place inutile -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".5"></LinearLayout>
+        android:layout_weight=".1"></LinearLayout>
 
-    <Button
-        android:id="@+id/b_validate"
-        style="@style/Button"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="@string/new_template" />
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/b_return"
+            style="@style/SmallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp"
+            android:text="@string/nav_home" />
+
+        <Button
+            android:id="@+id/b_new_random_template"
+            style="@style/SmallButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:text="@string/new_template" />
+
+    </LinearLayout>
 
 </LinearLayout>
