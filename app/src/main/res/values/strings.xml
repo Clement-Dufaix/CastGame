@@ -19,16 +19,24 @@
     <string name="page_map">Carte</string>
     <string name="page_about">A propos</string>
     <string name="page_answer">Solution</string>
+    <string name="page_help">Aide</string>
 
     <string name="map_selection">Aucune carte affichable pour le moment\nVeuillez choisir une difficulté</string>
 
     <!-- A propos -->
     <string name="about_title1">Informations</string>
     <string name="about_title2">Credits</string>
-    <string name="about_text1">Ce projet a été réalisé dans le cadre du projet tuteuré du Semestre 3 du département informatique de l\'IUT de Laval (2017 – 2018).\n\nL\'objectif était de transformer un jeu existant en version papier, en une version mobile plus interactive permettant aux étudiants de vérifier directement la réponse choisi. De plus, cette version permet de mieux visualiser la carte Template choisie. </string>
-    <string name="about_text2">Ce jeu est utile à l\'apprentissage de la Programmation Orientée Objet, notamment pour comprendre le principe de Cast en Java.</string>
+    <string name="about_text1">Ce projet a été réalisé dans le cadre du projet tuteuré du Semestre 3 du département informatique de l\'IUT de Laval (2017 – 2018).</string>
+    <string name="about_text2">L\'objectif était de transformer un jeu existant en version papier, en une version mobile plus interactive permettant aux étudiants de vérifier directement la réponse choisie. De plus, cette version permet de mieux visualiser la carte Template sélectionnée.\n\nCe jeu est utile à l\'apprentissage de la Programmation Orientée Objet, notamment pour comprendre le principe de Cast en Java.</string>
     <string name="about_credits">TOUCHAIS Mickael\nVUILLEMIN Thomas\nCHAUVIN Dimitri\nDUFAIX Clément\nBRIAND Guillaume</string>
 
+    <!-- page d'aide -->
+    <string name="help_title1">Principe du Cast</string>
+    <string name="help_title2">Utiliser l\'application</string>
+    <string name="help_text1">Le <b>cast</b> est le fait de forcer le compilateur à considérer un objet comme étant d\’un type qui n’est pas le type déclaré ou réel de l’objet.\n\nEn Java, les seuls casts autorisés entre classes sont les casts <b>entre classe mère et classe fille.</b></string>
+    <string name="help_text2">Si vous souhaitez obtenir plus d\'informations à propos de l\'héritage et du cast, suivez ce lien <a href="http://perso.univ-lemans.fr/~i161408/dl/heritageJava.pdf">heritage.pdf </a></string>
+
+    <string name="help_text3">A partir de l\'accueil, 2 choix s\'offrent à vous : le mode facile et difficile.\nVous avez ensuite le choix entre le mode Compagnon et le mode Révisions.\n\n<b>Mode Révisions :</b> Un cas vous est proposé, vous devez indiquer si dans la situation le code se compile, s\'exécute et ce qu\'indique l\'affichage à la sortie. \n\n<b>Mode compagnon : </b>Vous devez d\'abord choisir un template. Vous aurez ensuite à choisir différentes cartes pour compléter ce template. Lorsque toutes les cartes ont été choisies, l\'application affiche le résultat du template complété.</string>
 
     <!-- Difficulté -->
     <string name="easy">Facile</string>

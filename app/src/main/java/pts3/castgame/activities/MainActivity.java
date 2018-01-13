@@ -89,7 +89,10 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_home) {
             loadHome();
         } else if (id == R.id.nav_help) {
-
+            Intent intent = new Intent(this, HelpActivity.class);
+            // Nettoyage de la pile
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
         } else if (id == R.id.nav_exit) {
             this.finish();
             System.exit(0);

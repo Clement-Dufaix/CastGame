@@ -18,7 +18,7 @@
         android:padding="10dp">
 
         <ImageButton
-            android:id="@+id/b_back_about"
+            android:id="@+id/b_back_help"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/backarrow"
@@ -29,7 +29,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/page_about" />
+            android:text="@string/page_help" />
 
         <View
             android:layout_width="40dp"
@@ -40,7 +40,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/colorAccent" />
+        android:background="@color/colorAccent" >
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -53,61 +55,40 @@
             android:padding="5dp">
 
             <TextView
-                android:id="@+id/about_title1"
+                android:id="@+id/help_title1"
                 style="@style/SimpleTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/about_title1" />
+                android:text="@string/help_title1" />
 
             <TextView
-                android:id="@+id/about_text1"
+                android:id="@+id/help_text1"
                 style="@style/SmallTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/about_text1" />
-
-            <ImageView
-                android:id="@+id/about_iut"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                app:srcCompat="@drawable/iut" />
+                android:text="@string/help_text1" />
 
             <TextView
-                android:id="@+id/about_text2"
+                android:id="@+id/help_text2"
                 style="@style/SmallTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/about_text2" />
+                android:text="@string/help_text2" />
 
             <TextView
-                android:id="@+id/about_title2"
+                android:id="@+id/help_title2"
                 style="@style/SimpleTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/about_title2" />
+                android:text="@string/help_title2" />
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/help_text3"
+                style="@style/SmallTitle"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/about_text3"
-                    style="@style/SmallTitle"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="@string/about_credits" />
-
-                <ImageView
-                    android:id="@+id/about_cast"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
-                    app:srcCompat="@mipmap/logo_cast" />
-            </LinearLayout>
+                android:layout_weight="1"
+                android:text="@string/help_text3" />
 
         </LinearLayout>
     </ScrollView>

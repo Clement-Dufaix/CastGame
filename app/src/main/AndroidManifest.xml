@@ -26,9 +26,14 @@
             android:name=".activities.MapActivity"
             android:screenOrientation="sensorPortrait" />
         <activity
-            android:name=".activities.AboutActivity"
+        android:name=".activities.AboutActivity"
+        android:noHistory="true"
+        android:screenOrientation="sensorPortrait" />
+        <activity
+            android:name=".activities.HelpActivity"
             android:noHistory="true"
             android:screenOrientation="sensorPortrait" />
+
     </application>
 
 </manifest>
