@@ -1,5 +1,4 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,27 +8,27 @@
     android:orientation="vertical"
     tools:context="pts3.castgame.fragments.AnswerSoloFragment">
 
-
     <TextView
         style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="A toi de jouer!" />
+        android:text="@string/page_answer_solo" />
 
     <TextView
-        android:id="@+id/template_selected_Solo"
+        android:id="@+id/template_selected"
         style="@style/TemplateContainer"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-
-        android:textAlignment="center" />
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
 
     <LinearLayout
-        style="@style/TemplateContainer"
+        style="@style/SimpleContainer"
         android:layout_width="match_parent"
-        android:layout_height="170dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -42,36 +41,33 @@
                 android:id="@+id/buttonNokCompile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
                 android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:background="@drawable/nok_black_white"
+                android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nok_black_white"
                 android:tag="black" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_compilation" />
+                android:text="@string/rep_compilation"
+                android:textSize="20sp" />
 
             <ImageButton
                 android:id="@+id/buttonOkCompile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="20dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:background="@drawable/ok_black_white"
+                android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ok_black_white"
                 android:tag="black" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/colorAccent" />
 
         <LinearLayout
@@ -84,80 +80,72 @@
                 android:id="@+id/buttonNokExecute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginLeft="20dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:background="@drawable/nok_black_white"
+                android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
-                android:src="@drawable/nok_black_white"
                 android:tag="black" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="@string/rep_execution" />
+                android:text="@string/rep_execution"
+                android:textSize="20sp" />
 
             <ImageButton
                 android:id="@+id/buttonOkExecute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginRight="20dp"
-                android:adjustViewBounds="true"
-                android:background="#FFFFFF"
+                android:background="@drawable/ok_black_white"
+                android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
-                android:src="@drawable/ok_black_white"
                 android:tag="black" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
+            android:layout_height="1dp"
             android:background="@color/colorAccent" />
 
         <LinearLayout
             android:id="@+id/display_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-           >
+            android:orientation="vertical">
 
-            <View
-                android:layout_width="40dp"
-                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Affichage"
+                android:textSize="20sp" />
 
-            <LinearLayout
 
+            <Spinner
+                android:id="@+id/spinnerSolo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Affichage" />
-
-                <Spinner
-                    android:id="@+id/spinnerSolo"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="50dp"
-                    />
-            </LinearLayout>
+                android:layout_weight="1" />
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent" />
+
     </LinearLayout>
 
+    <!-- Prend la place inutile -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></LinearLayout>
+
     <Button
-        android:id="@+id/b_new_template"
+        android:id="@+id/b_validate"
         style="@style/Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

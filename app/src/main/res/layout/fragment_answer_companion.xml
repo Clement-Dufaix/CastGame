@@ -12,7 +12,7 @@
         style="@style/SimpleTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/page_answer" />
+        android:text="@string/page_answer_companion" />
 
     <TextView
         android:id="@+id/template_container"
@@ -53,7 +53,6 @@
                 android:id="@+id/icon_compilation"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
                 android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc" />
 
@@ -85,7 +84,6 @@
                 android:id="@+id/icon_execution"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
                 android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc" />
 
@@ -118,7 +116,6 @@
                 android:id="@+id/icon_display"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_gravity="center_vertical"
                 android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc" />
 
@@ -126,6 +123,7 @@
 
     </LinearLayout>
 
+    <!-- Prend la place inutile -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
