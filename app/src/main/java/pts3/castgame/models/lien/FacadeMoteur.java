@@ -108,7 +108,8 @@ public class FacadeMoteur {
         } else {
             for (CastGameTypable t : cartesClassesSelectionnee.values())
                 if (t instanceof CastGameClass)
-                    result.add(((CastGameClass) t).getResultToString());
+                    if (!result.contains(((CastGameClass) t).getResultToString()))
+                        result.add(((CastGameClass) t).getResultToString());
         }
         return result;
     }
