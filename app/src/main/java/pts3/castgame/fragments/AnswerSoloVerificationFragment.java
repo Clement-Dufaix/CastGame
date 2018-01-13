@@ -1,109 +1,85 @@
 package pts3.castgame.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import pts3.castgame.R;
+import pts3.castgame.activities.MainActivity;
+import pts3.castgame.models.lien.FacadeAnswer;
+import pts3.castgame.models.lien.FacadeMoteur;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link AnswerSoloVerificationFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link AnswerSoloVerificationFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class AnswerSoloVerificationFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private MainActivity context;
+    private FacadeMoteur facadeMoteur;
+    private FacadeAnswer facadeAnswer;
 
-    private OnFragmentInteractionListener mListener;
-
-    public AnswerSoloVerificationFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AnswerSoloVerificationFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AnswerSoloVerificationFragment newInstance(String param1, String param2) {
-        AnswerSoloVerificationFragment fragment = new AnswerSoloVerificationFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+    private ImageView supposedCompilation;
+    private ImageView supposedExecution;
+    private TextView supposedDisplay;
+    private ImageView solutionCompilation;
+    private ImageView solutionExecution;
+    private TextView solutionDisplay;
+    private TextView errorDisplay;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_answer_verification_solo, container, false);
+        View view = inflater.inflate(R.layout.fragment_answer_verification_solo, container, false);
+        context = (MainActivity) getActivity();
+
+        initializeContainers(view);
+        getSolution();
+
+        return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
+    private void initializeContainers(View view) {
+
+        facadeMoteur = context.getFacade();
+        facadeAnswer = facadeMoteur.getAnswer();
+
+        supposedCompilation = view.findViewById(R.id.supposed_compilation);
+        supposedExecution = view.findViewById(R.id.supposed_execution);
+        supposedDisplay = view.findViewById(R.id.supposed_display);
+
+        solutionCompilation = view.findViewById(R.id.solution_compilation);
+        solutionExecution = view.findViewById(R.id.solution_execution);
+        solutionDisplay = view.findViewById(R.id.solution_display);
+        errorDisplay = view.findViewById(R.id.error_display);
+    }
+
+    private void getSolution() {
+        // Changement des images si la compilation et/ou l'exécution passent.
+        if (!facadeAnswer.compilationError()) {
+            solutionCompilation.setBackgroundResource(R.drawable.ok);
         }
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (!facadeAnswer.executionError()) {
+            solutionExecution.setBackgroundResource(R.drawable.ok);
+        }
+        // Si on fait un appel à une méthode.
+        if (facadeMoteur.useMethod()) {
+            if (facadeAnswer.codeIsWorking()) {
+                solutionDisplay.setText("Aucun");
+                errorDisplay.setText("Pas d'affichage,\n appel à une méthode");
+            } else {
+                solutionDisplay.setText("Aucun");
+                errorDisplay.setText("Raison :\nErreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
+            }
         } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+            if (facadeAnswer.getOutputDisplay().equals("")) {
+                solutionDisplay.setText("Aucun");
+                errorDisplay.setText("Raison :\nErreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
+            } else {
+                solutionDisplay.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
+                errorDisplay.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
+            }
         }
     }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-    }
 }

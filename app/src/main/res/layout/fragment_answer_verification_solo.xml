@@ -39,7 +39,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Votre réponse" />
+                android:text="Votre réponse"
+                android:textSize="20sp" />
 
             <View
                 android:layout_width="0dp"
@@ -49,7 +50,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Solution" />
+                android:text="Solution"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -64,7 +66,7 @@
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:adjustViewBounds="true"
-                android:background="@drawable/nok_black_white"
+                android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
                 android:tag="black" />
@@ -77,10 +79,10 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/solution_compile"
+                android:id="@+id/solution_compilation"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/nok_black_white"
+                android:background="@drawable/nok"
                 android:scaleType="fitCenter"
                 android:tag="black" />
 
@@ -101,7 +103,7 @@
                 android:id="@+id/supposed_execution"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/nok_black_white"
+                android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
                 android:tag="black" />
@@ -114,10 +116,10 @@
                 android:textSize="20sp" />
 
             <ImageButton
-                android:id="@+id/solution_execute"
+                android:id="@+id/solution_execution"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/nok_black_white"
+                android:background="@drawable/nok"
                 android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter"
                 android:tag="black" />
@@ -132,19 +134,21 @@
         <LinearLayout
             android:id="@+id/display_container"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/supposed_display"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5" />
+                android:layout_weight=".5"
+                android:gravity="left"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Affichage"
                 android:textSize="20sp" />
 
@@ -152,7 +156,9 @@
                 android:id="@+id/solution_display"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight=".5" />
+                android:layout_weight=".5"
+                android:gravity="right"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -163,11 +169,19 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/error_display"
+        style="@style/SimpleContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:textSize="20sp" />
+
     <!-- Prend la place inutile -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"></LinearLayout>
+        android:layout_weight=".5"></LinearLayout>
 
     <Button
         android:id="@+id/b_validate"
