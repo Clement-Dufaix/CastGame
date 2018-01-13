@@ -92,9 +92,10 @@ public class AnswerSoloFragment extends Fragment {
             public void onClick(View view) {
                 // Si le joueur n'a rien sélectionné pour la compilation ou l'exécutnio
                 if (compilationOpinion == -1 || executionOpinion == -1) {
-                    Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix de compilation/exécution", Toast.LENGTH_LONG);
-                    t.setGravity(Gravity.BOTTOM, 0, 200);
-                    t.show();
+                    // Regarder comment envoyer un toast depuis un fragment MAKE ne marche pas.
+                    // Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix de compilation/exécution", Toast.LENGTH_LONG);
+                    // t.setGravity(Gravity.BOTTOM, 0, 200);
+                    // t.show();
                 } else {
                     validate();
                 }
@@ -105,7 +106,7 @@ public class AnswerSoloFragment extends Fragment {
         List<String> temp = new ArrayList<String>();
         temp.add("aucun");  //l'utilisateur peut choisir entre aucun et les différentes classes présentes dans le code
         temp.addAll(facade.getPossibleAnswer());
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1,temp );
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, temp);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
