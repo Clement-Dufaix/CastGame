@@ -87,7 +87,7 @@ public class CastGameObject {
 
             // Si le type réel n'implémente pas l'interface (qui est dans ce cas le type déclaré).
             if (!otherObjectRealType.implementsThis((CastGameInterface) objectType))
-                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, otherObjectRealType.getName() + "n'implémente pas l'interface " + objectType.getName(), "");
+                return new CastGameAnswer(InstructionResult.COMPILATION_FAIL, otherObjectRealType.getName() + " n'implémente pas l'interface " + objectType.getName(), "");
 
             realObjectType = otherObjectRealType;
 

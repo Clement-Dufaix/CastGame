@@ -2,9 +2,6 @@ package pts3.castgame.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.ActivityManagerCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -23,7 +20,6 @@ import pts3.castgame.R;
 import pts3.castgame.fragments.AnswerCompanionFragment;
 import pts3.castgame.fragments.AnswerSoloFragment;
 import pts3.castgame.fragments.CardFragment;
-import pts3.castgame.fragments.GameStartFragment;
 import pts3.castgame.fragments.GameTypeFragment;
 import pts3.castgame.fragments.TemplateFragment;
 import pts3.castgame.models.lien.FacadeMoteur;
@@ -31,8 +27,8 @@ import pts3.castgame.models.lien.FacadeMoteur;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    Intent intentMap;
-    FacadeMoteur facadeMoteur;
+    private Intent intentMap;
+    private FacadeMoteur facadeMoteur;
 
     private ImageButton bMap;
 
@@ -65,12 +61,10 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intentMap);
             }
         });
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -120,6 +114,11 @@ public class MainActivity extends AppCompatActivity
         return facadeMoteur;
     }
 
+    /**
+     * Applique le fragment à l'activité courante.
+     *
+     * @param fragment Le fragment à charger.
+     */
     private void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         // On remplace l'ancien fragment par le nouveau.
@@ -134,33 +133,36 @@ public class MainActivity extends AppCompatActivity
      * Applique la <b>difficulty</b> à la carte pour afficher le bon plateau,
      * et envoie vers le fragment suivant.
      *
-     * @param difficulty La difficulté voulue
+     * @param difficulty       La difficulté voulue
+     * @param facadeDifficulty La difficulté pour la facade (redondant avec l'autre param mais bon)
      */
-    public void setDifficulty(String difficulty) {
+    public void setDifficulty(String difficulty, boolean facadeDifficulty) {
         intentMap.putExtra("difficulty", difficulty);
-        GameTypeFragment newFragment = new GameTypeFragment();
-        setFragment(newFragment);
+        facadeMoteur.setDifficile(facadeDifficulty);
+        setFragment(new GameTypeFragment());
     }
 
+    /**
+     * Démarre une partie en mode compagnon.
+     */
     public void startNewCompanionGame() {
-        GameStartFragment newFragment = new GameStartFragment();
-        setFragment(newFragment);
+        setFragment(new TemplateFragment());
     }
 
+    /**
+     * Démarre une partie de mode révisions.
+     */
     public void startNewGameSolo() {
-        AnswerSoloFragment newFragment = new AnswerSoloFragment();
-        setFragment(newFragment);
+        setFragment(new AnswerSoloFragment());
     }
 
+    /**
+     * Charge un nouveau template pour le jeu compagnon.
+     */
     public void loadNewTemplate() {
-        FragmentManager fragmentManager = getSupportFragmentManager();
         // Destruction de la pile.
-        // Attention cela détruit tous les parents, dont le fragment de sélection de type de jeu.
-        // On revient sur la sélection de difficulté en tant que fragment parent.
-        // TODO Faire un vrai menu d'accueil, et voir si celui-ci deviendra le parent.
-        fragmentManager.popBackStack(FRAGMENT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-        TemplateFragment newFragment = new TemplateFragment();
-        setFragment(newFragment);
+        getSupportFragmentManager().popBackStack(FRAGMENT_TAG, FragmentManager.POP_BACK_STACK_INCLUSIVE);
+        setFragment(new TemplateFragment());
     }
 
     /**
@@ -175,8 +177,7 @@ public class MainActivity extends AppCompatActivity
      * Sélectionne une carte, tant qu'il reste des cartes à sélectionner (voir dans le fragment associé).
      */
     public void setFragmentCardSelection() {
-        CardFragment newFragment = new CardFragment();
-        setFragment(newFragment);
+        setFragment(new CardFragment());
     }
 
 }

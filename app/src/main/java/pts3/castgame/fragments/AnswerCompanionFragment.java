@@ -17,20 +17,22 @@ import pts3.castgame.models.lien.FacadeMoteur;
 
 public class AnswerCompanionFragment extends Fragment {
 
-    Button bNewTemplate;
+    private MainActivity context;
+    private FacadeMoteur facadeMoteur;
+    private FacadeAnswer facadeAnswer;
 
-    FacadeMoteur facadeMoteur;
-    FacadeAnswer facadeAnswer;
+    private TextView templateContainer;
+    private ImageView compilationImageView;
+    private ImageView executionImageView;
+    private TextView displayTextView;
 
-    TextView templateContainer;
-    ImageView compilationImageView;
-    ImageView executionImageView;
-    ImageView displayImageView;
-    TextView displayTextView;
+    private Button bNewTemplate;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_answer_companion, container, false);
+        context = (MainActivity) getActivity();
 
         initializeContainers(view);
 
@@ -42,30 +44,24 @@ public class AnswerCompanionFragment extends Fragment {
             }
         });
 
+        // Changement des images si la compilation et/ou l'exécution passent.
         if (!facadeAnswer.compilationError()) {
             compilationImageView.setBackgroundResource(R.drawable.ok);
         }
         if (!facadeAnswer.executionError()) {
             executionImageView.setBackgroundResource(R.drawable.ok);
         }
-        if (facadeAnswer.codeIsWorking()) {
-            displayImageView.setBackgroundResource(R.drawable.ok);
-        }
 
+        // Si on fait un appel à une méthode.
         if (facadeMoteur.useMethod()) {
             if (facadeAnswer.codeIsWorking()) {
                 displayTextView.setText("Pas d'affichage,\n appel à une méthode");
-
             } else {
                 displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
-                // On n'affiche pas d'icône puisqu'on se sert du layout pour afficher l'erreur.
-                displayImageView.setVisibility(View.INVISIBLE);
             }
         } else {
             if (facadeAnswer.getOutputDisplay().equals("")) {
                 displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
-                // On n'affiche pas d'icône puisqu'on se sert du layout pour afficher l'erreur.
-                displayImageView.setVisibility(View.INVISIBLE);
             } else {
                 displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
             }
@@ -74,8 +70,7 @@ public class AnswerCompanionFragment extends Fragment {
     }
 
     private void initializeContainers(View view) {
-        MainActivity mainActivity = (MainActivity) getActivity();
-        facadeMoteur = mainActivity.getFacade();
+        facadeMoteur = context.getFacade();
         facadeAnswer = facadeMoteur.getAnswer();
 
         templateContainer = view.findViewById(R.id.template_container);
@@ -83,12 +78,7 @@ public class AnswerCompanionFragment extends Fragment {
 
         compilationImageView = view.findViewById(R.id.icon_compilation);
         executionImageView = view.findViewById(R.id.icon_execution);
-        displayImageView = view.findViewById(R.id.icon_display);
         displayTextView = view.findViewById(R.id.text_display);
-    }
-
-    public void loadNewTemplate() {
-
     }
 
 }

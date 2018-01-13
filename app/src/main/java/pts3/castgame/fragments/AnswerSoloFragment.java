@@ -93,7 +93,7 @@ public class AnswerSoloFragment extends Fragment {
                     t.setGravity(Gravity.BOTTOM, 0, 200);
                     t.show();
                 } else {
-                    // Vérifier
+                    validate();
                 }
             }
         });

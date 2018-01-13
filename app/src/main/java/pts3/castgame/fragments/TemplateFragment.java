@@ -19,15 +19,16 @@ import pts3.castgame.models.CastGameTemplate;
 
 public class TemplateFragment extends Fragment {
 
-    private ListView mListView;
     private MainActivity context;
+    private ListView listTemplates;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_template, container, false);
 
-        mListView = v.findViewById(R.id.listTemplate);
+        View view = inflater.inflate(R.layout.fragment_template, container, false);
         context = ((MainActivity) getActivity());
+
+        listTemplates = view.findViewById(R.id.list_templates);
         context.getFacade().reset();
 
         // Ajout des numéros aux templates
@@ -42,17 +43,17 @@ public class TemplateFragment extends Fragment {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_list_item_1, templatesString);
-        mListView.setAdapter(adapter);
+        listTemplates.setAdapter(adapter);
 
 
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listTemplates.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 context.getFacade().setTemplateChoisi(context.getFacade().getListTemplate().get(position));
-                ((MainActivity) getActivity()).setFragmentCardSelection();
+                context.setFragmentCardSelection();
             }
         });
-        return v;
+        return view;
     }
 
 }

@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MenuActivity"
+            android:name=".activities.LoadingActivity"
             android:noHistory="true"
             android:screenOrientation="sensorPortrait">
             <intent-filter>

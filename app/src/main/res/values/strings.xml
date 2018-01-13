@@ -9,6 +9,7 @@
     <string name="ic_desc">icône</string>
 
     <!-- nom des pages -->
+    <string name="page_welcome">Bienvenue dans le jeu du cast !</string>
     <string name="page_difficulty">Choix de la difficulté</string>
     <string name="page_game_type">Choix du type de jeu</string>
     <string name="page_template">Choix du template</string>
@@ -29,7 +30,7 @@
 
     <string name="start_game">C\'est parti !\nBonne chance</string>
 
-    <!-- Réponses -->
+    <!-- Réponses pour les différents modes de jeu -->
     <string name="rep_compilation">Compile</string>
     <string name="rep_execution">S\'exécute</string>
     <string name="rep_display">Affiche\n\n</string>

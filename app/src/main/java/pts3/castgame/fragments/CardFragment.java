@@ -16,11 +16,11 @@ import pts3.castgame.models.lien.FacadeMoteur;
 
 public class CardFragment extends Fragment {
 
-    TextView templateTextView;
-    ListView listCards;
-    TextView actualCardTextView;
-    int state;
-    FacadeMoteur facade;
+    private FacadeMoteur facade;
+    private int state;
+    private TextView templateTextView;
+    private ListView listCards;
+    private TextView actualCardTextView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
