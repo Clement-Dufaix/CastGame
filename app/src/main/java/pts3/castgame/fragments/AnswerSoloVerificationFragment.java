@@ -54,6 +54,7 @@ public class AnswerSoloVerificationFragment extends Fragment {
         errorDisplay = view.findViewById(R.id.error_display);
     }
 
+    // Code dupliqué par rapport à la récupération de solution de mode compagnon
     private void getSolution() {
         // Changement des images si la compilation et/ou l'exécution passent.
         if (!facadeAnswer.compilationError()) {
