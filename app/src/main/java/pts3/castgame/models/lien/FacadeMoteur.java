@@ -100,17 +100,23 @@ public class FacadeMoteur {
 
     public List<String> getPossibleAnswers() {
         List<String> result = new LinkedList<String>();
+        Set<String> r = new TreeSet<String>();
         if (templateChoisi.getUseMethod()) {
             for (CastGameTypable t : getCarteClasse())
                 if (t instanceof CastGameClass)
                     if (((CastGameClass) t).getMethodList().containsKey(methodeSelectionnee))
-                        result.add(((CastGameClass) t).getMethodList().get(methodeSelectionnee));
+                        r.add(((CastGameClass) t).getMethodList().get(methodeSelectionnee));
         } else {
             for (CastGameTypable t : cartesClassesSelectionnee.values())
                 if (t instanceof CastGameClass)
-                    if (!result.contains(((CastGameClass) t).getResultToString()))
-                        result.add(((CastGameClass) t).getResultToString());
+                    r.add(((CastGameClass) t).getResultToString());
+                else
+                    r.add("Je suis un " + t.getName());
         }
+
+        for (String s : r)
+            result.add(s);
+        
         return result;
     }
     //inutilisee
