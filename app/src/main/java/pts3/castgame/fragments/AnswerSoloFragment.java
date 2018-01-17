@@ -3,6 +3,7 @@ package pts3.castgame.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -33,11 +35,17 @@ public class AnswerSoloFragment extends Fragment {
     private ImageButton buttonOkExecute;
     private Spinner spinner;
 
-    private boolean compilationSelected = false;
-    private boolean executionSelected = false;
+    private LinearLayout layoutBarExecute;
+    private LinearLayout layoutExecute;
+    private LinearLayout layoutBarAffichage;
+    private LinearLayout layoutBar2Affichage;
+    private LinearLayout layoutAffichage;
 
-    private boolean compilationSupposed;
-    private boolean executionSupposed;
+    private boolean compilationSelected = true;
+    private boolean executionSelected = true;
+
+    private boolean compilationSupposed=false;
+    private boolean executionSupposed=false;
     private String displaySupposed;
 
     @Override
@@ -48,47 +56,57 @@ public class AnswerSoloFragment extends Fragment {
         facadeMoteur = ((MainActivity) getActivity()).getFacade();
         createTemplate(view);
 
-        buttonNokCompile = view.findViewById(R.id.buttonNokCompile);
-        buttonNokCompile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                compilationSelected = true;
-                compilationSupposed = false;
-                buttonNokCompile.setImageResource(R.drawable.nok);
-                buttonOkCompile.setImageResource(R.drawable.ok_black_white);
-            }
-        });
+        layoutBarExecute = view.findViewById(R.id.barExecuteLayout);
+        layoutExecute = view.findViewById(R.id.executeLayout);
+        layoutBarAffichage = view.findViewById(R.id.barAffichageLayout);
+        layoutBar2Affichage = view.findViewById(R.id.barAffichage2Layout);
+        layoutAffichage = view.findViewById(R.id.display_container);
+
 
         buttonOkCompile = view.findViewById(R.id.buttonOkCompile);
         buttonOkCompile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                compilationSelected = true;
-                compilationSupposed = true;
-                buttonOkCompile.setImageResource(R.drawable.ok);
-                buttonNokCompile.setImageResource(R.drawable.nok_black_white);
+                if (compilationSupposed) {
+                    compilationSupposed = false;
+                    executionSelected = false;
+                    executionSupposed = false;
+                    buttonOkExecute.setImageResource(R.drawable.nok);
+                    buttonOkCompile.setImageResource(R.drawable.nok);
+                    layoutBarExecute.setVisibility(View.INVISIBLE);
+                    layoutExecute.setVisibility(View.INVISIBLE);
+                    layoutBarAffichage.setVisibility(View.INVISIBLE);
+                    layoutAffichage.setVisibility(View.INVISIBLE);
+                    layoutBar2Affichage.setVisibility(View.INVISIBLE);
+                } else {
+                    compilationSupposed = true;
+                    buttonOkCompile.setImageResource(R.drawable.ok);
+                    layoutBarExecute.setVisibility(View.VISIBLE);
+                    layoutExecute.setVisibility(View.VISIBLE);
+                    layoutBarAffichage.setVisibility(View.VISIBLE);
+
+                }
             }
         });
 
-        buttonNokExecute = view.findViewById(R.id.buttonNokExecute);
-        buttonNokExecute.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                executionSelected = true;
-                executionSupposed = false;
-                buttonNokExecute.setImageResource(R.drawable.nok);
-                buttonOkExecute.setImageResource(R.drawable.ok_black_white);
-            }
-        });
 
         buttonOkExecute = view.findViewById(R.id.buttonOkExecute);
         buttonOkExecute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                executionSelected = true;
-                executionSupposed = true;
-                buttonOkExecute.setImageResource(R.drawable.ok);
-                buttonNokExecute.setImageResource(R.drawable.nok_black_white);
+                if (executionSupposed) {
+                    executionSupposed = false;
+                    buttonOkExecute.setImageResource(R.drawable.nok);
+                    layoutBarAffichage.setVisibility(View.INVISIBLE);
+                    layoutAffichage.setVisibility(View.INVISIBLE);
+                    layoutBar2Affichage.setVisibility(View.INVISIBLE);
+                } else {
+                    executionSupposed = true;
+                    buttonOkExecute.setImageResource(R.drawable.ok);
+                    layoutBarAffichage.setVisibility(View.VISIBLE);
+                    layoutAffichage.setVisibility(View.VISIBLE);
+                    layoutBar2Affichage.setVisibility(View.VISIBLE);
+                }
             }
         });
 
