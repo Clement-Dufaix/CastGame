@@ -67,7 +67,7 @@ public class AnswerSoloFragment extends Fragment {
         buttonOkCompile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (compilationSupposed) {
+                if (compilationSupposed) {  //quand on décoche compilation, tout redevient par défaut
                     compilationSupposed = false;
                     executionSelected = false;
                     executionSupposed = false;
@@ -78,7 +78,7 @@ public class AnswerSoloFragment extends Fragment {
                     layoutBarAffichage.setVisibility(View.INVISIBLE);
                     layoutAffichage.setVisibility(View.INVISIBLE);
                     layoutBar2Affichage.setVisibility(View.INVISIBLE);
-                } else {
+                } else {         //quand on coche compilation cela fait apparaitre la demande d'exécution
                     compilationSupposed = true;
                     buttonOkCompile.setImageResource(R.drawable.ok);
                     layoutBarExecute.setVisibility(View.VISIBLE);
@@ -94,13 +94,13 @@ public class AnswerSoloFragment extends Fragment {
         buttonOkExecute.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (executionSupposed) {
+                if (executionSupposed) {         //quand on décoche compilation, on enlève la sélection d'affichage
                     executionSupposed = false;
                     buttonOkExecute.setImageResource(R.drawable.nok);
                     layoutBarAffichage.setVisibility(View.INVISIBLE);
                     layoutAffichage.setVisibility(View.INVISIBLE);
                     layoutBar2Affichage.setVisibility(View.INVISIBLE);
-                } else {
+                } else {    //quand on coche compilation, on rajoute la sélection d'affichage
                     executionSupposed = true;
                     buttonOkExecute.setImageResource(R.drawable.ok);
                     layoutBarAffichage.setVisibility(View.VISIBLE);
