@@ -1,9 +1,7 @@
 package pts3.castgame.fragments;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.text.Layout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,23 +27,17 @@ public class AnswerSoloFragment extends Fragment {
 
     private TextView templateTextView;
     private Button bValidate;
-    private ImageButton buttonNokCompile;
     private ImageButton buttonOkCompile;
-    private ImageButton buttonNokExecute;
     private ImageButton buttonOkExecute;
     private Spinner spinner;
 
-    private LinearLayout layoutBarExecute;
+    private View compilationLine;
     private LinearLayout layoutExecute;
-    private LinearLayout layoutBarAffichage;
-    private LinearLayout layoutBar2Affichage;
-    private LinearLayout layoutAffichage;
+    private View executionLine;
+    private LinearLayout layoutDisplay;
 
-    private boolean compilationSelected = true;
-    private boolean executionSelected = true;
-
-    private boolean compilationSupposed=false;
-    private boolean executionSupposed=false;
+    private boolean compilationSupposed = false;
+    private boolean executionSupposed = false;
     private String displaySupposed;
 
     @Override
@@ -56,12 +48,10 @@ public class AnswerSoloFragment extends Fragment {
         facadeMoteur = ((MainActivity) getActivity()).getFacade();
         createTemplate(view);
 
-        layoutBarExecute = view.findViewById(R.id.barExecuteLayout);
+        compilationLine = view.findViewById(R.id.line_compilation);
+        executionLine = view.findViewById(R.id.line_execution);
         layoutExecute = view.findViewById(R.id.executeLayout);
-        layoutBarAffichage = view.findViewById(R.id.barAffichageLayout);
-        layoutBar2Affichage = view.findViewById(R.id.barAffichage2Layout);
-        layoutAffichage = view.findViewById(R.id.display_container);
-
+        layoutDisplay = view.findViewById(R.id.display_container);
 
         buttonOkCompile = view.findViewById(R.id.buttonOkCompile);
         buttonOkCompile.setOnClickListener(new View.OnClickListener() {
@@ -69,22 +59,20 @@ public class AnswerSoloFragment extends Fragment {
             public void onClick(View view) {
                 if (compilationSupposed) {  //quand on décoche compilation, tout redevient par défaut
                     compilationSupposed = false;
-                    executionSelected = false;
                     executionSupposed = false;
-                    buttonOkExecute.setImageResource(R.drawable.nok);
-                    buttonOkCompile.setImageResource(R.drawable.nok);
-                    layoutBarExecute.setVisibility(View.INVISIBLE);
+                    buttonOkExecute.setBackgroundResource(R.drawable.nok);
+                    buttonOkCompile.setBackgroundResource(R.drawable.nok);
+
+                    compilationLine.setVisibility(View.INVISIBLE);
+                    executionLine.setVisibility(View.INVISIBLE);
                     layoutExecute.setVisibility(View.INVISIBLE);
-                    layoutBarAffichage.setVisibility(View.INVISIBLE);
-                    layoutAffichage.setVisibility(View.INVISIBLE);
-                    layoutBar2Affichage.setVisibility(View.INVISIBLE);
+                    layoutDisplay.setVisibility(View.INVISIBLE);
                 } else {         //quand on coche compilation cela fait apparaitre la demande d'exécution
                     compilationSupposed = true;
-                    buttonOkCompile.setImageResource(R.drawable.ok);
-                    layoutBarExecute.setVisibility(View.VISIBLE);
+                    buttonOkCompile.setBackgroundResource(R.drawable.ok);
+                    compilationLine.setVisibility(View.VISIBLE);
                     layoutExecute.setVisibility(View.VISIBLE);
-                    layoutBarAffichage.setVisibility(View.VISIBLE);
-
+                    executionLine.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -96,16 +84,14 @@ public class AnswerSoloFragment extends Fragment {
             public void onClick(View view) {
                 if (executionSupposed) {         //quand on décoche compilation, on enlève la sélection d'affichage
                     executionSupposed = false;
-                    buttonOkExecute.setImageResource(R.drawable.nok);
-                    layoutBarAffichage.setVisibility(View.INVISIBLE);
-                    layoutAffichage.setVisibility(View.INVISIBLE);
-                    layoutBar2Affichage.setVisibility(View.INVISIBLE);
+                    buttonOkExecute.setBackgroundResource(R.drawable.nok);
+                    executionLine.setVisibility(View.INVISIBLE);
+                    layoutDisplay.setVisibility(View.INVISIBLE);
                 } else {    //quand on coche compilation, on rajoute la sélection d'affichage
                     executionSupposed = true;
-                    buttonOkExecute.setImageResource(R.drawable.ok);
-                    layoutBarAffichage.setVisibility(View.VISIBLE);
-                    layoutAffichage.setVisibility(View.VISIBLE);
-                    layoutBar2Affichage.setVisibility(View.VISIBLE);
+                    buttonOkExecute.setBackgroundResource(R.drawable.ok);
+                    executionLine.setVisibility(View.VISIBLE);
+                    layoutDisplay.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -114,20 +100,13 @@ public class AnswerSoloFragment extends Fragment {
         bValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Si le joueur n'a rien sélectionné pour la compilation ou l'exécution
-                if (!compilationSelected || !executionSelected) {
-                    // Regarder comment envoyer un toast depuis un fragment MAKE ne marche pas.
-                    // Toast t = Toast.makeText(getActivity(), "Vous devez faire un choix de compilation/exécution", Toast.LENGTH_LONG);
-                    // t.setGravity(Gravity.BOTTOM, 0, 200);
-                    // t.show();
-                } else {
-                    validate(compilationSupposed, executionSupposed, displaySupposed);
-                }
+                validate(compilationSupposed, executionSupposed, displaySupposed);
+
             }
         });
 
         //Menu déroulant pour sélectionner une réponse parmi celles proposées pour l'affichage en sortie
-        spinner = view.findViewById(R.id.spinnerSolo);
+        spinner = view.findViewById(R.id.spinner_solo);
         List<String> temp = new ArrayList<>();
         //l'utilisateur peut choisir entre aucun et les différentes classes présentes dans le code
         temp.add("Aucun");
@@ -138,7 +117,6 @@ public class AnswerSoloFragment extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 displaySupposed = spinner.getAdapter().getItem(position).toString();
-                Log.e("CONTENT", "a : " + spinner.getAdapter().getItem(position).toString());
             }
 
             @Override
