@@ -347,8 +347,8 @@ public class FacadeMoteur {
 
         //Classe Guerrier
         interfaces.clear();
-        methodList.put("attaquer", "J'attaque");
-        methodList.put("defendre", "Je défends");
+        methodList.put("attaquer", "Attaque à l'epee !");
+        methodList.put("defendre", "Defense au bouclier !");
         interfaces.add(combattant);
         CastGameClass guerrier = new CastGameClass("Guerrier", "Je suis un guerrier", methodList, interfaces);
         result.add(guerrier);
@@ -360,8 +360,8 @@ public class FacadeMoteur {
         //Classe Magicien
         methodList.clear();
         interfaces.clear();
-        methodList.put("lancerSort", "Je lance un sort");
-        methodList.put("guerir", "Je guéris");
+        methodList.put("lancerSort", "Abracadabra !");
+        methodList.put("guerir", "Guerison miraculeuse !");
         interfaces.add(guerisseur);
         interfaces.add(lanceurSortProfane);
         CastGameClass magicien = new CastGameClass("Magicien", "Je suis un magicien", methodList, interfaces);
@@ -369,30 +369,30 @@ public class FacadeMoteur {
 
         //Classe Sorceleur
         methodList.clear();
-        methodList.put("defendre", "Défense magique");
-        methodList.put("lancerSort", "Je lance un sort d'attaque");
-        methodList.put("guerir", "Guérison");
+        methodList.put("defendre", "Parade defensive !");
+        methodList.put("lancerSort", "Sortilege magique");
+        methodList.put("guerir", "Sortilege de soin");
         CastGameClass sorceleur = new CastGameClass("Sorceleur", "Je suis un sorceleur", methodList, guerrier, interfaces);
         result.add(sorceleur);
 
         //Classe Clerc
         methodList.clear();
         interfaces.clear();
-        methodList.put("attaquer", "Au nom de dieu, J'attaque");
-        methodList.put("lancerSort", "Au nom de dieu, je lance un sort");
+        methodList.put("attaquer", "Attaque de baton !");
+        methodList.put("lancerSort", "Sort divin !");
         interfaces.add(lanceurSortDivin);
         CastGameClass clerc = new CastGameClass("Clerc", "Je suis un clerc", methodList, guerrier, interfaces);
         result.add(clerc);
 
         //Classe Pretre
         methodList.clear();
-        methodList.put("lancerSort", "Je prie pour lancer un sort");
+        methodList.put("lancerSort", "Par le pouvoir de Dieu !");
         CastGameClass pretre = new CastGameClass("Pretre", "Je suis un pretre", methodList, interfaces);
         result.add(pretre);
 
         //Classe Sorcier
         methodList.clear();
-        methodList.put("lancerSort", "Je lance un sort puissant");
+        methodList.put("lancerSort", "Sort de ce corps !");
         CastGameClass sorcier = new CastGameClass("Sorcier", "Je suis un sorcier", methodList, magicien);
         result.add(sorcier);
 
@@ -405,8 +405,8 @@ public class FacadeMoteur {
         //Classe Necromancien
         methodList.clear();
         interfaces.clear();
-        methodList.put("lancerSort", "Je lance un sort mortel");
-        methodList.put("reveillerMort", "Je réveille les morts");
+        methodList.put("lancerSort", "Sort ! la clepsidre !");
+        methodList.put("reveillerMort", "Reveil de mort");
         interfaces.add(lanceurSortMalefique);
         CastGameClass necromancien = new CastGameClass("Necromancien", "Je suis un necromancien", methodList, sorcier, interfaces);
         result.add(necromancien);
@@ -423,14 +423,14 @@ public class FacadeMoteur {
         result.add(mendiant);
 
         //Classe Guerisseur
-        methodList.put("guerir", "Je guéris");
+        methodList.put("guerir", "Je gueris");
         CastGameClass guerisseur = new CastGameClass("Guerisseur", "Je suis un guérisseur", methodList);
         result.add(guerisseur);
 
         //Classe Guerrier
         methodList.clear();
-        methodList.put("attaquer", "J'attaque");
-        methodList.put("defendre", "Je défends");
+        methodList.put("attaquer", "Attaque à l'epee !");
+        methodList.put("defendre", "Defense au bouclier !");
         CastGameClass guerrier = new CastGameClass("Guerrier", "Je suis un guerrier", methodList);
         result.add(guerrier);
 
