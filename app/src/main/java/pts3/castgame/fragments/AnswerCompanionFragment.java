@@ -52,19 +52,10 @@ public class AnswerCompanionFragment extends Fragment {
             executionImageView.setBackgroundResource(R.drawable.ok);
         }
 
-        // Si on fait un appel à une méthode.
-        if (facadeMoteur.useMethod()) {
-            if (facadeAnswer.codeIsWorking()) {
-                displayTextView.setText("Pas d'affichage,\n appel à une méthode");
-            } else {
+        if (!facadeAnswer.codeIsWorking()) {
                 displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
-            }
         } else {
-            if (facadeAnswer.getOutputDisplay().equals("")) {
-                displayTextView.setText("Erreur ligne n°" + facadeAnswer.getLineNumber() + " : " + facadeAnswer.getExplanation());
-            } else {
                 displayTextView.setText("Affiche :\n" + facadeAnswer.getOutputDisplay());
-            }
         }
         return view;
     }
