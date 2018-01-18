@@ -52,7 +52,7 @@
                 android:id="@+id/buttonOkCompile"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/nok"
+                android:background="@drawable/case_vierge"
                 android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter" />
 
@@ -87,7 +87,7 @@
                 android:id="@+id/buttonOkExecute"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:background="@drawable/nok"
+                android:background="@drawable/case_vierge"
                 android:contentDescription="@string/ic_desc"
                 android:scaleType="fitCenter" />
 

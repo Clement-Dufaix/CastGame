@@ -60,8 +60,8 @@ public class AnswerSoloFragment extends Fragment {
                 if (compilationSupposed) {  //quand on décoche compilation, tout redevient par défaut
                     compilationSupposed = false;
                     executionSupposed = false;
-                    buttonOkExecute.setBackgroundResource(R.drawable.nok);
-                    buttonOkCompile.setBackgroundResource(R.drawable.nok);
+                    buttonOkExecute.setBackgroundResource(R.drawable.case_vierge);
+                    buttonOkCompile.setBackgroundResource(R.drawable.case_vierge);
 
                     compilationLine.setVisibility(View.INVISIBLE);
                     executionLine.setVisibility(View.INVISIBLE);
@@ -69,7 +69,7 @@ public class AnswerSoloFragment extends Fragment {
                     layoutDisplay.setVisibility(View.INVISIBLE);
                 } else {         //quand on coche compilation cela fait apparaitre la demande d'exécution
                     compilationSupposed = true;
-                    buttonOkCompile.setBackgroundResource(R.drawable.ok);
+                    buttonOkCompile.setBackgroundResource(R.drawable.case_ok);
                     compilationLine.setVisibility(View.VISIBLE);
                     layoutExecute.setVisibility(View.VISIBLE);
                     executionLine.setVisibility(View.VISIBLE);
@@ -84,12 +84,12 @@ public class AnswerSoloFragment extends Fragment {
             public void onClick(View view) {
                 if (executionSupposed) {         //quand on décoche compilation, on enlève la sélection d'affichage
                     executionSupposed = false;
-                    buttonOkExecute.setBackgroundResource(R.drawable.nok);
+                    buttonOkExecute.setBackgroundResource(R.drawable.case_vierge);
                     executionLine.setVisibility(View.INVISIBLE);
                     layoutDisplay.setVisibility(View.INVISIBLE);
                 } else {    //quand on coche compilation, on rajoute la sélection d'affichage
                     executionSupposed = true;
-                    buttonOkExecute.setBackgroundResource(R.drawable.ok);
+                    buttonOkExecute.setBackgroundResource(R.drawable.case_ok);
                     executionLine.setVisibility(View.VISIBLE);
                     layoutDisplay.setVisibility(View.VISIBLE);
                 }
