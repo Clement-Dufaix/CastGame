@@ -29,6 +29,7 @@
     <string name="about_text1">Ce projet a été réalisé dans le cadre du projet tuteuré du Semestre 3 du département informatique de l\'IUT de Laval (2017 – 2018).</string>
     <string name="about_text2">L\'objectif était de transformer un jeu existant en version papier, en une version mobile plus interactive permettant aux étudiants de vérifier directement la réponse choisie. De plus, cette version permet de mieux visualiser la carte Template sélectionnée.\n\nCe jeu est utile à l\'apprentissage de la Programmation Orientée Objet, notamment pour comprendre le principe de Cast en Java.</string>
     <string name="about_credits">TOUCHAIS Mickael\nVUILLEMIN Thomas\nCHAUVIN Dimitri\nDUFAIX Clément\nBRIAND Guillaume</string>
+    <string name="credits">Icônes faites par Zlatko Najdenovski sur www.flaticon.com  </string>
 
     <!-- page d'aide -->
     <string name="help_title1">Principe du Cast</string>

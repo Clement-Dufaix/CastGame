@@ -9,6 +9,10 @@
         <item name="android:fontFamily">casual</item>
     </style>
 
+    <style name="Case">
+        <item name="android:background">@drawable/container_template</item>
+    </style>
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat" />
 
     <style name="BigTitle">
